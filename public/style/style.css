@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --azul-escuro: #1F304E;
+    --azul-mediano: #5371FA;
+    --azul-claro: #6595F2;
+    --creme: #fcfbfb;
+    --creme-escururo: #F4EFEC
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Barlow Condensed", system-ui;
+    background-color: #fcfbfb;
+}
+
+/* Navegação */
+
+.cabecalho{
+    height: 56.9375rem;
+    background: url(../img/banner.png) no-repeat center center;
+    background-size: cover;
+}
+
+.cabecalho-navegacao{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navegacao-logo{
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.navegacao-menu-img{
+    margin: 10px;
+}
+
+/* Menu lateral */
+
+.menu-lateral {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: -250px; 
+    background-color: var(--azul-escuro);
+    overflow-x: hidden;
+    transition: width 0.3s ease, right 0.3s ease; 
+    padding-top: 60px;
+    z-index: 1000; 
+  }
+  
+  .menu-lateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-lateral ul li {
+    padding: 10px 20px;
+    text-align: left;
+  }
+  
+  .menu-lateral ul li a {
+    color: var(--creme); 
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+  }
+  
+  .menu-lateral ul li a:hover {
+    background-color: var(--azul-mediano); 
+  }
+  
+  .fechar-menu {
+    position: absolute;
+    top: 20px;
+    left: 25px; 
+    font-size: 36px;
+    color: var(--creme);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+  }
+  
+  .menu-lateral.aberto {
+    right: 0; 
+    width: 250px;
+  }
+  
+  .menu-lateral.aberto a {
+    opacity: 1; 
+  }
+  
+
+/* Responvidade */
+
+@media (max-width: 700px) {
+    .cabecalho{
+        background: url(../img/banner-mobile.png) no-repeat center center;
+        background-size: cover;
+    }
+
+    .navegacao-logo{
+        width: 120px;
+        height: 55px;
+
+    }
+
+    .navegacao-menu-img{
+        width: 49px;
+        height: 45px;
+    }
+}
+
+
+/* barra lateral*/
+
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #fcfbfb;
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: #fcfbfb;
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: #fcfbfb;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background-color: #1F304E;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #2B436D;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: #2B436D;
+}

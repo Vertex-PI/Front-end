@@ -1,83 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertex</title>
+    <link rel="icon" type="image/x-icon" href="img/1-removebg-preview.png" />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vertex</title>
-  <link rel="icon" type="image/x-icon" href="img/1-removebg-preview.png" />
-  <link rel="stylesheet" href="style/style.css" />
-
-
-</head>
-
-<body>
-  <header class="cabecalho">
-    <div class="cabecalho-navegacao">
-      <img src="img/3_semFundo.png" alt="Logo" class="navegacao-logo">
-      <img src="img/menu hamburguer.png" alt="Menu Hambúrguer" class="navegacao-menu-img" id="menu-hamburguer">
-    </div>
-    <div class="container">
-      <h1 class="cabecalho-titulo">Otimizando Energia,
-        Transformando o Futuro</h1>
-      <p class="cabecalho-paragrafo">Monitoramento inteligente para soluções sustentáveis.</p>
-    </div>
-    <a href="" class="cabecalho-botao">
-      <img src="img/saibaMais.png" alt="">
-    </a>
-  </header>
-
-  <nav class="menu-lateral" id="menu-lateral">
-    <a href="#" class="fechar-menu" id="fechar-menu">&times;</a>
-    <ul>
-      <li><a href="#">Link 1</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
-      <li><a href="#">Link 4</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <article class="sobre item">
-      <h1 class="sobre-titulo">Sobre nós</h1>
-      <p class="sobre-paragrafo">Apaixonados por inovação e sustentabilidade, nosso foco é <span
-          class="negrito">monitorar o consumo de energia elétrica</span>, trazendo
-        soluções inteligentes para reduzir gastos e promover um futuro mais eficiente e sustentável.</p>
-
-      <p class="sobre-paragrafo">Nosso time é formado por especialistas comprometidos com a criação de um impacto
-        positivo. Acreditamos que
-        <span class="negrito">pequenas mudanças</span> podem gerar <span class="negrito">grandes resultados</span>, e
-        estamos aqui para transformar o modo como a energia é gerida.
-      </p>
-
-      <p class="sobre-paragrafo">Vamos juntos, rumo a um futuro mais <span class="negrito">consciente e
-          sustentável!</span></p>
-    </article>
-
-    <section>
-      <div>
-        <h3>16+</h3>
-        <p>Algo aqui nesse lugar</p>
+  <body>
+    <header class="cabecalho">
+      <div class="cabecalho-navegacao">
+        <img src="img/3_semFundo.png" alt="Logo" class="navegacao-logo" />
+        <img
+          src="img/menu hamburguer.png"
+          alt="Menu Hambúrguer"
+          class="navegacao-menu-img"
+          id="menu-hamburguer"
+        />
       </div>
-      <div>
-        <h3>300+</h3>
-        <p>Algo aqui nesse lugar</p>
+      <div class="container">
+        <h1 class="cabecalho-titulo">
+          Otimizando Energia, Transformando o Futuro
+        </h1>
+        <p class="cabecalho-paragrafo">
+          Monitoramento inteligente para soluções sustentáveis.
+        </p>
       </div>
-      <div>
-        <h3>50</h3>
-        <p>Algo aqui nesse lugar</p>
-      </div>
-      <div>
-        <h3>25%</h3>
-        <p>Algo aqui nesse lugar</p>
+      <a href="#sobre-nos" class="cabecalho-botao">
+        <img src="img/saibaMais.png" alt="" />
+      </a>
+    </header>
+
+    <nav class="menu-lateral" id="menu-lateral">
+      <a href="#" class="fechar-menu" id="fechar-menu">&times;</a>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article class="sobre" id="sobre-nos">
+        <h1 class="sobre-titulo">Sobre nós</h1>
+        <p class="sobre-paragrafo">
+          Apaixonados por inovação e sustentabilidade, nosso foco é
+          <span class="negrito">monitorar o consumo de energia elétrica</span>,
+          trazendo soluções inteligentes para reduzir gastos e promover um
+          futuro mais eficiente e sustentável.
+        </p>
+
+        <p class="sobre-paragrafo">
+          Nosso time é formado por especialistas comprometidos com a criação de
+          um impacto positivo. Acreditamos que
+          <span class="negrito">pequenas mudanças</span> podem gerar
+          <span class="negrito">grandes resultados</span>, e estamos aqui para
+          transformar o modo como a energia é gerida.
+        </p>
+
+        <p class="sobre-paragrafo">
+          Vamos juntos, rumo a um futuro mais
+          <span class="negrito">consciente e sustentável!</span>
+        </p>
+      </article>
+
+      <figure class="sobre-img-mobile">
+        <img src="img/man-worker-mobile.png" alt="" class="img-mobile" />
+      </figure>
+
+      <section class="dados">
+        <div class="card-dados">
+          <h3 class="card-dados-titulo">16+</h3>
+          <p class="card-dados-paragrafo">Algo aqui nesse lugar</p>
+        </div>
+        <div class="card-dados">
+          <h3 class="card-dados-titulo">300+</h3>
+          <p class="card-dados-paragrafo">Algo aqui nesse lugar</p>
+        </div>
+        <div class="card-dados">
+          <h3 class="card-dados-titulo">50</h3>
+          <p class="card-dados-paragrafo">Algo aqui nesse lugar</p>
+        </div>
+        <div class="card-dados">
+          <h3 class="card-dados-titulo">25%</h3>
+          <p class="card-dados-paragrafo">Algo aqui nesse lugar</p>
+        </div>
+      </section>
+
+      <article class="comparacao">
+        <div class="comparacao-container">
+          <h2 class="comparacao-titulo">Energia convencional</h2>
+          <p class="comparacao-paragrafo">
+            Derivada de
+            <span class="negrito">petróleo, carvão e gás natural</span>, é
+            amplamente utilizada pela infraestrutura existente e alta densidade
+            energética. <br />
+            No entanto, sua queima emite gases de efeito estufa,
+            <span class="negrito"
+              >agravando o aquecimento global e as mudanças climáticas</span
+            >.
+          </p>
+        </div>
+        <div class="separador"><span>X</span></div>
+        <div class="comparacao-container">
+          <h2 class="comparacao-titulo">Energia convencional</h2>
+          <p class="comparacao-paragrafo">
+            A energia renovável é <span class="negrito">sustentável</span> e tem
+            impacto ambiental <span class="negrito">menor</span> que as fontes
+            convencionais.<br />
+            Embora os custos iniciais sejam altos, a baixa manutenção e produção
+            constante tornam essas
+            <span class="negrito">fontes economicamente viáveis</span> e
+            favorecem a independência energética a longo prazo.
+          </p>
+        </div>
+      </article>
+
+      <figure class="banner-img-desktop">
+        <img src="img/man-worker-desktop.png" alt="" class="img-des" />
+      </figure>
+    </main>
+
+    <section class="equipe">
+      <div class="equipe-card">
+        <img class="equipe-card-img" src="img/bia.jpg" alt="" />
+        <h4 class="equipe-card-titulo">Bianca </h4>
+        <p class="equipe-card-subtitulo">Dev. full stack</p>
+        <div class="equipe-card-contato">
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/instagram.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/linkedin.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/github.svg" alt="" /></a>
+        </div>
+        <a href="" class="equipe-card-botao">Contato</a>
       </div>
     </section>
-  </main>
-
-
-
-</body>
-
+  </body>
 </html>
 
 <script src="js/menu.js"></script>

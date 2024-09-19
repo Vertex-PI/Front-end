@@ -21,6 +21,10 @@ body {
     background-color: #fcfbfb;
 }
 
+.negrito{
+  font-weight: bold;
+}
+
 /* Navegação */
 
 .cabecalho{
@@ -73,6 +77,7 @@ body {
     justify-content: center;
     margin-top: 250px;
     padding-bottom: 10px;
+    
 }
 
 /* Menu lateral */
@@ -134,6 +139,33 @@ body {
   .menu-lateral.aberto a {
     opacity: 1; 
   }
+
+  /* Sobre nós */
+
+  .sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+  }
+
+  .sobre-titulo{
+    font-weight: 200;
+    font-size: 87px;
+    font-style: italic;
+
+    margin-bottom: 0;
+  }
+
+  .sobre-paragrafo{
+    font-size: 36px;
+    text-align: center;
+    font-weight: 200;
+
+    margin: 30px 300px;
+  }
   
 
 /* Responvidade */
@@ -141,7 +173,6 @@ body {
 @media (max-width: 1360px) {
     .cabecalho{
       text-align: center;
-   
     }
 
     .cabecalho-titulo{
@@ -162,6 +193,13 @@ body {
       justify-content: center;
       flex-wrap: wrap;
     }
+
+}
+
+@media (max-width: 1024px) {
+  .sobre-paragrafo{
+    margin: 30px 100px;
+  }
 
 }
 
@@ -188,6 +226,10 @@ body {
 
     .cabecalho-paragrafo{
       font-size: 60px
+    }
+
+    .sobre-paragrafo{
+      text-align: left;
     }
 }
 

@@ -259,23 +259,80 @@ body {
 
 /* Equipe */
 
+.equipe-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
 .equipe-card{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+ 
+
 }
 
 .equipe-card-img{
   width: 300px;
+  box-shadow: -2px 4px 25px -8px rgba(0,0,0,0.75);
 }
 
 .equipe-card-titulo{
-  margin: 10px;
+  margin: 5px 0 0 0;
   font-size: 25px;
   font-style: italic;
 
   font-weight: 400;
+}
+
+.equipe-card-subtitulo{
+  margin: 0 0 10px 0;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.equipe-card-contato{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+.equipe-card-botao{
+  border: 3px solid var(--azul-texto);
+  border-radius: 5px;
+
+  padding: 10px 60px;
+
+  color: var(--azul-texto);
+
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+
+  margin: 10px;
+  
+  transition: 0.5s;
+}
+
+.equipe-card-botao:hover{
+    background-color: var(--azul-texto);
+    color: var(--creme);
+    padding: 11px 66px;
+}
+
+.equipe-titulo{
+  text-align: center;
+
+  font-size: 5vw;
+  font-weight: 200;
+  font-style: italic;
 }
 
 /* Responvidade */
@@ -312,8 +369,16 @@ body {
 
   }
 
+  body.modo-escuro .card-dados:not(:last-child){
+    border-right: none !important;
+  }
+
   .card-dados {
     border-bottom: 1px solid black;
+  }
+
+  body.modo-escuro .card-dados{
+    border-bottom: 1px solid var(--creme) !important;
   }
 
 }
@@ -386,6 +451,11 @@ body {
   .container {
     width: 100%;
   }
+
+  .equipe-titulo{
+    font-size: 10vw;
+  }
+  
 }
 
 @media (max-width: 530px) {
@@ -405,9 +475,24 @@ body {
     width: 200px;
   }
 
+  .equipe-titulo{
+    font-size: 13vw;
+  }
+
 }
 
+/* Animação */
 
+.animar {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.ativar-animacao {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* barra lateral*/
 
@@ -441,3 +526,5 @@ body {
 *::-webkit-scrollbar-thumb:active {
   background-color: #2B436D;
 }
+
+

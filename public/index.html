@@ -6,6 +6,7 @@
     <title>Vertex</title>
     <link rel="icon" type="image/x-icon" href="img/1-removebg-preview.png" />
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/modoEscuro.css">
   </head>
 
   <body>
@@ -35,15 +36,16 @@
     <nav class="menu-lateral" id="menu-lateral">
       <a href="#" class="fechar-menu" id="fechar-menu">&times;</a>
       <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
+        <li><a href="#sobre-nos">Sobre Nós</a></li>
+        <li><a href="#comparar">Comparação</a></li>
+        <li><a href="#equipe">Equipe</a></li>
         <li><a href="#">Link 4</a></li>
+        <button id="modo-escuro-btn" class="modo-claro">🌞</button>
       </ul>
     </nav>
 
     <main>
-      <article class="sobre" id="sobre-nos">
+      <article class="sobre animar" id="sobre-nos">
         <h1 class="sobre-titulo">Sobre nós</h1>
         <p class="sobre-paragrafo">
           Apaixonados por inovação e sustentabilidade, nosso foco é
@@ -52,7 +54,7 @@
           futuro mais eficiente e sustentável.
         </p>
 
-        <p class="sobre-paragrafo">
+        <p class="sobre-paragrafo animar">
           Nosso time é formado por especialistas comprometidos com a criação de
           um impacto positivo. Acreditamos que
           <span class="negrito">pequenas mudanças</span> podem gerar
@@ -60,17 +62,17 @@
           transformar o modo como a energia é gerida.
         </p>
 
-        <p class="sobre-paragrafo">
+        <p class="sobre-paragrafo animar ">
           Vamos juntos, rumo a um futuro mais
           <span class="negrito">consciente e sustentável!</span>
         </p>
       </article>
 
-      <figure class="sobre-img-mobile">
+      <figure class="sobre-img-mobile animar ">
         <img src="img/man-worker-mobile.png" alt="" class="img-mobile" />
       </figure>
 
-      <section class="dados">
+      <section class="dados animar ">
         <div class="card-dados">
           <h3 class="card-dados-titulo">16+</h3>
           <p class="card-dados-paragrafo">Algo aqui nesse lugar</p>
@@ -89,7 +91,7 @@
         </div>
       </section>
 
-      <article class="comparacao">
+      <article class="comparacao animar" id="comparar">
         <div class="comparacao-container">
           <h2 class="comparacao-titulo">Energia convencional</h2>
           <p class="comparacao-paragrafo">
@@ -123,7 +125,9 @@
       </figure>
     </main>
 
-    <section class="equipe">
+    <section class="equipe animar" id="equipe">
+    <h1 class="equipe-titulo">Desenvolvedores</h1>
+    <div class="equipe-container">
       <div class="equipe-card">
         <img class="equipe-card-img" src="img/bia.jpg" alt="" />
         <h4 class="equipe-card-titulo">Bianca </h4>
@@ -135,9 +139,60 @@
         </div>
         <a href="" class="equipe-card-botao">Contato</a>
       </div>
-    </section>
+
+      <div class="equipe-card">
+        <img class="equipe-card-img" src="img/gusta.jpg" alt="" />
+        <h4 class="equipe-card-titulo">Gustavo </h4>
+        <p class="equipe-card-subtitulo">Dev. full stack</p>
+        <div class="equipe-card-contato">
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/instagram.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/linkedin.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/github.svg" alt="" /></a>
+        </div>
+        <a href="" class="equipe-card-botao">Contato</a>
+      </div>
+
+      <div class="equipe-card">
+        <img class="equipe-card-img" src="img/lucas.jpg" alt="" />
+        <h4 class="equipe-card-titulo">Lucas </h4>
+        <p class="equipe-card-subtitulo">Dev. full stack</p>
+        <div class="equipe-card-contato">
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/instagram.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/linkedin.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/github.svg" alt="" /></a>
+        </div>
+        <a href="" class="equipe-card-botao">Contato</a>
+      </div>
+
+      <div class="equipe-card">
+        <img class="equipe-card-img" src="img/leo.jpg" alt="" />
+        <h4 class="equipe-card-titulo">Leonardo </h4>
+        <p class="equipe-card-subtitulo">Dev. full stack</p>
+        <div class="equipe-card-contato">
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/instagram.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/linkedin.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/github.svg" alt="" /></a>
+        </div>
+        <a href="" class="equipe-card-botao">Contato</a>
+      </div>
+
+      <div class="equipe-card">
+        <img class="equipe-card-img" src="img/matheus.jpg" alt="" />
+        <h4 class="equipe-card-titulo">Matheus </h4>
+        <p class="equipe-card-subtitulo">Dev. full stack</p>
+        <div class="equipe-card-contato">
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/instagram.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/linkedin.svg" alt="" /></a>
+          <a href="" class="equipe-card-link"><img class="equipe-card-link-img" src="img/github.svg" alt="" /></a>
+        </div>
+        <a href="" class="equipe-card-botao">Contato</a>
+      </div>
+    
+    </div>
+  </section>
   </body>
 </html>
 
 <script src="js/menu.js"></script>
 <script src="js/animacao.js"></script>
+<script src="js/modoEscuro.js"></script>

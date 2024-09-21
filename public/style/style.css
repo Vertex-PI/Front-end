@@ -31,23 +31,30 @@ body {
 .cabecalho {
   background: url(../img/banner.png) no-repeat center center;
   background-size: cover;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
 }
 
 .cabecalho-navegacao {
   display: flex;
   justify-content: space-between;
-  position: relative;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .navegacao-logo {
   width: 190px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
+  margin: 10px auto;
 }
 
-.navegacao-menu-img {
-  margin: 10px;
+.navegacao-menu-img{
+  width: 80px;
+  height: 80px;
+
+  cursor: pointer;
 }
 
 .cabecalho-titulo {
@@ -58,7 +65,7 @@ body {
   margin-bottom: 0;
   width: 60%;
   margin-left: 100px;
-  margin-top: 150px;
+  margin-top: 250px;
 }
 
 .cabecalho-paragrafo {
@@ -66,18 +73,19 @@ body {
   font-weight: 100;
   color: var(--creme);
   width: 50%;
-  margin-top: 0;
-
   margin-left: 100px;
+  margin-top: auto;
 }
 
 .cabecalho-botao {
   display: flex;
   justify-content: center;
-  margin-top: 250px;
   padding-bottom: 10px;
-
+  margin-top: auto;
+  
 }
+
+/* Menu lateral */
 
 /* Menu lateral */
 
@@ -89,9 +97,10 @@ body {
   right: -250px;
   background-color: var(--azul-escuro);
   overflow-x: hidden;
-  transition: width 0.3s ease, right 0.3s ease;
+  transition: width 0.5s ease, right 0.5s ease;
   padding-top: 60px;
   z-index: 1000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .menu-lateral ul {
@@ -101,21 +110,24 @@ body {
 }
 
 .menu-lateral ul li {
-  padding: 10px 20px;
+  padding: 15px 20px;
   text-align: left;
 }
 
 .menu-lateral ul li a {
   color: var(--creme);
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: block;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateX(30px);
+  transition: 1s;
 }
 
 .menu-lateral ul li a:hover {
   background-color: var(--azul-mediano);
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .fechar-menu {
@@ -127,7 +139,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 .menu-lateral.aberto {
@@ -137,8 +149,12 @@ body {
 
 .menu-lateral.aberto a {
   opacity: 1;
+  transform: translateX(0);
 }
 
+.menu-lateral.aberto .fechar-menu {
+  opacity: 1;
+}
 /* Sobre nós */
 
 .sobre {
@@ -335,6 +351,34 @@ body {
   font-style: italic;
 }
 
+/* Rodape */
+
+.site-footer {
+  background-color: var(--azul-escuro);
+  color: var(--creme);
+  padding: 20px 0;
+  text-align: center;
+
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo {
+  width: 100px; /* Ajuste o tamanho da logo conforme necessário */
+  margin-bottom: 10px;
+}
+
+.site-footer p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
 /* Responvidade */
 
 @media (max-width: 1360px) {
@@ -480,6 +524,47 @@ body {
   }
 
 }
+
+@media (max-width: 425px) {
+  .comparacao-paragrafo {
+    font-size: 25px;
+  }
+
+  .sobre-paragrafo {
+    font-size: 25px;
+  }
+
+}
+
+@media (max-height: 800px) {
+  .cabecalho-titulo {
+    font-size: 8vh; 
+  }
+
+  .cabecalho-paragrafo {
+    font-size: 4vh; 
+  }
+
+  .cabecalho-botao {
+    margin-top: 3vh; 
+  }
+}
+
+@media (max-height: 600px) {
+  .cabecalho-titulo {
+    font-size: 6vh; 
+  }
+
+  .cabecalho-paragrafo {
+    font-size: 3vh; 
+  }
+
+  .cabecalho-botao {
+    margin-top: 2vh; 
+  }
+}
+
+
 
 /* Animação */
 

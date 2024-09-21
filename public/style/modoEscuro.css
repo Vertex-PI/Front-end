@@ -71,3 +71,7 @@
     background-color: var(--creme);
     color: #2B436D;
   }
+
+  body.modo-escuro .site-footer{
+    border-top: 1px solid var(--creme);
+  }

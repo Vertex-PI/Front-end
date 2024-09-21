@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="shortcut icon" href="imagens/1-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/login.css" />
+  </head>
+  <body>
+    <main>
+      <div class="PaiLogin">
+        <div class="FilhoLogin">
+          <h1>Seja Bem-vindo</h1>
+          <p style="color: #1F304E">Faça login para continuar</p>
+          <form>
+            <label for="input_email">Email</label>
+            <input type="email" id="input_email" placeholder="exemplo@exemplo.com"/>
+
+            <label for="input_senha">Senha</label>
+            <div class="div_input">
+              <input type="password" id="input_senha" placeholder="Insira sua senha"/>
+              <img src="img/open_eye.svg" id="open_eye" onclick="show_password()">
+            </div>
+
+            <button class="botao" type="button" onclick="entrar()">
+              Entrar
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  function show_password(){
+    let ipt = document.getElementById("input_senha");
+    let img = document.getElementById("open_eye");
+
+    if (ipt.type == "password"){
+      ipt.type = "text";
+      img.src = "img/eye_closed.svg"
+    } else {
+      ipt.type = "password"
+      img.src = "img/open_eye.svg"
+    }
+  }
+</script>

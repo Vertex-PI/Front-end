@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Barlow Condensed", system-ui;
+    font-family: "Inter", sans-serif;
 }
 
 body {
@@ -31,21 +31,23 @@ body {
     gap: 10px;
     width: 40%;
     height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background: #FFFFFF;
-    border: 1px solid #DDE1E6;
 }
 
 .signup-container h2 {
-    margin-bottom: 10px;
     font-size: 28px;
     font-weight: bold;
     color: #333;
+
+    /* background-color: red; */
 }
 
 .signup-container p {
     margin-bottom: 20px;
-    color: #666;
-    font-size: 14px;
+    font-size: 14px;    
+    color: #1F304E;
 }
 
 .signup-container a {
@@ -60,6 +62,7 @@ body {
 .form-group {
     margin-bottom: 20px;
     position: relative;
+    
 }
 
 .form-group img {
@@ -69,7 +72,7 @@ body {
     cursor: pointer;
     top: 57%;
     transform: translateY(-25%);
-    left: 88%;
+    left: 92%;
 }
 
 .form_group_double {
@@ -118,6 +121,7 @@ label {
     font-size: 14px;
     color: #333;
     text-align: left;
+    font-family: "Inter", sans-serif;
 }
 
 input {
@@ -134,33 +138,27 @@ input {
 .input-placeholder {
     padding-left: 10px;
     font-size: 16px;
-    color: #555;
+    color: black;
 }
 
-.password-toggle {
-    position: absolute;
-    right: 20px;
-    top: calc(100% - 45px);
-    cursor: pointer;
+.div_btn{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
 }
 
-.linha {
-    margin-top: 25px;
-    width: 95%;
-    height: 0px;
-    border: 1px solid #DDE1E6;
-}
-
-button {
-    background-color: #1F304E;
-    color: white;
-    padding: 12px;
+.botao-cadastro{
+    padding: 10px;
     border: none;
     border-radius: 4px;
+    background-color: #1F304E;
+    color: #fff;
     font-size: 16px;
     cursor: pointer;
-    width: 100%;
-    transition: 0.3s;
+    transition: 0.2s;
+    font-family: "Inter", sans-serif;
+
+    width: 200px;
 }
 
 button:hover {
@@ -181,21 +179,6 @@ button:hover {
     text-decoration: underline;
 }
 
-
-.botao-voltar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #1F304E;
-}
-
-.botao-voltar:hover {
-    color: #5371FA;
-}
 @media (min-width: 1000px) {
     .signup-container {
         width: 30%;

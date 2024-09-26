@@ -33,6 +33,12 @@ h1{
     margin: 0;
 }
 
+.div_btn{
+    display: flex;
+    justify-content: center;
+
+}
+
 .PaiLogin a {
 
     color: #333;
@@ -72,7 +78,7 @@ h1{
     object-fit: contain;
     position: absolute;
     height: 3vh;
-    top: 56%;
+    top: 57.5%;
     left: 61%;
     cursor: pointer;
 }
@@ -102,8 +108,10 @@ h1{
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
     font-family: "Inter", sans-serif;
+
+    width: 200px;
 }
 
 .botao:hover {

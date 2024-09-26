@@ -57,10 +57,34 @@ body {
   width: 100%;
 }
 
+.btn_login{
+  width: 95px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  color: #fcfbfb;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-right: 25px;
+  font-size: 16px;
+
+  background-color: transparent ;
+  border: 3px solid #fcfbfb;
+
+  cursor: pointer ;
+  transition: 0.2s;
+}
+
+.btn_login:hover{
+  transform: scale(1.05);
+  background-color: #1F304E;
+  border: 3px solid #1F304E;
+}
+
 .navegacao-logo {
   margin: 5px auto;
   object-fit: contain;
-  margin-right: 40%;
+  margin-right: 35%;
 }
 
 
@@ -129,8 +153,6 @@ body {
 
 /* Menu lateral */
 
-/* Menu lateral */
-
 .menu-lateral {
   height: 100%;
   width: 0;
@@ -185,8 +207,8 @@ body {
 }
 
 .menu-lateral.aberto {
-  right: 0;
-  width: 250px;
+  left: 0;
+  width: 300px;
 }
 
 .menu-lateral.aberto a {
@@ -244,6 +266,7 @@ body {
 
 .dados {
   margin: 5px 0px;
+  margin-bottom: 50px;
   width: 100vw;
   height: 21vh;
   display: flex;
@@ -257,6 +280,8 @@ body {
   
   height: 10vh;
   padding: 40px;
+
+  /* background-color: rebeccapurple; */
 
 }
 
@@ -289,6 +314,7 @@ body {
   text-align: center;
 
   gap: 20px;
+  margin: 50px;
 
 }
 
@@ -300,7 +326,7 @@ body {
 }
 
 .comparacao-titulo {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 200;
   font-style: italic;
 }
@@ -314,7 +340,7 @@ body {
 
 .comparacao-paragrafo {
   font-weight: 300;
-  font-size: 36px;
+  font-size: 30px;
 
   color: var(--azul-texto);
 }
@@ -342,28 +368,25 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
- 
-
 }
 
 .equipe-card-img{
-  width: 300px;
+  width: 200px;
   box-shadow: -2px 4px 25px -8px rgba(0,0,0,0.75);
 }
 
 .equipe-card-titulo{
   margin: 5px 0 0 0;
-  font-size: 25px;
+  font-size: 23px;
   font-style: italic;
 
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .equipe-card-subtitulo{
   margin: 0 0 10px 0;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .equipe-card-contato{
@@ -374,6 +397,16 @@ body {
   gap: 20px;
 }
 
+.equipe-card-link-img{
+  object-fit: contain;
+  width: 30px;
+
+  transition: 0.2s;
+}
+
+.equipe-card-link-img:hover{
+  transform: scale(1.05);
+}
 
 .equipe-card-botao{
   border: 3px solid var(--azul-texto);
@@ -389,19 +422,18 @@ body {
 
   margin: 10px;
   
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .equipe-card-botao:hover{
     background-color: var(--azul-texto);
     color: var(--creme);
-    padding: 11px 66px;
 }
 
 .equipe-titulo{
   text-align: center;
 
-  font-size: 5vw;
+  font-size: 3vw;
   font-weight: 200;
   font-style: italic;
 }

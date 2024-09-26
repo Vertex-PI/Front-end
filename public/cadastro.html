@@ -13,7 +13,7 @@
 
     <div class="signup-container">
         <h2>Cadastro</h2>
-        <!-- <p>Cadastra-se</p> -->
+        <p>Entraremos em contato para mais informações</p>
         <div class="form">
             <div class="form-group">
                 <label>Nome</label>
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label>Senha</label>
                 <input class="input-placeholder" id="input_senha" type="password" placeholder="Crie uma senha">
-                <img src="img/open_eye.svg" id="open_eye_1" onclick="show_password()">
+                <img src="img/eye_closed.svg" id="open_eye_1" class="eye_toggle" onclick="show_password()">
 
             </div>
             <div class="form">
@@ -44,15 +44,13 @@
                     <label>Confirmar Senha</label>
                     <input class="input-placeholder" id="input_confirmar_senha" type="password"
                         placeholder="Confirme sua senha">
-                    <img src="img/open_eye.svg" id="open_eye_2" onclick="show_password_2()">
+                    <img src="img/eye_closed.svg" id="open_eye_2" class="eye_toggle" onclick="show_password_2()">
                 </div>
             </div>
 
-
-
-            <button onclick="cadastrar()" class="botao-cadastro">Cadastre-se</button>
-        </div>
-        <div class="linha">
+            <div class="div_btn">
+                <button onclick="cadastrar()" class="botao-cadastro">Cadastre-se</button>
+            </div>
         </div>
     </div>
 </body>
@@ -66,10 +64,10 @@
 
         if (ipt.type == "password") {
             ipt.type = "text";
-            img.src = "img/eye_closed.svg"
+            img.src = "img/open_eye.svg"
         } else {
             ipt.type = "password"
-            img.src = "img/open_eye.svg"
+            img.src = "img/eye_closed.svg"
         }
     }
 
@@ -79,10 +77,10 @@
 
         if (ipt.type == "password") {
             ipt.type = "text";
-            img.src = "img/eye_closed.svg"
+            img.src = "img/open_eye.svg"
         } else {
             ipt.type = "password"
-            img.src = "img/open_eye.svg"
+            img.src = "img/eye_closed.svg"
         }
     }
 </script>

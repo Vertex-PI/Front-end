@@ -11,7 +11,7 @@
     <main>
       <div class="PaiLogin">
         <div class="FilhoLogin">
-          <h1>Seja Bem-vindo</h1>
+          <h1>Seja bem-vindo(a)</h1>
           <p style="color: #1F304E">Faça login para continuar</p>
           <form>
             <label for="input_email">Email</label>
@@ -20,12 +20,14 @@
             <label for="input_senha">Senha</label>
             <div class="div_input">
               <input type="password" id="input_senha" placeholder="Insira sua senha"/>
-              <img src="img/open_eye.svg" id="open_eye" onclick="show_password()">
+              <img src="img/eye_closed.svg" id="eye_closed" onclick="show_password()">
             </div>
 
-            <button class="botao" type="button" onclick="entrar()">
-              Entrar
-            </button>
+            <div class="div_btn">
+              <button class="botao" type="button" onclick="entrar()">
+                Entrar
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -36,14 +38,14 @@
 <script>
   function show_password(){
     let ipt = document.getElementById("input_senha");
-    let img = document.getElementById("open_eye");
+    let img = document.getElementById("eye_closed");
 
     if (ipt.type == "password"){
       ipt.type = "text";
-      img.src = "img/eye_closed.svg"
+      img.src = "img/open_eye.svg"
     } else {
       ipt.type = "password"
-      img.src = "img/open_eye.svg"
+      img.src = "img/eye_closed.svg"
     }
   }
 </script>

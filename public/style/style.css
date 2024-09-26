@@ -20,6 +20,7 @@ body {
   padding: 0;
   font-family: "Inter", sans-serif;
   background-color: #fcfbfb;
+  overflow-x: hidden;
 }
 
 .negrito {
@@ -35,54 +36,95 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; 
+
+}
+
+.container{
+  /* background-color: red; */
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  
+  margin-top: 15vh;
 }
 
 .cabecalho-navegacao {
   display: flex;
   justify-content: space-between;
   position: absolute;
+  height: 10vh;
   top: 0;
   width: 100%;
 }
 
 .navegacao-logo {
-  width: 190px;
-  margin: 10px auto;
+  margin: 5px auto;
+  object-fit: contain;
+  margin-right: 40%;
 }
 
-.navegacao-menu-img{
-  width: 80px;
-  height: 80px;
 
+.navegacao-menu-img{
+  width: 50px;
+  height: 70px;
+  margin-right: 30px;
+
+  object-fit: contain;
   cursor: pointer;
 }
 
 .cabecalho-titulo {
+  /* background-color: rebeccapurple; */
   font-size: 96px;
   font-weight: 300;
   font-style: italic;
   color: var(--creme);
   margin-bottom: 0;
-  width: 60%;
+  width: 50%;
   margin-left: 100px;
-  margin-top: 250px;
 }
 
 .cabecalho-paragrafo {
   font-size: 48px;
   font-weight: 100;
   color: var(--creme);
-  width: 50%;
+  width: 60%;
   margin-left: 100px;
   margin-top: auto;
 }
 
+.sobre_nos{
+  height: 10vh;
+  width: 100vw;
+  margin-top: 40px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: blue; */
+
+  position: relative;
+  top: 13%;
+}
+
 .cabecalho-botao {
   display: flex;
-  justify-content: center;
-  padding-bottom: 10px;
-  margin-top: auto;
-  
+  flex-direction: column;
+  /* background-color: rebeccapurple; */
+  text-decoration: none;
+}
+
+.saiba_mais{
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.arrow_img{
+  object-fit: contain;
+  height: 15px;
 }
 
 /* Menu lateral */
@@ -169,18 +211,18 @@ body {
 
 .sobre-titulo {
   font-weight: 200;
-  font-size: 87px;
+  font-size: 70px;
   font-style: italic;
 
   margin-bottom: 0;
 }
 
 .sobre-paragrafo {
-  font-size: 36px;
+  font-size: 30px;
   text-align: center;
   font-weight: 200;
 
-  margin: 30px 300px;
+  margin: 20px 300px;
 }
 
 .sobre-img-mobile {
@@ -190,20 +232,32 @@ body {
 /* Dados */
 .dados,
 .card-dados {
+  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap
+  text-align: center;
+  flex-wrap: wrap;
+  width: 15vw;
+  
 }
 
 .dados {
-  margin: 40px 40px;
+  margin: 5px 0px;
+  width: 100vw;
+  height: 21vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  /* background-color: blue; */
 }
 
 .card-dados {
-  flex-direction: column;
-
+  flex-direction: row;
+  
+  height: 10vh;
   padding: 40px;
+
 }
 
 .card-dados:not(:last-child) {
@@ -211,17 +265,18 @@ body {
 }
 
 .card-dados-titulo {
-  font-size: 60px;
-  font-weight: lighter;
-
+  font-size: 35px;
+  font-weight: 300;
+  
   margin: 0;
 }
 
 .card-dados-paragrafo {
-  font-size: 40px;
-  font-weight: lighter;
+  font-size: 25px;
+  font-weight: 200;
   font-style: italic;
-
+  
+  margin: 0;
   width: 300px;
   text-align: center;
 }
@@ -493,7 +548,7 @@ body {
   }
 
   .container {
-    width: 100%;
+    width: 50%;
   }
 
   .equipe-titulo{
@@ -538,11 +593,11 @@ body {
 
 @media (max-height: 800px) {
   .cabecalho-titulo {
-    font-size: 8vh; 
+    font-size: 9vh; 
   }
 
   .cabecalho-paragrafo {
-    font-size: 4vh; 
+    font-size: 5vh; 
   }
 
   .cabecalho-botao {
@@ -583,20 +638,8 @@ body {
 
 *::-webkit-scrollbar {
   height: 10px;
-  width: 10px;
-}
-
-*::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: #fcfbfb;
-}
-
-*::-webkit-scrollbar-track:hover {
-  background-color: #fcfbfb;
-}
-
-*::-webkit-scrollbar-track:active {
-  background-color: #fcfbfb;
+  width: 5px;
+  display: none;
 }
 
 *::-webkit-scrollbar-thumb {

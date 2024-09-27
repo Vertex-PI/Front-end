@@ -1,5 +1,5 @@
 var usuarioModel = require("../models/usuarioModel");
-var quartosModel = require("../models/quartosModel");
+var cargosModel = require("../models/cargosModel");
 
 function autenticar(req, res) {
   var email = req.body.emailServer;
@@ -18,20 +18,19 @@ function autenticar(req, res) {
 
         if (resultadoAutenticar.length == 1) {
           console.log(resultadoAutenticar);
-
-          quartosModel
-            .buscarQuartosPorHotel(resultadoAutenticar[0].hotelId)
-            .then((resultadoquartos) => {
-              if (resultadoquartos.length > 0) {
+          cargosModel
+            .buscarCargosPorFuncionario(resultadoAutenticar[0].idFuncionario)
+            .then((resultadoCargos) => {
+              if (resultadoCargos.length > 0) {
                 res.json({
                   id: resultadoAutenticar[0].idFuncionario,
                   email: resultadoAutenticar[0].emailFuncionario,
                   nome: resultadoAutenticar[0].nomeFuncionario,
                   senha: resultadoAutenticar[0].senhaFuncionario,
-                  quartos: resultadoquartos
+                  cargos: resultadoCargos
                 });
               } else {
-                res.status(204).json({ quartos: [] });
+                res.status(204).json({ cargos: [] });
               }
             });
         } else if (resultadoAutenticar.length == 0) {
@@ -56,23 +55,20 @@ function cadastrar(req, res) {
   var nome = req.body.nomeServer;
   var email = req.body.emailServer;
   var senha = req.body.senhaServer;
-  var hotelId = req.body.hotelServer;
+  var cargoId = req.body.cargoServer;
 
-  // Faça as validações dos valores
   if (nome == undefined) {
     res.status(400).send("Seu nome está undefined!");
   } else if (email == undefined) {
     res.status(400).send("Seu email está undefined!");
   } else if (senha == undefined) {
     res.status(400).send("Sua senha está undefined!");
-  } else if (hotelId == undefined) {
-    res.status(400).send("Seu hotel está undefined!");
+  } else if (cargoId == undefined) {
+    res.status(400).send("Seu cargo está undefined!");
   }
-
-  // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
   else
     usuarioModel
-      .cadastrar(nome, email, senha, hotelId)
+      .cadastrar(nome, email, senha, cargoId)
       .then(function (resultado) {
         res.json(resultado);
       })

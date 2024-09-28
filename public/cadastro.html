@@ -9,43 +9,57 @@
     <link rel="stylesheet" href="style/cadastro.css">
 </head>
 
-<body>
+<body onload="listar()">
 
     <div class="signup-container">
         <h2>Cadastro</h2>
-        <p>Entraremos em contato para mais informações</p>
         <div class="form">
             <div class="form-group">
                 <label>Nome</label>
                 <input class="input-placeholder" id="input_nome" type="text" placeholder="Ex.: Fernanda">
+                <span id="nomeErro" class="mensagemErro"></span>
             </div>
 
             <div class="form-group">
                 <label>Email</label>
                 <input class="input-placeholder" id="input_email" type="email" placeholder="exemplo@exemplo.com"
                     required>
+                <span id="cadastroEmailErro" class="mensagemErro"></span>
             </div>
 
             <div class="form-group">
                 <label>Cargo</label>
-                <select name="cargo" class="input-placeholder" id="select-cargo">
-                    <option disabled selected id="selecao">Selecione o cargo</option>
+                <select name="cargo" class="input-placeholder" id="select_cargo">
+                    <option disabled selected value="nada" id="selecao">Selecione o cargo</option>
                 </select>
+                <span id="cadastroCargoErro" class="mensagemErro"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Sexo</label>
+                <select name="cargo" class="input-placeholder" id="select_sexo">
+                    <option disabled selected value="nada" id="selecao">Selecione o sexo</option>
+                    <option value="Masculino" id="selecao">Masculino</option>
+                    <option value="Feminino" id="selecao">Feminino</option>
+                    <option value="Outro" id="selecao">Outro</option>
+                </select>
+                <span id="cadastroSexoErro" class="mensagemErro"></span>
             </div>
 
             <div class="form-group">
                 <label>Senha</label>
                 <input class="input-placeholder" id="input_senha" type="password" placeholder="Crie uma senha">
                 <img src="img/eye_closed.svg" id="open_eye_1" class="eye_toggle" onclick="show_password()">
-
+                <span id="cadastroSenhaErro" class="mensagemErro"></span>
             </div>
-            <div class="form">
+           
                 <div class="form-group">
                     <label>Confirmar Senha</label>
                     <input class="input-placeholder" id="input_confirmar_senha" type="password"
                         placeholder="Confirme sua senha">
                     <img src="img/eye_closed.svg" id="open_eye_2" class="eye_toggle" onclick="show_password_2()">
-                </div>
+                
+                <span id="cadastroConfirmSenhaErro" class="mensagemErro"></span>
             </div>
 
             <div class="div_btn">
@@ -84,3 +98,5 @@
         }
     }
 </script>
+
+<script src="js/cadastro/cadastro.js"></script>

@@ -19,14 +19,15 @@ function autenticar(req, res) {
         if (resultadoAutenticar.length == 1) {
           console.log(resultadoAutenticar);
           cargosModel
-            .buscarCargosPorFuncionario(resultadoAutenticar[0].idFuncionario)
+            .buscarCargosPorFuncionario(resultadoAutenticar[0].idUsuario)
             .then((resultadoCargos) => {
               if (resultadoCargos.length > 0) {
                 res.json({
-                  id: resultadoAutenticar[0].idFuncionario,
-                  email: resultadoAutenticar[0].emailFuncionario,
-                  nome: resultadoAutenticar[0].nomeFuncionario,
-                  senha: resultadoAutenticar[0].senhaFuncionario,
+                  id: resultadoAutenticar[0].idUsuario,
+                  email: resultadoAutenticar[0].email,
+                  nome: resultadoAutenticar[0].nome,
+                  senha: resultadoAutenticar[0].senha,
+                  sexo: resultadoAutenticar[0].sexo,
                   cargos: resultadoCargos
                 });
               } else {
@@ -55,6 +56,7 @@ function cadastrar(req, res) {
   var nome = req.body.nomeServer;
   var email = req.body.emailServer;
   var senha = req.body.senhaServer;
+  var sexo = req.body.sexoServer;
   var cargoId = req.body.cargoServer;
 
   if (nome == undefined) {
@@ -63,12 +65,14 @@ function cadastrar(req, res) {
     res.status(400).send("Seu email está undefined!");
   } else if (senha == undefined) {
     res.status(400).send("Sua senha está undefined!");
+  }else if(sexo == undefined){
+    res.status(400).send("Seu sexo está undefinied!");
   } else if (cargoId == undefined) {
     res.status(400).send("Seu cargo está undefined!");
   }
   else
     usuarioModel
-      .cadastrar(nome, email, senha, cargoId)
+      .cadastrar(nome, email, senha, sexo, cargoId)
       .then(function (resultado) {
         res.json(resultado);
       })

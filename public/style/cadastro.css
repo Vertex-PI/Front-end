@@ -87,14 +87,14 @@ body {
     width: 48%;
 }
 
-#select-cargo{
+#select_cargo, #select_sexo {
     padding-left: 320px;
     text-align: left;
 
     background-color: #1F304E;
 }
 
-#select-cargo {
+#select_cargo, #select_sexo  {
     background-color: #f5f7fa;
     border: none;
     border-bottom: 1px solid #d3d3d3;
@@ -104,15 +104,15 @@ body {
     padding-left: 10px;
     font-size: 16px;
     color: #555;
-    appearance: none; /* Remove a seta padrão do select */
-    -webkit-appearance: none; /* Compatibilidade para navegadores WebKit */
-    -moz-appearance: none; /* Compatibilidade para navegadores Mozilla */
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEyIDciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGw2IDcgNi03eiIgZmlsbD0iIzU1NSIvPjwvc3ZnPg==');
     background-position: right 10px center;
     background-repeat: no-repeat;
 }
 
-#select-cargo option {
+#select_cargo option , #select_sexo option{
     color: #555;
     background-color: #f5f7fa;
 }
@@ -139,6 +139,8 @@ input {
     padding-left: 10px;
     font-size: 16px;
     color: black;
+
+    margin-bottom: 5px;
 }
 
 .div_btn{
@@ -177,6 +179,10 @@ button:hover {
 
 .login-link:hover {
     text-decoration: underline;
+}
+
+.mensagemErro{
+    color: red;
 }
 
 @media (min-width: 1000px) {

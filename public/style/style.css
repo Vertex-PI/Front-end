@@ -81,6 +81,11 @@ body {
   border: 3px solid #1F304E;
 }
 
+.btn_login_texto{
+  text-decoration: none;
+  color: var(--creme);
+}
+
 .navegacao-logo {
   margin: 5px auto;
   object-fit: contain;

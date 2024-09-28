@@ -4,6 +4,8 @@ function cadastrar() {
   const email = document.getElementById("input_email").value;
   const senha = document.getElementById("input_senha").value;
   const confirmSenha = document.getElementById("input_confirmar_senha").value;
+  const selectCargo = document.getElementById("select_cargo").value;
+  const selectSexo = document.getElementById("select_sexo").value;
 
   let regexMaiuscula = /[A-Z]/;
   let regexMinuscula = /[a-z]/;
@@ -19,10 +21,13 @@ function cadastrar() {
 
   let mensagemEmailInvalido = "Insira um email válido. Ex: vertex@gmail.com";
 
+  let mensagemCargoInvalido = "Insira um cargo Valido";
+
+  let mensagemSexoInvalido = "Insira um sexo Valido";
+
   let mensagemSenhaCurta = "A senha deve conter pelo menos 6 caracteres";
 
-  let mensagemSenhaInvalida = `A senha deve conter pelo menos uma letra maiúscula, 
-      além de uma minúscula, um caracter numérico e pelo menos um caracter especial <br> (@, #, %, *, ?, $, &, !, -, /).`;
+  let mensagemSenhaInvalida = `A senha deve conter pelo menos uma letra maiúscula`;
 
   let mensagemErroConfirmSenha = "As senhas devem ser iguais.";
 
@@ -36,6 +41,41 @@ function cadastrar() {
     document.getElementById("nomeErro").innerHTML = mensagemErroNome;
   } else if (nomeValido) {
     document.getElementById("nomeErro").innerHTML = "";
+  }
+
+    /* ------------------------------ CONFIRMAÇÃO DE EMAIL ------------------------------- */
+
+    if (
+      email.indexOf("@") > 0 &&
+      (email.indexOf(".com") > email.indexOf("@") ||
+        email.indexOf(".school") > email.indexOf("@"))
+    ) {
+      emailValido = true;
+    }
+  
+    if (!emailValido) {
+      document.getElementById("cadastroEmailErro").innerHTML =
+        mensagemEmailInvalido;
+    } else if (emailValido) {
+      document.getElementById("cadastroEmailErro").innerHTML = "";
+    }
+
+  /* ------------------ VERIFICAÇÃO DE Cargo ----------------------- */
+
+  if(selectCargo == 'nada'){
+    document.getElementById("cadastroCargoErro").innerHTML =
+      mensagemCargoInvalido;
+  } else{
+    document.getElementById("cadastroCargoErro").innerHTML = "";
+  }
+
+  /* ------------------ VERIFICAÇÃO DE Cargo ----------------------- */
+
+  if(selectSexo == 'nada'){
+    document.getElementById("cadastroSexoErro").innerHTML =
+      mensagemSexoInvalido;
+  } else{
+    document.getElementById("cadastroSexoErro").innerHTML = "";
   }
 
   /* ------------------ VERIFICAÇÃO DE SENHA ----------------------- */
@@ -65,7 +105,7 @@ function cadastrar() {
     document.getElementById("cadastroSenhaErro").innerHTML = "";
   }
 
-  if (!senhaValida && senha.length >= 6) {
+  if (!senhaValida && senha.length <= 6) {
     document.getElementById("cadastroSenhaErro").innerHTML =
       mensagemSenhaInvalida;
   } else if (senhaValida && senha.length >= 6) {
@@ -82,43 +122,19 @@ function cadastrar() {
     document.getElementById("cadastroConfirmSenhaErro").innerHTML = "";
   }
 
-  /* ------------------------------ CONFIRMAÇÃO DE EMAIL ------------------------------- */
 
-  if (
-    email.indexOf("@") > 0 &&
-    (email.indexOf(".com") > email.indexOf("@") ||
-      email.indexOf(".school") > email.indexOf("@"))
-  ) {
-    emailValido = true;
-  }
-
-  if (!emailValido) {
-    document.getElementById("cadastroEmailErro").innerHTML =
-      mensagemEmailInvalido;
-  } else if (emailValido) {
-    document.getElementById("cadastroEmailErro").innerHTML = "";
-  }
 
   /* ------------------------------ VERIFICANDO SE TODOS OS CAMPOS ESTÃO CORRETOS ----------------------------- */
   //Recupere o valor da nova input pelo nome do id
   // Agora vá para o método fetch logo abaixo
   var nomeVar = input_nome.value;
   var emailVar = input_email.value;
-  var senhaVar = cadastro_input_senha.value;
+  var senhaVar = input_senha.value;
   var confirmacaoSenhaVar = input_confirmar_senha.value;
-  var cargosVar = select - cargo.value;
+  var sexoVar = select_sexo.value
+  var cargosVar = select_cargo.value;
 
   if (nomeValido && emailValido && senhaValida && confirmSenhaValida) {
-    document.getElementById("cadastroSucesso").style.display = "flex";
-    document.getElementById("cadastroSucesso").style.animation =
-      "cadastroComSucesso";
-    document.getElementById("cadastroSucesso").style.animationDuration = "5s";
-
-    setTimeout(
-      () =>
-        (document.getElementById("cadastroSucesso").style.display = "none"),
-      4900
-    );
 
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -129,17 +145,16 @@ function cadastrar() {
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        CargosServer: cargosVar,
+        sexoServer: sexoVar,
+        cargoServer: cargosVar,
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cadastroSucesso.style.display = "flex";
-
           setTimeout(() => {
-            window.location = "dash.html";
+            window.location = "index.html";
           }, "2000");
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
@@ -160,7 +175,7 @@ function listar() {
     .then(function (resposta) {
       resposta.json().then((cargos) => {
         cargos.forEach((cargo) => {
-          listacargos.innerHTML += `<option value='${cargo.idCargos}'>${cargo.Nome}</option>`;
+          select_cargo.innerHTML += `<option value='${cargo.idCargos}'>${cargo.Nome}</option>`;
         });
       });
     })

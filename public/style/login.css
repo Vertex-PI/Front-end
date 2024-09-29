@@ -65,24 +65,26 @@ h1{
     flex-direction: column;
 }
 
-.div_input{
+.div_input {
+    position: relative;
     width: 100%;
     display: flex;
+    align-items: center; 
 }
 
-.div_input input{
-    width: 95%;
+.div_input input {
+    width: 100%; 
+    padding-right: 40px; 
 }
 
-.div_input img{
-    object-fit: contain;
+.div_input img {
     position: absolute;
-    height: 3vh;
-    top: 57.5%;
-    left: 61%;
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-80%); 
+    height: 50%;
     cursor: pointer;
 }
-
 .FilhoLogin input {
     padding: 10px;
     background-color: #f5f7fa;
@@ -136,6 +138,12 @@ h1{
     border: 1px solid #DDE1E6;
 
 }
+
+#mensagem_erro_login{
+    color: red;
+}
+
+
 
 @media only screen and (max-width: 640px){
     .PaiLogin{

@@ -1,51 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="shortcut icon" href="img/1-removebg-preview.png" type="image/x-icon">
-    <link rel="stylesheet" href="style/login.css" />
-  </head>
-  <body>
-    <main>
-      <div class="PaiLogin">
-        <div class="FilhoLogin">
-          <h1>Seja bem-vindo(a)</h1>
-          <p style="color: #1F304E">Faça login para continuar</p>
-          <form>
-            <label for="input_email">Email</label>
-            <input type="email" id="input_email" placeholder="exemplo@exemplo.com"/>
 
-            <label for="input_senha">Senha</label>
-            <div class="div_input">
-              <input type="password" id="input_senha" placeholder="Insira sua senha"/>
-              <img src="img/eye_closed.svg" id="eye_closed" onclick="show_password()">
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="shortcut icon" href="img/1-removebg-preview.png" type="image/x-icon">
+  <link rel="stylesheet" href="style/login.css" />
+</head>
 
-            <div class="div_btn">
-              <button class="botao" type="button" onclick="entrar()">
-                Entrar
-              </button>
-            </div>
-          </form>
-        </div>
+<body>
+  <main>
+    <div class="PaiLogin">
+      <div class="FilhoLogin">
+        <h1>Seja bem-vindo(a)</h1>
+        <p style="color: #1F304E">Faça login para continuar</p>
+        <p id="mensagem_erro_login"></p>
+        <form>
+          <label for="input_email">Email</label>
+          <input type="email" id="input_email" placeholder="exemplo@exemplo.com" />
+
+          <label for="input_senha">Senha</label>
+          <div class="div_input">
+            <input type="password" id="input_senha" placeholder="Insira sua senha" />
+            <img src="img/eye_closed.svg" id="eye_closed" onclick="show_password()">
+          </div>
+
+          <div class="div_btn">
+            <button class="botao" type="button" onclick="entrar()">
+              Entrar
+            </button>
+          </div>
+        </form>
       </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
+
 </html>
 
-<script>
-  function show_password(){
-    let ipt = document.getElementById("input_senha");
-    let img = document.getElementById("eye_closed");
-
-    if (ipt.type == "password"){
-      ipt.type = "text";
-      img.src = "img/open_eye.svg"
-    } else {
-      ipt.type = "password"
-      img.src = "img/eye_closed.svg"
-    }
-  }
-</script>
+<script src="js/login/login.js"></script>

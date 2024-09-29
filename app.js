@@ -29,15 +29,12 @@ app.use("/cargos", cargosRouter);
 
 
 app.listen(PORTA_APP, function () {
-    console.log(`
- __      ________ _____ _______ ________   __   
- \ \    / /  ____|  __ \__   __|  ____\ \ / /
-  \ \  / /| |__  | |__) | | |  | |__   \ V / 
-   \ \/ / |  __| |  _  /  | |  |  __|   > <  
-    \  /  | |____| | \ \  | |  | |____ / . \ 
-     \/   |______|_|  \_\ |_|  |______/_/ \_\  
-
-    \n\n\n                                                                                                 
+    console.log(`            
+        _____ _____ _____ _____ _____ __ __ 
+        |  |  |   __| __  |_   _|   __|  |  |
+        |  |  |   __|    -| | | |   __|-   -|
+         \___/ |_____|__|__| |_| |_____|__|__|
+    \n\n                                                                                                 
     Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar .: http://${HOST_APP}:${PORTA_APP} :. \n\n
     Você está rodando sua aplicação em ambiente de .:${process.env.AMBIENTE_PROCESSO}:. \n\n`);
 });

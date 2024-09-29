@@ -1,6 +1,6 @@
 function entrar() {
-    var emailVar = login_input_email.value;
-    var senhaVar = login_input_senha.value;
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
 
     if (emailVar == "" || senhaVar == "") {
       mensagem_erro_login.innerHTML = "Por favor, preencha todos os campos";
@@ -35,7 +35,7 @@ function entrar() {
             sessionStorage.CARGOS = json.cargos;
 
             setTimeout(function () {
-              window.location = "../../dash.html";
+              window.location = "../../index.html";
             }, 1000); 
           });
         } else {
@@ -50,4 +50,19 @@ function entrar() {
       });
 
     return false;
+  }
+
+  /* mostrar senha */
+
+  function show_password() {
+    let ipt = document.getElementById("input_senha");
+    let img = document.getElementById("eye_closed");
+
+    if (ipt.type == "password") {
+      ipt.type = "text";
+      img.src = "img/open_eye.svg"
+    } else {
+      ipt.type = "password"
+      img.src = "img/eye_closed.svg"
+    }
   }

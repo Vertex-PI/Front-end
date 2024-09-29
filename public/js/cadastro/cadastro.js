@@ -25,9 +25,9 @@ function cadastrar() {
 
   let mensagemSexoInvalido = "Insira um sexo Valido";
 
-  let mensagemSenhaCurta = "A senha deve conter pelo menos 6 caracteres";
+  let mensagemSenhaCurta = "A senha deve conter pelo menos 6 caracteres e um numero";
 
-  let mensagemSenhaInvalida = `A senha deve conter pelo menos uma letra maiúscula`;
+  let mensagemSenhaInvalida = `A senha deve conter: <br> • Pelo menos 6 caracteres, <br> • Uma letra maiúscula <br> • Um numero`;
 
   let mensagemErroConfirmSenha = "As senhas devem ser iguais.";
 
@@ -94,9 +94,10 @@ function cadastrar() {
     }
   }
 
-  if (senhaValidaRegex && senhaValidaNumeros) {
-    senhaValida = true;
-  }
+  if (senhaValidaRegex && senhaValidaNumeros) senhaValida = true;
+  
+
+  
 
   if (senha.length < 6) {
     document.getElementById("cadastroSenhaErro").innerHTML =
@@ -125,8 +126,7 @@ function cadastrar() {
 
 
   /* ------------------------------ VERIFICANDO SE TODOS OS CAMPOS ESTÃO CORRETOS ----------------------------- */
-  //Recupere o valor da nova input pelo nome do id
-  // Agora vá para o método fetch logo abaixo
+
   var nomeVar = input_nome.value;
   var emailVar = input_email.value;
   var senhaVar = input_senha.value;
@@ -151,11 +151,13 @@ function cadastrar() {
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
-
+  
         if (resposta.ok) {
           setTimeout(() => {
-            window.location = "index.html";
+            window.location = "../../index.html";
           }, "2000");
+        } else if (resposta.status == 409) {
+          document.getElementById("cadastroEmailErro").innerHTML = "Email já cadastrado!";
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
@@ -163,7 +165,7 @@ function cadastrar() {
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
       });
-
+  
     return false;
   }
 }
@@ -182,4 +184,32 @@ function listar() {
     .catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
     });
+}
+
+/* mostrar senha */
+
+function show_password() {
+  let ipt = document.getElementById("input_senha");
+  let img = document.getElementById("open_eye_1");
+
+  if (ipt.type == "password") {
+      ipt.type = "text";
+      img.src = "img/open_eye.svg"
+  } else {
+      ipt.type = "password"
+      img.src = "img/eye_closed.svg"
+  }
+}
+
+function show_password_2() {
+  let ipt = document.getElementById("input_confirmar_senha");
+  let img = document.getElementById("open_eye_2");
+
+  if (ipt.type == "password") {
+      ipt.type = "text";
+      img.src = "img/open_eye.svg"
+  } else {
+      ipt.type = "password"
+      img.src = "img/eye_closed.svg"
+  }
 }

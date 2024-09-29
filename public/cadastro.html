@@ -11,23 +11,23 @@
 
 <body onload="listar()">
 
-    <div class="signup-container">
+    <div class="cadastro-container">
         <h2>Cadastro</h2>
         <div class="form">
-            <div class="form-group">
+            <div class="form-container">
                 <label>Nome</label>
                 <input class="input-placeholder" id="input_nome" type="text" placeholder="Ex.: Fernanda">
                 <span id="nomeErro" class="mensagemErro"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-container">
                 <label>Email</label>
                 <input class="input-placeholder" id="input_email" type="email" placeholder="exemplo@exemplo.com"
                     required>
                 <span id="cadastroEmailErro" class="mensagemErro"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-container">
                 <label>Cargo</label>
                 <select name="cargo" class="input-placeholder" id="select_cargo">
                     <option disabled selected value="nada" id="selecao">Selecione o cargo</option>
@@ -35,7 +35,7 @@
                 <span id="cadastroCargoErro" class="mensagemErro"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-container">
                 <label>Sexo</label>
                 <select name="cargo" class="input-placeholder" id="select_sexo">
                     <option disabled selected value="nada" id="selecao">Selecione o sexo</option>
@@ -46,21 +46,22 @@
                 <span id="cadastroSexoErro" class="mensagemErro"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-container form-container-senha">
                 <label>Senha</label>
                 <input class="input-placeholder" id="input_senha" type="password" placeholder="Crie uma senha">
                 <img src="img/eye_closed.svg" id="open_eye_1" class="eye_toggle" onclick="show_password()">
-                <span id="cadastroSenhaErro" class="mensagemErro"></span>
             </div>
+            <span id="cadastroSenhaErro" class="mensagemErro"></span>
            
-                <div class="form-group">
+                <div class="form-container form-container-confirmar-senha">
                     <label>Confirmar Senha</label>
                     <input class="input-placeholder" id="input_confirmar_senha" type="password"
                         placeholder="Confirme sua senha">
                     <img src="img/eye_closed.svg" id="open_eye_2" class="eye_toggle" onclick="show_password_2()">
-                
-                <span id="cadastroConfirmSenhaErro" class="mensagemErro"></span>
             </div>
+            <span id="cadastroConfirmSenhaErro" class="mensagemErro"></span>
+
+
 
             <div class="div_btn">
                 <button onclick="cadastrar()" class="botao-cadastro">Cadastre-se</button>
@@ -70,33 +71,5 @@
 </body>
 
 </html>
-
-<script>
-    function show_password() {
-        let ipt = document.getElementById("input_senha");
-        let img = document.getElementById("open_eye_1");
-
-        if (ipt.type == "password") {
-            ipt.type = "text";
-            img.src = "img/open_eye.svg"
-        } else {
-            ipt.type = "password"
-            img.src = "img/eye_closed.svg"
-        }
-    }
-
-    function show_password_2() {
-        let ipt = document.getElementById("input_confirmar_senha");
-        let img = document.getElementById("open_eye_2");
-
-        if (ipt.type == "password") {
-            ipt.type = "text";
-            img.src = "img/open_eye.svg"
-        } else {
-            ipt.type = "password"
-            img.src = "img/eye_closed.svg"
-        }
-    }
-</script>
 
 <script src="js/cadastro/cadastro.js"></script>

@@ -22,7 +22,7 @@ body {
     background-color: #f5f5f5;
 }
 
-.signup-container {
+.cadastro-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,65 +36,55 @@ body {
     background: #FFFFFF;
 }
 
-.signup-container h2 {
+.cadastro-container h2 {
     font-size: 28px;
     font-weight: bold;
     color: #333;
-
-    /* background-color: red; */
-}
-
-.signup-container p {
-    margin-bottom: 20px;
-    font-size: 14px;    
-    color: #1F304E;
-}
-
-.signup-container a {
-    text-decoration: none;
-    color: #1F304E;
 }
 
 .form {
     width: 100%;
 }
 
-.form-group {
+.form-container {
     margin-bottom: 20px;
     position: relative;
-    
+
 }
 
-.form-group img {
-    object-fit: contain;
+.form-container-senha {
+    margin-bottom: 0;
+}
+
+.form-container-confirmar-senha {
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+.form-container input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.form-container img {
     position: absolute;
-    height: 3vh;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-10%);
+    height: 50%;
     cursor: pointer;
-    top: 57%;
-    transform: translateY(-25%);
-    left: 92%;
 }
 
-.form_group_double {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    width: 48%;
-}
-
-#select_cargo, #select_sexo {
+#select_cargo,
+#select_sexo {
     padding-left: 320px;
     text-align: left;
 
     background-color: #1F304E;
 }
 
-#select_cargo, #select_sexo  {
+#select_cargo,
+#select_sexo {
     background-color: #f5f7fa;
     border: none;
     border-bottom: 1px solid #d3d3d3;
@@ -104,15 +94,16 @@ body {
     padding-left: 10px;
     font-size: 16px;
     color: #555;
-    appearance: none; 
-    -webkit-appearance: none; 
-    -moz-appearance: none; 
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEyIDciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGw2IDcgNi03eiIgZmlsbD0iIzU1NSIvPjwvc3ZnPg==');
     background-position: right 10px center;
     background-repeat: no-repeat;
 }
 
-#select_cargo option , #select_sexo option{
+#select_cargo option,
+#select_sexo option {
     color: #555;
     background-color: #f5f7fa;
 }
@@ -143,13 +134,14 @@ input {
     margin-bottom: 5px;
 }
 
-.div_btn{
-    /* background-color: red; */
+.div_btn {
     display: flex;
     justify-content: center;
+
+    margin-top: 30px
 }
 
-.botao-cadastro{
+.botao-cadastro {
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -181,57 +173,28 @@ button:hover {
     text-decoration: underline;
 }
 
-.mensagemErro{
+.mensagemErro {
     color: red;
 }
 
-@media (min-width: 1000px) {
-    .signup-container {
-        width: 30%;
-        padding: 50px;
-    }
-
-    .form_group_double {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .input-group {
-        width: 48%;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    button {
-        font-size: 18px;
-        padding: 14px;
-        width: 100%;
-    }
+.invalido {
+    color: red;
 }
 
-@media (max-width: 1000px) {
-    .signup-container {
+.valido {
+    color: green;
+}
+
+#regrasSenha{
+    margin-left: 20px;
+}
+
+
+@media (max-width: 1024px) {
+    .cadastro-container {
         width: 60%;
         padding: 40px;
         align-items: center;
-    }
-
-    .form_group_double {
-        flex-direction: column;
-    }
-
-    .input-group {
-        width: 100%;
-    }
-
-    .input-group > label{
-        margin-top: 20px;
     }
 
     button {
@@ -239,18 +202,11 @@ button:hover {
         align-self: center;
     }
 }
+
 @media (max-width: 500px) {
-    .signup-container {
+    .cadastro-container {
         width: 90%;
         padding: 20px;
-    }
-
-    .form_group_double {
-        flex-direction: column;
-    }
-
-    .input-group {
-        width: 100%;
     }
 
     button {

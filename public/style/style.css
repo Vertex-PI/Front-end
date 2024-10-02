@@ -15,14 +15,13 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
   background-color: #fcfbfb;
   overflow-x: hidden;
+  user-select: none;
 }
 
 .negrito {
@@ -89,7 +88,6 @@ body {
   margin: 5px auto;
   object-fit: contain;
 }
-
 
 .navegacao-menu-img{
   width: 50px;
@@ -189,11 +187,12 @@ body {
   display: block;
   opacity: 0;
   transform: translateX(30px);
-  transition: 1s;
+  transition: 0.6s;
 }
 
 .menu-lateral ul li a:hover {
-  background-color: var(--azul-mediano);
+  background-color: var(--creme);
+  color: var(--azul-escuro);
   border-radius: 5px;
   padding: 10px;
 }
@@ -541,11 +540,32 @@ body {
 
 }
 
+@media (max-width: 765px){
+  .btn_login{
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 835px){
+  .cabecalho-titulo {
+    font-size: 35px;
+    margin-top: 20px; 
+  }
+  
+  .cabecalho-paragrafo {
+    font-size: 20px;
+  }
+  
+}
+
 @media (max-width: 700px) {
   .cabecalho {
     background: url(../img/banner-mobile.png) no-repeat center center;
     background-size: cover;
   }
+
 
   .navegacao-logo {
     width: 100px;

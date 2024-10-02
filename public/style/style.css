@@ -215,11 +215,13 @@ body {
 
 .menu-lateral.aberto a {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .menu-lateral.aberto .fechar-menu {
   opacity: 1;
+  left: 0;
+  padding: 0 20px;
 }
 /* Sobre nós */
 

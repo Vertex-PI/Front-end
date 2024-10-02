@@ -15,6 +15,8 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
 body {
   margin: 0;
   padding: 0;
@@ -73,7 +75,7 @@ body {
 }
 
 .btn_login:hover{
-  transform: scale(1.05);
+  transform: scale(1.02);
   background-color: #1F304E;
   border: 3px solid #1F304E;
 }
@@ -105,7 +107,7 @@ body {
   font-style: italic;
   color: var(--creme);
   margin-bottom: 0;
-  width: 60%;
+  width: 70%;
   margin-left: 100px;
 }
 
@@ -397,7 +399,9 @@ body {
 .equipe-card-link-img{
   object-fit: contain;
   width: 30px;
-
+  filter: invert(18%) sepia(14%) saturate(2129%) hue-rotate(179deg) brightness(90%) contrast(94%);
+  /*Mudou a cor do SVG de preto pra azul marinho*/
+  
   transition: 0.2s;
 }
 
@@ -469,7 +473,7 @@ body {
   margin: 0;
 }
 
-/* Responvidade */
+/* Responsividade */
 
 @media (max-width: 1360px) {
   .cabecalho {
@@ -480,13 +484,14 @@ body {
   .cabecalho-titulo {
     margin: 160px 0 0 0;
     width: 100%;
-    font-size: 80px; 
+    font-size: 70px; 
   }
 
   .cabecalho-paragrafo {
     margin: 0 auto;
     text-align: center;
     width: 80%;
+    font-size: 40px;
   }
 }
 
@@ -512,10 +517,9 @@ body {
 }
 
 
-
 @media (max-width: 1024px) {
   .cabecalho-titulo {
-    font-size: 60px;
+    font-size: 85px;
     margin: 100px 0 0 0; 
   }
 
@@ -601,15 +605,14 @@ body {
 
 }
 
-
 @media (max-width: 425px) {
   .cabecalho-titulo {
-    font-size: 35px;
+    font-size: 27px;
     margin-top: 10px;
   }
 
   .cabecalho-paragrafo {
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
   }
 
@@ -634,10 +637,6 @@ body {
 
 
 @media (max-height: 800px) {
-
-  .cabecalho-paragrafo {
-    font-size: 5vh; 
-  }
 
   .cabecalho-botao {
     margin-top: 3vh; 

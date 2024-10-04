@@ -28,6 +28,20 @@ Antes de rodar o projeto, certifique-se de ter os seguintes itens instalados:
 
 ## Instalação
 
+### Instalação pelo docker
+
+Crie a imagem para rodar o node:
+```bash
+  docker build --pull --rm -f "dockerfile" -t frontend:latest "."
+```
+Crie o container que ira rodar na porta 3333 e utilizara a imagem criada
+para o node:
+```bash
+  docker run -d --name ContainerNode -p 3333:3333 frontend:latest
+```
+
+### Instalação via CLI
+
 ### 1. Clone o repositório
 
 ```bash

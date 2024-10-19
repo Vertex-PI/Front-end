@@ -3,12 +3,12 @@
 
 
 :root {
-  --azul-escuro: #1F304E;
+  --azul-escuro: #2E354B;
   --azul-mediano: #5371FA;
   --azul-claro: #6595F2;
-  --azul-texto: #1F304E;
+  --azul-texto: #2E354B;
   --creme: #fcfbfb;
-  --creme-escururo: #F4EFEC
+  --creme-escururo: #F4EFEC;
 }
 
 html {
@@ -105,8 +105,8 @@ body {
 
 .btn_login:hover{
   transform: scale(1.02);
-  background-color: #1F304E;
-  border: 3px solid #1F304E;
+  background-color: #222736;
+  border: 3px solid #222736;
 }
 
 .btn_login_texto{

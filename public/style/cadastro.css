@@ -1,11 +1,17 @@
 /* Estilo geral */
 :root {
-    --azul-escuro: #1F304E;
-    --azul-mediano: #5371FA;
-    --azul-claro: #6595F2;
-    --creme: #FBF8F6;
-    --creme-escururo: #F4EFEC
+    --azul-escuro: #2E354B;
+  --azul-mediano: #5371FA;
+  --azul-claro: #6595F2;
+  --azul-texto: #2E354B;
+  --creme: #fcfbfb;
+  --creme-escururo: #F4EFEC;
 }
+
+/*#222736 background
+#282d3e quadrados
+#1e2230 azul mais escuro
+*/ 
 
 * {
     margin: 0;
@@ -16,13 +22,33 @@
 
 body {
     display: flex;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #222736;
+    overflow-x: hidden;
+}
+
+
+#back_area{
+    /* background-color: red; */
+    width: 3vw;
+    height: 5vh;
+
+    display: flex;
+    align-items: center;
+}
+
+#img_back{
+    object-fit: contain;
+    height: 5vh;
+    filter: invert(97%) sepia(3%) saturate(12%) hue-rotate(180deg) brightness(103%) contrast(102%);
+    
 }
 
 .cadastro-container {
+    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,22 +59,24 @@ body {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: #FFFFFF;
+    background: #282d3e;
 }
 
 .cadastro-container h2 {
     font-size: 28px;
     font-weight: bold;
-    color: #333;
+    color: #f5f7fa;
 }
 
 .form {
     width: 100%;
+    height: auto;
 }
 
 .form-container {
     margin-bottom: 20px;
     position: relative;
+    height: auto;   
 
 }
 
@@ -110,7 +138,7 @@ body {
 
 label {
     font-size: 14px;
-    color: #333;
+    color: #f5f7fa;
     text-align: left;
     font-family: "Inter", sans-serif;
 }
@@ -145,8 +173,8 @@ input {
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #1F304E;
-    color: #fff;
+    background-color: #1e2230;
+    color: #fcfbfb;
     font-size: 16px;
     cursor: pointer;
     transition: 0.2s;
@@ -156,7 +184,7 @@ input {
 }
 
 button:hover {
-    background-color: #5371FA;
+    background-color: #222736;
 }
 
 .login-link a {

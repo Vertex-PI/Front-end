@@ -124,7 +124,8 @@ a{
 
 .section-logout{
     display: flex;
-    margin-top: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 #section_configuracoes{

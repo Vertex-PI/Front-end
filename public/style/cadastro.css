@@ -48,7 +48,6 @@ body {
 }
 
 .cadastro-container {
-    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

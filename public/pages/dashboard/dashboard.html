@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/dashboard.css">
+    <link rel="stylesheet" href="../../style/components/aside_dash.css">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body onload="">
+    <aside id="sidebar">
+        
+        <section id="sidebar-cliente">
+            <!-- <img src="img/img_dash/Default_pfp.png" id="img_user_sidebar" alt=""> -->
+            <div class="infos_cliente">
+                <span class="nome_cliente">Olá <span id="b_usuario">Visitante</span>!</span>
+                <span class="descricao_cliente">Seja bem-vindo(a)!!</span>
+            </div>
+        </section>
+        
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/dashboard.svg" id="dashboard_svg" class="img_item" alt="">
+                <a style="font-weight: 600; color: white;" href="dashboard.html" class="titulo_item">Dashboard</a>
+            </div>
+        </section>
+        
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/stonks.svg" class="img_item" alt="">
+                <a href="metas.html" class="titulo_item">Metas</a>
+            </div>
+        </section>
+        
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
+                <a href="cadastro.html" class="titulo_item">Adicionar usuário</a>
+            </div>
+        </section>
+
+        
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                <a href="editar_perfil.html" class="titulo_item">Editar perfil</a>
+            </div>
+        </section>
+        
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/edit_user.svg" class="img_item" alt="">
+                <a href="editar_usuario.html" class="titulo_item">Editar usuário</a>
+            </div>
+        </section>
+
+        <section class="section-logout">
+            <div class="div_item">
+                <img src="../../img/img_dash/logout.svg" class="img_logout" alt="">
+                <a href="" class="titulo_logout" onclick="limparSessao()">Sair</a>
+            </div>
+        </section>
+    </aside>
+
+    <main id="main_dashboard">
+
+        <section class="section_introducao">
+            <span class="titulo_introducao">Dashboard</span>
+            <span class="subtitulo_introducao">Aqui você pode monitorar os seus dados de forma segura e eficiente!!</span>
+        </section>
+
+        <section class="section_kpis">
+            <div class="div_kpi">
+                <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                <div class="div_titulo_kpi">
+                    <div class="conteudo">
+                        <span class="indicador_kpi">1,234</span>
+                        <span class="legenda_kpi">testes</span>
+                    </div>
+                    <span class="descricao_kpi">Lorem ipsum dolor sit amet</span>
+                </div>
+            </div>
+            
+            <div class="div_kpi">
+                <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                <div class="div_titulo_kpi">
+                    <div class="conteudo">
+                        <span class="indicador_kpi">56</span>
+                        <span class="legenda_kpi">testes</span>
+                    </div>
+                    <span class="descricao_kpi">Lorem ipsum dolor sit amet</span>
+                </div>
+            </div>
+            
+            <div class="div_kpi">
+                <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                <div class="div_titulo_kpi">
+                    <div class="conteudo">
+                        <span class="indicador_kpi">789</span>
+                        <span class="legenda_kpi">testes</span>
+                    </div>
+                    <span class="descricao_kpi">Lorem ipsum dolor sit amet</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="section_charts">
+            <div class="chart_background">
+                <h3 class="titulo_chart">Gastos R$</h3>
+                <canvas id="myChart"></canvas>
+            </div>
+            
+            <div class="chart_background">
+                <h3 class="titulo_chart">Gastos KWh</h3>
+                <canvas id="myChart2"></canvas>
+            </div>
+        </section>
+
+        <section id="section_recomendacoes">
+            <div class="row_recomedacoes">
+                <div class="card_recomendacao">
+                    <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                    <div class="div_recomendacao">
+                        <span class="titulo_recomendacao">Titulo recomendacao</span>
+                        <span class="conteudo_recomendacao">Conteudo da recomendacao vem aqui lalalalla</span>
+
+                    </div>
+                </div>
+                
+                <div class="card_recomendacao">
+                    <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                    <div class="div_recomendacao">
+                        <span class="titulo_recomendacao">Titulo recomendacao</span>
+                        <span class="conteudo_recomendacao">Conteudo da recomendacao vem aqui lalalalla</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row_recomedacoes">
+                <div class="card_recomendacao">
+                    <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                    <div class="div_recomendacao">
+                        <span class="titulo_recomendacao">Titulo recomendacao</span>
+                        <span class="conteudo_recomendacao">Conteudo da recomendacao vem aqui lalalalla</span>
+
+                    </div>
+                </div>
+
+                <div class="card_recomendacao">
+                    <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                    <div class="div_recomendacao">
+                        <span class="titulo_recomendacao">Titulo recomendacao</span>
+                        <span class="conteudo_recomendacao">Conteudo da recomendacao vem aqui lalalalla</span>
+
+                    </div>
+                </div>
+            </div>
+            
+
+        </section>
+
+        <div id="icone_faq">
+            <a href="FAQ.html"> 
+                <img class="img_faq" src="../../img/img_dash/question.svg" alt="">
+                <div class="circulo_faq"></div>
+            </a>
+            
+        </div>
+        
+    </main>
+</body>
+</html>
+
+<script src="../../js/dash/sessao.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../js/dash/graficos.js"></script>

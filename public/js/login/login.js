@@ -29,13 +29,14 @@ function entrar() {
             console.log("Jason:" + json);
 
             console.log(JSON.stringify(json));
-            sessionStorage.EMAIL_USUARIO = json.email;
-            sessionStorage.NOME_USUARIO = json.nome;
             sessionStorage.ID_USUARIO = json.id;
-            sessionStorage.CARGOS = json.cargos;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.ID_CARGO = json.idCargo;
+            sessionStorage.CARGOS = json.cargo;
 
             setTimeout(function () {
-              window.location = "../../index.html";
+              window.location = "../pages/dashboard/dashboard.html";
             }, 1000); 
           });
         } else {
@@ -60,9 +61,9 @@ function entrar() {
 
     if (ipt.type == "password") {
       ipt.type = "text";
-      img.src = "img/open_eye.svg"
+      img.src = "../../img/open_eye.svg"
     } else {
       ipt.type = "password"
-      img.src = "img/eye_closed.svg"
+      img.src = "../../img/eye_closed.svg"
     }
   }

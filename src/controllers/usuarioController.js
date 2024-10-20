@@ -10,7 +10,6 @@ function autenticar(req, res) {
   } else if (senha == undefined) {
     res.status(400).send("Sua senha está indefinida!");
   } else {
-    // Aqui certifique-se de que a função de autenticação do seu modelo está sendo chamada corretamente
     usuarioModel.autenticar(email, senha)
       .then(function (resultadoAutenticar) {
         console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
@@ -23,8 +22,10 @@ function autenticar(req, res) {
             nome: resultadoAutenticar[0].nome,
             senha: resultadoAutenticar[0].senha,
             sexo: resultadoAutenticar[0].sexo,
-            cargo: resultadoAutenticar[0].cargos
+            cargo: resultadoAutenticar[0].Nome,
+            idCargo: resultadoAutenticar[0].idCargos
           });
+          
         } else if (resultadoAutenticar.length == 0) {
           res.status(403).send("Email e/ou senha inválido(s)");
         } else {

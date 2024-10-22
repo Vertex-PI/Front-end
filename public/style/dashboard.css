@@ -29,100 +29,11 @@ a{
     color: unset; 
 }
 
-#sidebar {
-    height: 100%;
-    width: 250px;
-    background-color: #1E2230;
-
-    color: #D1D5DB;
-}
-
-#img_user_sidebar {
-    object-fit: contain;
-    height: 5vh;
-    filter: invert(30%) sepia(17%) saturate(182%) hue-rotate(179deg) brightness(97%) contrast(89%);
-}
-
-#sidebar-cliente {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    gap: 25px;
-    padding: 25px;
-
-
-    border-bottom: 1px solid #282d3e;
-
-
-    /* background-color: rebeccapurple; */
-
-}
-
-.infos_cliente {
-    display: flex;
-    flex-direction: column;
-}
-
-.nome_cliente {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.descricao_cliente {
-    margin-top: 5px;
-    font-size: 13px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #606472;
-}
-
-.section-itens {
-    display: flex;
-    
-}
-
-.div_item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
-    margin-left: 15px;
-    margin-top: 3px;
-    gap: 15px;
-
-    font-size: 15px;
-    color: #abb0b9;
-
-}
-
-#dashboard_svg{
-    filter: invert(98%) sepia(38%) saturate(2%) hue-rotate(309deg) brightness(108%) contrast(100%);
-}
-
-.img_item {
-    object-fit: contain;
-    height: 3vh;
-
-    filter: invert(60%) sepia(17%) saturate(182%) hue-rotate(179deg) brightness(97%) contrast(89%);
-}
-
-.img_logout{
-    object-fit: contain;
-    height: 3vh;
-    
-    filter: invert(12%) sepia(100%) saturate(7454%) hue-rotate(0deg) brightness(99%) contrast(110%);
-}
-
-.titulo_logout {
-    color: red;
-}
 
 .section-logout{
     display: flex;
-    margin-top: 85%;
+    position: absolute;
+    bottom: 0;
 }
 
 #main_dashboard {
@@ -246,12 +157,16 @@ a{
     align-items: center;
 }
 
+.titulo_chart{
+    text-align: center;
+    margin: 10px 0;
+}
+
 .chart_background{
     /* margin-top: 25px; */
     background-color: #282d3e;
-
     width: 39vw;
-    height: 36vh;
+    height: 37vh;
 }
 
 #section_recomendacoes{

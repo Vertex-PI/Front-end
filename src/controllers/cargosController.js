@@ -1,7 +1,7 @@
-var hotelModel = require("../models/cargosModel");
+var cargosModel = require("../models/cargosModel");
 
 function listar(req, res) {
-  hotelModel.listar().then((resultado) => {
+  cargosModel.listar().then((resultado) => {
     res.status(200).json(resultado);
   });
 }
@@ -9,7 +9,7 @@ function listar(req, res) {
 function buscarPorId(req, res) {
   var id = req.params.id;
 
-  hotelModel.buscarPorId(id).then((resultado) => {
+  cargosModel.buscarPorId(id).then((resultado) => {
     res.status(200).json(resultado);
   });
 }

@@ -40,6 +40,13 @@ h1{
 
 }
 
+.img_back{
+    object-fit: contain;
+    height: 5vh;
+    position: relative;
+    left: 45%;
+}
+
 .PaiLogin a {
 
     color: #333;

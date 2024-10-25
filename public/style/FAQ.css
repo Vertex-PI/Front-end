@@ -11,20 +11,31 @@
 
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100vh;
     width: 100vw;
-    background-color: #1e2230;
+    background-color: #222736;
     color: #fcfbfb;
 }
 
 #back_area{
     /* background-color: red; */
-    /* width: 30vw; */
+    width: 80vw;
     height: 15vh;
 
     display: flex;
     align-items: center;
+    text-align: start;
+    /* justify-content: end; */
+}
+
+.section-cards-faq{
+    /* background-color: rebeccapurple; */
+    width: 100%;
+    height: 70%;
+    gap: 4vh;
+    display: flex;
+    justify-content: center;
 }
 
 #img_back{
@@ -53,15 +64,16 @@ body {
 }
 
 #main_faq{
-    /* background-color: #222736 */
+    /* background-color:blue; */
     width: 85%;
-    height: 75%;
+    height: 100%;
     
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;  
     align-items: center;
 
-    margin-left: 7%;
+    /* margin-left: 7%; */
 
 }
 
@@ -76,7 +88,7 @@ body {
     display: flex;
     align-items: center;
     height: 8vh;
-    gap: 15px   ;
+    gap: 15px;
 
 }
 
@@ -96,7 +108,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1.5px solid #fcfbfb;
+    border-bottom: 1.5px solid #909090;
 
     margin-left: 2vw;
     margin-top: 2vh;
@@ -110,7 +122,8 @@ body {
 
 .arrow_expandir_pergunta{
     object-fit: contain;
-    height: 1vh;
+    height: 2.5vh;
+    rotate: 270deg;
     filter: invert(97%) sepia(3%) saturate(12%) hue-rotate(180deg) brightness(103%) contrast(102%);
 }
 

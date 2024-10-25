@@ -60,6 +60,11 @@ a{
     font-weight: 600;
 }
 
+#metas_svg{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(249deg) brightness(112%) contrast(102%);
+    
+}
+
 .input_design{
     display: flex;
     align-items: center;

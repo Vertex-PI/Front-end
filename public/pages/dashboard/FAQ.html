@@ -1,108 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
     <link rel="stylesheet" href="../../style/FAQ.css">
+    <link rel="stylesheet" href="../../style/components/aside_dash.css">
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
 </head>
+
 <body>
 
-    <section id="back_area">
-        <a href="dashboard.html"><img draggable="false" src="../../img/img_dash/back_arrow_blue.svg" id="img_back" alt=""></a>
-        <section id="section_titulo_faq">
-            <span class="titulo_faq">FAQ</span>
-            <span class="subtitulo_faq">Ficou com dúvida? Temos a resposta!</span>
+    <aside id="sidebar">
+
+        <section id="sidebar-cliente">
+            <!-- <img src="img/img_dash/Default_pfp.png" id="img_user_sidebar" alt=""> -->
+            <div class="infos_cliente">
+                <span class="nome_cliente">Olá <span id="b_usuario">Visitante</span>!</span>
+                <span class="descricao_cliente">Seja bem-vindo(a)!!</span>
+            </div>
         </section>
-    </section>
+
+        <section class="section-itens">
+            <div class="div_item">
+                <a style="font-weight: 600; color: white;" href="dashboard.html" class="titulo_item">
+                    <img src="../../img/img_dash/dashboard.svg" id="destaque_svg" class="img_item" alt="">
+                    Dashboard
+                </a>
+            </div>
+        </section>
+
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/stonks.svg" class="img_item" alt="">
+                <a href="metas.html" class="titulo_item">
+                    Metas
+                </a>
+            </div>
+        </section>
+
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
+                <a href="cadastro.html" class="titulo_item">
+                    Adicionar usuário
+                </a>
+            </div>
+        </section>
+
+
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                <a href="editar_perfil.html" class="titulo_item">
+                    Editar perfil
+                </a>
+            </div>
+        </section>
+
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/edit_user.svg" class="img_item" alt="">
+                <a href="editar_usuario.html" class="titulo_item">
+                    Editar usuário
+                </a>
+            </div>
+        </section>
+
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
+                <a href="" class="titulo_item">
+                    Recomendações
+                </a>
+            </div>
+        </section>
+
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/question.svg" class="img_item" alt="">
+                <a href="FAQ.html" class="titulo_item">
+                    Perguntas frequentes
+                </a>
+            </div>
+        </section>
+
+        <section class="section-logout">
+            <div class="div_item">
+                <img src="../../img/img_dash/logout.svg" class="img_logout" alt="">
+                <a href="" class="titulo_logout" onclick="limparSessao()">
+                    Sair
+                </a>
+            </div>
+        </section>
+    </aside>
 
 
     <main id="main_faq">
-        <section class="card-faq">
-            <div class="classificacao">
-                <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
-                 <div class="circulo"></div>
-                <span class="titulo_classificacao">Titulo 1</span>
-            </div>
-
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-             <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>  
-            
+        <section id="back_area">
+            <!-- <a href="dashboard.html"><img draggable="false" src="../../img/img_dash/back_arrow_blue.svg" id="img_back" alt=""></a> -->
+            <section id="section_titulo_faq">
+                <span class="titulo_faq">FAQ</span>
+                <span class="subtitulo_faq">Ficou com dúvida? Temos a resposta!</span>
+            </section>
         </section>
         
-        <section class="card-faq">
-            <div class="classificacao">
-                <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
-                 <div class="circulo"></div>
-                <span class="titulo_classificacao">Titulo 2</span>
+        <section class="section-cards-faq">
+
+            <div class="card-faq">
+                <div class="classificacao">
+                    <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
+                    <div class="circulo"></div>
+                    <span class="titulo_classificacao">Titulo 1</span>
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
             </div>
 
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-             <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-        </section>
-        
-        <section class="card-faq">
-            <div class="classificacao">
-                <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
-                 <div class="circulo"></div>
-                <span class="titulo_classificacao">Titulo 3</span>
+            <div class="card-faq">
+                <div class="classificacao">
+                    <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
+                    <div class="circulo"></div>
+                    <span class="titulo_classificacao">Titulo 2</span>
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
             </div>
 
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-            <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
-            </div>
-            
-             <div class="div_pergunta">
-                <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta" src="img/img_dash/SVGRepo_iconCarrier.svg" alt="">
+            <div class="card-faq">
+                <div class="classificacao">
+                    <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
+                    <div class="circulo"></div>
+                    <span class="titulo_classificacao">Titulo 3</span>
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
+
+                <div class="div_pergunta">
+                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
+                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                </div>
             </div>
         </section>
     </main>
 </body>
+
 </html>

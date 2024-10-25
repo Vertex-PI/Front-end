@@ -59,7 +59,7 @@ a{
     height: 12vh;
 
     border-radius: 3px;
-    /* margin-top: 5vh; */
+    margin-top: 3vh;
     gap: 10px;
 
 }
@@ -89,7 +89,7 @@ a{
     justify-content: space-between;
     
     width: 95%;
-    height: 10vh;
+    height: 15vh;
 }
 
 .div_kpi {
@@ -112,6 +112,10 @@ a{
     height: 7vh;
     margin-left: 15px;
     
+}
+
+#dashboard_svg{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(249deg) brightness(112%) contrast(102%);
 }
 
 .div_titulo_kpi {
@@ -148,13 +152,16 @@ a{
 }
 
 #section_charts{
-    width: 95%;
-    height: 45vh;
+    width: 100%;
+    height: 70vh;
     /* background-color: rebeccapurple; */
     
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     align-items: center;
+
+    gap: 5vh;
 }
 
 .titulo_chart{
@@ -165,8 +172,8 @@ a{
 .chart_background{
     /* margin-top: 25px; */
     background-color: #282d3e;
-    width: 39vw;
-    height: 37vh;
+    width: 80vw;
+    height: 30vh;
 }
 
 #section_recomendacoes{
@@ -192,7 +199,7 @@ a{
     justify-content: space-around;
 
     gap: 5vh;
-    /* margin-bottom: 15px; */
+    margin-bottom: 15px;
 
 }
 
@@ -230,7 +237,7 @@ a{
 
 }
 
-#icone_faq{
+/* #icone_faq{
     position: fixed;
 }
 
@@ -256,4 +263,4 @@ a{
     
     top: 90%;
     left: 94.1%;
-}
+} */

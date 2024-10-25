@@ -11,4 +11,13 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.put("/editar/:idUsuario", function (req, res) {
+    usuarioController.editar(req, res);
+});
+
+router.delete("/deletar/:idUsuario", function (req, res) {
+    usuarioController.deletar(req, res);
+});
+
+
 module.exports = router;

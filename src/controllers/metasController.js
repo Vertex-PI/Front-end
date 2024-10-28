@@ -15,38 +15,37 @@ function listar(req, res) {
 }
 
 function publicar(req, res) {
-  var gastos = req.body.gastos;
-  var kwh = req.body.kwh;
-  var mes = req.body.mes;
-  var idUsuario = req.params.idUsuario;
+    var gasto = req.body.gasto; // Ajustado para 'gasto'
+    var kwh = req.body.kwh;
+    var mes = req.body.mes;
+    var idUsuario = req.params.idUsuario;
 
-  if (gastos == undefined) {
-      res.status(400).send("O gasto está indefinido!");
-  } else if (kwh == undefined) {
-      res.status(400).send("A kwh está indefinido!");
-  } else if (mes == undefined) {
-      res.status(400).send("O mes está indefinido!");
-  } else if (idUsuario == undefined) {
-      res.status(403).send("O id do usuário está indefinido!");
-  } else {
-      metasModel.publicar(gastos, kwh, mes, idUsuario)
-          .then(
-              function (resultado) {
-                  res.json(resultado);
-              }
-          )
-          .catch(
-              function (erro) {
-                  console.log(erro);
-                  console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                  res.status(500).json(erro.sqlMessage);
-              }
-          );
-  }
+    // Verifica se os campos estão indefinidos
+    if (gasto === undefined) {
+        return res.status(400).send("O gasto está indefinido!"); // 'gasto' no singular
+    } else if (kwh === undefined) {
+        return res.status(400).send("A kWh está indefinida!");
+    } else if (mes === undefined) {
+        return res.status(400).send("O mês está indefinido!");
+    } else if (idUsuario === undefined) {
+        return res.status(403).send("O ID do usuário está indefinido!");
+    }
+
+    // Chama a função do modelo para inserir os dados
+    metasModel.publicar(gasto, kwh, mes, idUsuario)
+        .then(function (resultado) {
+            res.json(resultado);
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+            res.status(500).json({ error: erro.sqlMessage }); // Retorna um JSON consistente
+        });
 }
 
+
 function editar(req, res) {
-  var novoGasto = req.body.gastos;
+  var novoGasto = req.body.gasto;
   var novoKwh = req.body.kwh;
   var novoMes = req.body.mes;
   var idMetas = req.params.idMetas;

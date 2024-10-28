@@ -16,7 +16,7 @@
       referrerpolicy="no-referrer"
     /> -->
 </head>
-<body onload="">
+<body>
     <aside id="sidebar">
         
         <section id="sidebar-cliente">
@@ -104,53 +104,54 @@
     <main id="main_dashboard">
 
             <section class="section_introducao">
-                <span class="titulo_introducao">Dashboard</span>
+                <span class="titulo_introducao">Painel de monitoramento de gastos energeticos</span>
                 <span class="subtitulo_introducao">Aqui você pode monitorar os seus dados de forma segura e eficiente!!</span>
             </section>
 
         <section class="section_kpis">
             <div class="div_kpi">
-                <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                <img class="img_kpi" src="../../img/img_dash/user.svg" alt="" id="destaque_svg">
                 <div class="div_titulo_kpi">
                     <div class="conteudo">
-                        <span class="indicador_kpi">1,234</span>
-                        <span class="legenda_kpi">testes</span>
+                        <span class="indicador_kpi">8</span>
+                        <span class="legenda_kpi">Usuários ativos</span>
                     </div>
-                    <span class="descricao_kpi">Lorem ipsum dolor sit amet</span>
+                    <span class="descricao_kpi">Total de usuários que monitoram seus gastos</span>
+                </div>
+            </div>
+            
+            
+            <div class="div_kpi">
+                <img class="img_kpi" src="../../img/img_dash/target-svgrepo-com.svg" alt="" id="destaque_svg">
+                <div class="div_titulo_kpi">
+                    <div class="conteudo">
+                        <span class="indicador_kpi">80%</span>
+                        <span class="legenda_kpi">Meta atingida</span>
+                    </div>
+                    <span class="descricao_kpi">Porcentagem da meta atingida no mês</span>
                 </div>
             </div>
             
             <div class="div_kpi">
-                <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">
+                <img class="img_kpi" src="../../img/img_dash/dollar-svgrepo-com.svg" alt="" id="destaque_svg">
                 <div class="div_titulo_kpi">
                     <div class="conteudo">
-                        <span class="indicador_kpi">56</span>
-                        <span class="legenda_kpi">testes</span>
+                        <span class="indicador_kpi">10%</span>
+                        <span class="legenda_kpi">Redução de gastos</span>
                     </div>
-                    <span class="descricao_kpi">Lorem ipsum dolor sit amet</span>
-                </div>
-            </div>
-            
-            <div class="div_kpi">
-                <img class="img_kpi" src="../../img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt="">     
-                <div class="div_titulo_kpi">
-                    <div class="conteudo">
-                        <span class="indicador_kpi">789</span>
-                        <span class="legenda_kpi">testes</span>
-                    </div>
-                    <span class="descricao_kpi">Lorem ipsum dolor sit amet</span>
+                    <span class="descricao_kpi">Comparado ao mês anterior</span>
                 </div>
             </div>
         </section>
 
         <section id="section_charts">
             <div class="chart_background">
-                <h3 class="titulo_chart">Gastos R$</h3>
+                <h3 class="titulo_chart">Gastos kwh</h3>
                 <canvas id="myChart" width="2000" height="280"></canvas>
             </div>
             
             <div class="chart_background">
-                <h3 class="titulo_chart">Gastos KWh</h3>
+                <h3 class="titulo_chart">Gastos R$</h3>
                 <canvas id="myChart2" width="2000" height="280"></canvas>
             </div>
         </section>

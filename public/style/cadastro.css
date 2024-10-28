@@ -20,12 +20,20 @@
     font-family: "Inter", sans-serif;
 }
 
-body {
+body{
     display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items: center;
     height: 100vh;
+    width: 100vw;
+    background-color: #222736;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
     background-color: #222736;
     overflow-x: hidden;
 }

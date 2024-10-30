@@ -1,7 +1,7 @@
 var database = require("../database/config")
-
+//! Arrumar os cruds para proxima sprint
 function listar() {
-    var instrucaoSql = `SELECT * FROM genero`;
+    var instrucaoSql = `SELECT * FROM Genero`;
   
     return database.executar(instrucaoSql);
 }

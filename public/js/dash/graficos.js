@@ -8,7 +8,8 @@ const coresUsuarios = [
 ];
 
 
-// Função para plotar os gráficos com dados de energia e metas de usuários
+//? Não entendi mas funcionou ->
+//* Função para plotar os gráficos com dados de energia e metas de usuários
 function plotarGraficos(resposta, metas) {
   console.log("Iniciando plotagem dos gráficos...");
 

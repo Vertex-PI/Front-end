@@ -124,7 +124,6 @@ function cadastrar() {
   }
 
 
-
   /* ------------------------------ VERIFICANDO SE TODOS OS CAMPOS ESTÃO CORRETOS ----------------------------- */
 
   var nomeVar = input_nome.value;
@@ -190,7 +189,7 @@ function listar() {
 
 function show_password() {
   let ipt = document.getElementById("input_senha");
-  let img = document.getElementById("open_eye_1");
+  let img = document.getElementById("eye_closed");
 
   if (ipt.type == "password") {
       ipt.type = "text";
@@ -203,7 +202,7 @@ function show_password() {
 
 function show_password_2() {
   let ipt = document.getElementById("input_confirmar_senha");
-  let img = document.getElementById("open_eye_2");
+  let img = document.getElementById("eye_closed_2");
 
   if (ipt.type == "password") {
       ipt.type = "text";

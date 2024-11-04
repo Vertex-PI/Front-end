@@ -10,7 +10,6 @@
     --creme-escururo: #F4EFEC;
   }
 
-
 body {
     margin: 0;
     padding: 0;
@@ -48,11 +47,9 @@ h1{
 }
 
 .PaiLogin a {
-
     color: #333;
     text-decoration: none;
     transition: 0.5s;
-
 }
 
 .PaiLogin a:hover {
@@ -97,7 +94,6 @@ h1{
     padding: 10px;
     background-color: #f5f7fa;
 
-    font-size: 16px;
     font-size: 16px;
     background-color: #f5f7fa;
     outline: none; /* Remove a borda azul no foco */
@@ -152,13 +148,11 @@ h1{
 }
 
 
-
 @media only screen and (max-width: 640px){
     .PaiLogin{
         width: 300px;
     }
 }
-
 
 @media only screen and (max-width: 530px){
 
@@ -177,5 +171,3 @@ h1{
     }
 
 }
-
-

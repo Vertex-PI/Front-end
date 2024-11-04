@@ -27,9 +27,7 @@ a{
     gap: 25px;
     padding: 25px;
 
-
     border-bottom: 1px solid #282d3e;
-
 
     /* background-color: rebeccapurple; */
 
@@ -87,10 +85,6 @@ a{
     
 }
 
-/* #dashboard_svg_2{
-    filter: invert(100%) sepia(17%) saturate(0%) hue-rotate(179deg) brightness(97%) contrast(89%);
-} */
-
 #edit_svg{
     object-fit: contain;
     height: 3vh;
@@ -113,3 +107,4 @@ a{
     position: absolute;
     bottom: 0;
 }
+

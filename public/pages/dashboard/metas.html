@@ -21,8 +21,8 @@
         
         <section class="section-itens">
             <div class="div_item">
+                <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="">
                 <a href="dashboard.html" class="titulo_item">
-                    <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="">
                 Dashboard
                 </a>
             </div>
@@ -31,13 +31,13 @@
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/stonks.svg" id="destaque_svg" class="img_item" alt="">
-                <a style="font-weight: 600; color: white;"  href="metas.html" class="titulo_item">
+                <a style="font-weight: 600; color: white;" href="metas.html" class="titulo_item">
                 Metas
                 </a>
             </div>
         </section>
         
-        <section class="section-itens">
+        <!-- <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
                 <a href="cadastro.html" class="titulo_item">
@@ -63,13 +63,22 @@
                     Editar usuário
                 </a>
             </div>
-        </section>
+        </section> -->
         
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
-                <a href="" class="titulo_item">
+                <a href="recomendacoes.html" class="titulo_item">
                     Recomendações
+                </a>
+            </div>
+        </section>
+
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/config.svg" class="img_item" alt="">
+                <a  href="configuracoes.html" class="titulo_item">
+                    Configurações
                 </a>
             </div>
         </section>
@@ -92,35 +101,33 @@
             </div>
         </section>
 </aside>
+    <section id="section_meta">
+        <div id="background_meta">
+            <span class="titulo_meta">Definir meta:</span>
+            <span>Valor em reais que pretende gastar:</span>
+            <input class="input_design" type="number"  placeholder="R$00,00">
+            <span>KHW que pretende gastar:</span>
+            <input class="input_design" type="number" name="" id="" placeholder="5000">
+            <span>Mês referente:</span>
+            <select class="input_design" name="" id="">
+                <option value="">Janeiro</option>
+                <option value="">Fevereiro</option>
+                <option value="">Março</option>
+                <option value="">Abril</option>
+                <option value="">Maio</option>
+                <option value="">Junho</option>
+                <option value="">Julho</option>
+                <option value="">Agosto</option>
+                <option value="">Setembro</option>
+                <option value="">Outubro</option>
+                <option value="">Novembro</option>
+                <option value="">Dezembro</option>
+            </select>
+            <button>Salvar</button>
 
-<section id="section_meta">
-    <div id="background_meta">
-        <span class="titulo_meta">Definir meta:</span>
-        <span>Valor em reais que pretende gastar:</span>
-        <input class="input_design" type="number" id="valorGasto" placeholder="R$00,00">
-        <span>KHW que pretende gastar:</span>
-        <input class="input_design" type="number" id="kwhGasto" placeholder="5000">
-        <span>Mês referente:</span>
-        <select class="input_design" id="mesReferencia">
-            <option value="Janeiro">Janeiro</option>
-            <option value="Fevereiro">Fevereiro</option>
-            <option value="Março">Março</option>
-            <option value="Abril">Abril</option>
-            <option value="Maio">Maio</option>
-            <option value="Junho">Junho</option>
-            <option value="Julho">Julho</option>
-            <option value="Agosto">Agosto</option>
-            <option value="Setembro">Setembro</option>
-            <option value="Outubro">Outubro</option>
-            <option value="Novembro">Novembro</option>
-            <option value="Dezembro">Dezembro</option>
-        </select>
-        <button onclick="">Salvar</button>
-    </div>
-</section>
+        </div>
 
+    </section>
     
 </body>
 </html> 
-
-<script src="../../js/metas/metas.js"></script>

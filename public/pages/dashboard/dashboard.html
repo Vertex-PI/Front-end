@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +17,10 @@
       referrerpolicy="no-referrer"
     /> -->
 </head>
-<body>
+
+<body onload="">
     <aside id="sidebar">
-        
+
         <section id="sidebar-cliente">
             <!-- <img src="img/img_dash/Default_pfp.png" id="img_user_sidebar" alt=""> -->
             <div class="infos_cliente">
@@ -26,26 +28,26 @@
                 <span class="descricao_cliente">Seja bem-vindo(a)!!</span>
             </div>
         </section>
-        
+
         <section class="section-itens">
             <div class="div_item">
+                <img src="../../img/img_dash/dashboard.svg" id="destaque_svg" class="img_item" alt="">
                 <a style="font-weight: 600; color: white;" href="dashboard.html" class="titulo_item">
-                    <img src="../../img/img_dash/dashboard.svg" id="destaque_svg" class="img_item" alt="">
-                Dashboard
+                    Dashboard
                 </a>
             </div>
         </section>
-        
+
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/stonks.svg" class="img_item" alt="">
                 <a href="metas.html" class="titulo_item">
-                Metas
+                    Metas
                 </a>
             </div>
         </section>
-        
-        <section class="section-itens">
+
+        <!-- <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
                 <a href="cadastro.html" class="titulo_item">
@@ -54,7 +56,6 @@
             </div>
         </section>
     
-        
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
@@ -71,17 +72,27 @@
                     Editar usuário
                 </a>
             </div>
-        </section>
-        
+        </section> -->
+
+
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
-                <a href="" class="titulo_item">
+                <a href="recomendacoes.html" class="titulo_item">
                     Recomendações
                 </a>
             </div>
         </section>
-        
+
+        <section class="section-itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/config.svg" class="img_item" alt="">
+                <a href="configuracoes.html" class="titulo_item">
+                    Configurações
+                </a>
+            </div>
+        </section>
+
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/question.svg" class="img_item" alt="">
@@ -90,7 +101,7 @@
                 </a>
             </div>
         </section>
-    
+
         <section class="section-logout">
             <div class="div_item">
                 <img src="../../img/img_dash/logout.svg" class="img_logout" alt="">
@@ -99,15 +110,15 @@
                 </a>
             </div>
         </section>
-</aside>
+    </aside>
 
     <main id="main_dashboard">
 
-            <section class="section_introducao">
-                <span class="titulo_introducao">Painel de monitoramento de gastos energeticos</span>
-                <span class="subtitulo_introducao">Aqui você pode monitorar os seus dados de forma segura e eficiente!!</span>
-            </section>
-
+        <section class="section_introducao">
+            <span class="titulo_introducao">Dashboard</span>
+            <span class="subtitulo_introducao">Aqui você pode monitorar os seus dados de forma segura e
+                eficiente!!</span>
+        </section>
         <section class="section_kpis">
             <div class="div_kpi">
                 <img class="img_kpi" src="../../img/img_dash/user.svg" alt="" id="destaque_svg">
@@ -119,8 +130,8 @@
                     <span class="descricao_kpi">No mês de <b>maio</b> </span>
                 </div>
             </div>
-            
-            
+
+
             <div class="div_kpi">
                 <img class="img_kpi" src="../../img/img_dash/target-svgrepo-com.svg" alt="" id="destaque_svg">
                 <div class="div_titulo_kpi">
@@ -131,7 +142,7 @@
                     <span class="descricao_kpi">Porcentagem da meta atingida no mês</span>
                 </div>
             </div>
-            
+
             <div class="div_kpi">
                 <img class="img_kpi" src="../../img/img_dash/dollar-svgrepo-com.svg" alt="" id="destaque_svg">
                 <div class="div_titulo_kpi">
@@ -146,13 +157,13 @@
 
         <section id="section_charts">
             <div class="chart_background">
-                <h3 class="titulo_chart">Gastos kwh</h3>
-                <canvas id="myChart" width="2000" height="280"></canvas>
-            </div>
-            
-            <div class="chart_background">
                 <h3 class="titulo_chart">Gastos R$</h3>
-                <canvas id="myChart2" width="2000" height="280"></canvas>
+                <canvas id="myChart" width="2000" height="190"></canvas>
+            </div>
+
+            <div class="chart_background">
+                <h3 class="titulo_chart">Gastos KWh</h3>
+                <canvas id="myChart2" width="2000" height="190"></canvas>
             </div>
         </section>
 
@@ -200,16 +211,17 @@
 
         </section> -->
 
-            <!-- <div id="icone_faq">
+        <!-- <div id="icone_faq">
                 <a href="FAQ.html"> 
                     <img class="img_faq" src="../../img/img_dash/question.svg" alt="">
                     <div class="circulo_faq"></div>
                 </a>
                 
             </div> -->
-        
+
     </main>
 </body>
+
 </html>
 
 <script src="../../js/dash/sessao.js"></script>

@@ -1,14 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurações</title>
-    <link rel="stylesheet" href="../../style/configuracoes.css">
-    <link rel="stylesheet" href="/style/components/aside_dash.css">
+    <link rel="stylesheet" href="../../style/recomendacoes.css">
+    <link rel="stylesheet" href="../../style/components/aside_dash.css">
+    <title>Recomendações</title>
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+
+<body onload="">
     <aside id="sidebar">
         
         <section id="sidebar-cliente">
@@ -67,8 +71,8 @@
         
         <section class="section-itens">
             <div class="div_item">
-                <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
-                <a href="recomendacoes.html" class="titulo_item">
+                <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" id="destaque_svg" class="img_item" alt="">
+                <a style="font-weight: 600; color: white;" href="recomendacoes.html" class="titulo_item">
                     Recomendações
                 </a>
             </div>
@@ -76,8 +80,8 @@
 
         <section class="section-itens">
             <div class="div_item">
-                <img src="../../img/img_dash/config.svg" id="destaque_svg"  class="img_item" alt="">
-                <a  style="font-weight: 600; color: white;"  href="configuracoes.html" class="titulo_item">
+                <img src="../../img/img_dash/config.svg" class="img_item" alt="">
+                <a href="configuracoes.html" class="titulo_item">
                     Configurações
                 </a>
             </div>
@@ -101,67 +105,48 @@
             </div>
         </section>
 </aside>
-
     
-    <section id="section_configuracoes">
-        <div class="div_cabecalho">
-            <span class="titulo">Configurações:</span>
-        </div>
-        <div class="opcao_configuracao">
-            <div>
-                <img src="/img/img_dash/adduser.svg" class="img_config" alt="">
-                <a href="cadastro.html">Adicionar usuário</a>
+    <main id="main-recomendacao">
+        <section class="section_cabecalho">
+            <span class="titulo">Recomendações</span>
+            <span class="subtitulo">Veja as recomendações geradas especialmente para você</span>
+        </section>
+        <section class="background-recomendacao">
+            <div class="card-recomendacao">
+                <div class="div_cabecalho">
+                    <span class="titulo_card">Titulo</span>
+                    <span class="subtitulo_card">descrição</span>
+                </div>
+                <span class="conteudo_card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora sunt sit numquam. Error, omnis. Voluptatum labore impedit sed ipsa ab tempore, dicta necessitatibus fugiat mollitia molestias enim nam facere?</span>
             </div>
-            <img src="/img/arrow-prev-svgrepo-com (1).svg" class="arrow" alt="">
-        </div>
-        
-        <div class="opcao_configuracao">
-            <div>
-                <img src="/img/img_dash/edit.svg" class="img_config" alt="">
-                <a href="editar_perfil.html">Editar perfil</a>
-            </div>
-            <img src="/img/arrow-prev-svgrepo-com (1).svg" class="arrow" alt="">
-        </div>
-        
-        <div class="opcao_configuracao">
-            <div>
-                <img src="/img/img_dash/edit_user.svg" class="img_config" alt="">
-                <a href="editar_usuario.html">Editar usuário</a>
-            </div>
-            <img src="/img/arrow-prev-svgrepo-com (1).svg" class="arrow" alt="">
-        </div>
-        
-        <div class="opcao_configuracao">
-            <div>
-                <img src="/img/change_passwd.svg" class="img_config" alt="">
-                <a href="">Alterar senha</a>
-            </div>
-            <img src="/img/arrow-prev-svgrepo-com (1).svg" class="arrow" alt="">
-        </div>
-
-<!--         
-        <div class="opcao_configuracao">
-            <img src="img/img_dash/config.svg" class="img_config" alt="">
-            <span>Configuração</span>
-            <img src="img/img_dash/" class="arrow" alt="">
             
-        </div>
-        
-        <div class="opcao_configuracao">
-            <img src="img/img_dash/config.svg" class="img_config" alt="">
-            <span>Configuração</span>
-            <img src="img/img_dash/" class="arrow" alt="">
+            <div class="card-recomendacao">
+                <div class="div_cabecalho">
+                    <span class="titulo_card">Titulo</span>
+                    <span class="subtitulo_card">descrição</span>
+                </div>
+                <span class="conteudo_card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora sunt sit numquam. Error, omnis. Voluptatum labore impedit sed ipsa ab tempore, dicta necessitatibus fugiat mollitia molestias enim nam facere?</span>
+            </div>
             
-        </div> -->
-    </section>
+            <div class="card-recomendacao">
+                <div class="div_cabecalho">
+                    <span class="titulo_card">Titulo</span>
+                    <span class="subtitulo_card">descrição</span>
+                </div>
+                <span class="conteudo_card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora sunt sit numquam. Error, omnis. Voluptatum labore impedit sed ipsa ab tempore, dicta necessitatibus fugiat mollitia molestias enim nam facere?</span>
+            </div>
+            
+            <div class="card-recomendacao">
+                <div class="div_cabecalho">
+                    <span class="titulo_card">Titulo</span>
+                    <span class="subtitulo_card">descrição</span>
+                </div>
+                <span class="conteudo_card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora sunt sit numquam. Error, omnis. Voluptatum labore impedit sed ipsa ab tempore, dicta necessitatibus fugiat mollitia molestias enim nam facere?</span>
+            </div>
 
-    <!-- <div id="icone_faq">
-        <a href="FAQ.html"> 
-            <img class="img_faq" src="img/img_dash/question.svg" alt="">
-            <div class="circulo_faq"></div>
-        </a>
-        
-    </div> -->
-    
+        </section>
+
+    </main>
+
 </body>
-</html>
+    

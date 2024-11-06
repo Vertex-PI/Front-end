@@ -185,30 +185,3 @@ function listar() {
     });
 }
 
-/* mostrar senha */
-
-function show_password() {
-  let ipt = document.getElementById("input_senha");
-  let img = document.getElementById("eye_closed");
-
-  if (ipt.type == "password") {
-      ipt.type = "text";
-      img.src = "../../img/open_eye.svg"
-  } else {
-      ipt.type = "password"
-      img.src = "../../img/eye_closed.svg"
-  }
-}
-
-function show_password_2() {
-  let ipt = document.getElementById("input_confirmar_senha");
-  let img = document.getElementById("eye_closed_2");
-
-  if (ipt.type == "password") {
-      ipt.type = "text";
-      img.src = "../../img/open_eye.svg"
-  } else {
-      ipt.type = "password"
-      img.src = "../../img/eye_closed.svg"
-  }
-}

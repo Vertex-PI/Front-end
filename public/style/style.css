@@ -21,6 +21,7 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #fcfbfb;
   user-select: none;
+  overflow-x: hidden;
 }
 
 .negrito {
@@ -963,12 +964,12 @@ body {
 *::-webkit-scrollbar {
   height: 10px;
   width: 5px;
-  display: none;
+  /* display: none; */
 }
 
 *::-webkit-scrollbar-thumb {
-  border-radius: 1px;
-  background-color: #1F304E;
+  /* border-radius: 1px; */
+  background-color: #2E354B;
 }
 
 *::-webkit-scrollbar-thumb:hover {

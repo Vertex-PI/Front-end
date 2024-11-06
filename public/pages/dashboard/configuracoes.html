@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
     <link rel="stylesheet" href="/style/components/aside_dash.css">
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
 </head>
+
 <body>
     <aside id="sidebar">
-        
+
         <section id="sidebar-cliente">
             <!-- <img src="img/img_dash/Default_pfp.png" id="img_user_sidebar" alt=""> -->
             <div class="infos_cliente">
@@ -18,25 +20,25 @@
                 <span class="descricao_cliente">Seja bem-vindo(a)!!</span>
             </div>
         </section>
-        
+
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="">
                 <a href="dashboard.html" class="titulo_item">
-                Dashboard
+                    Dashboard
                 </a>
             </div>
         </section>
-        
+
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/stonks.svg" class="img_item" alt="">
                 <a href="metas.html" class="titulo_item">
-                Metas
+                    Metas
                 </a>
             </div>
         </section>
-        
+
         <!-- <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
@@ -64,7 +66,7 @@
                 </a>
             </div>
         </section> -->
-        
+
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
@@ -76,13 +78,13 @@
 
         <section class="section-itens">
             <div class="div_item">
-                <img src="../../img/img_dash/config.svg" id="destaque_svg"  class="img_item" alt="">
-                <a  style="font-weight: 600; color: white;"  href="configuracoes.html" class="titulo_item">
+                <img src="../../img/img_dash/config.svg" id="destaque_svg" class="img_item" alt="">
+                <a style="font-weight: 600; color: white;" href="configuracoes.html" class="titulo_item">
                     Configurações
                 </a>
             </div>
         </section>
-        
+
         <section class="section-itens">
             <div class="div_item">
                 <img src="../../img/img_dash/question.svg" class="img_item" alt="">
@@ -91,7 +93,7 @@
                 </a>
             </div>
         </section>
-    
+
         <section class="section-logout">
             <div class="div_item">
                 <img src="../../img/img_dash/logout.svg" class="img_logout" alt="">
@@ -100,68 +102,291 @@
                 </a>
             </div>
         </section>
-</aside>
+    </aside>
 
-    
+
     <section id="section_configuracoes">
         <div class="div_cabecalho">
-            <span class="titulo">Configurações:</span>
-        </div>
-        <div class="opcao_configuracao">
-            <div>
-                <img src="/img/img_dash/adduser.svg" class="img_config" alt="">
-                <a href="cadastro.html">Adicionar usuário</a>
+            <span class="titulo_cabecalho">Configurações:</span>
+
+            <div class="elementos_config">
+                <span class="opcao_config" id="opt_cadastro" style="font-weight: 700;" onclick="adicionarUsuario()">Cadastro</span>
+                <span class="opcao_config" id="opt_editar_conta" onclick="editarPerfil()">Conta</span>
+                <span class="opcao_config" id="opt_editar_cargo" onclick="editarUsuario()">Editar usuario</span>
+                <span class="opcao_config" id="opt_alterar_senha" onclick="alterarSenha()">Alterar senha</span>
             </div>
-            <img src="/img/arrow-prev-svgrepo-com (1).svg" class="arrow" alt="">
-        </div>
-        
-        <div class="opcao_configuracao">
-            <div>
-                <img src="/img/img_dash/edit.svg" class="img_config" alt="">
-                <a href="editar_perfil.html">Editar perfil</a>
-            </div>
-            <img src="/img/arrow-prev-svgrepo-com (1).svg" class="arrow" alt="">
-        </div>
-        
-        <div class="opcao_configuracao">
-            <div>
-                <img src="/img/img_dash/edit_user.svg" class="img_config" alt="">
-                <a href="editar_usuario.html">Editar usuário</a>
-            </div>
-            <img src="/img/arrow-prev-svgrepo-com (1).svg" class="arrow" alt="">
-        </div>
-        
-        <div class="opcao_configuracao">
-            <div>
-                <img src="/img/change_passwd.svg" class="img_config" alt="">
-                <a href="">Alterar senha</a>
-            </div>
-            <img src="/img/arrow-prev-svgrepo-com (1).svg" class="arrow" alt="">
         </div>
 
-<!--         
-        <div class="opcao_configuracao">
-            <img src="img/img_dash/config.svg" class="img_config" alt="">
-            <span>Configuração</span>
-            <img src="img/img_dash/" class="arrow" alt="">
-            
+        <!-- ADICIONAR USUARIO -->
+
+        <div id="div_adc_usuario" class="opcao_selecionada">
+            <div class="div_info">
+                <div class="div-cabecalho">
+                    <span class="titulo-span">Adicionar usuário</span>
+                    <span class="subtitulo-span">Adicione um ou mais funcionários para visualizarem sua
+                        dashboard.</span>
+                </div>
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Nome</span>
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara ">
+                </div>
+    
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Email</span>
+                    <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com">
+                </div>
+    
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input" >Cargo</span>
+                    <select name="" class="inp_cadastro">
+                        <option value="">Cargo 1</option>
+                        <option value="">Cargo 2</option>
+                    </select>
+                </div>
+    
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Senha</span>
+                    <div class="div_input">
+                        <input type="password" id="input_senha" class="inp_cadastro" placeholder="Insira sua senha" />
+                        <img src="/img/eye_closed.svg" id="eye_closed" class="class_eye_closed" onclick="show_password()">
+                    </div>
+                </div>
+    
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input" >Confirmar senha</span>
+                    <div class="div_input">
+                        <input type="password" id="input_confirmar_senha" class="inp_cadastro"
+                            placeholder="Insira sua senha" />
+                        <img src="/img/eye_closed.svg" id="eye_closed_2" class="class_eye_closed" onclick="show_password_2()">
+                    </div>
+    
+                </div>
+    
+                <button class="btn_adc_cadastro">Adicionar</button>
+            </div>
+
+        </div>
+
+        <!-- EDITAR CONTA -->
+
+        <div id="div_editar_conta" class="opcao_selecionada" style="display: none;">
+            <div class="div_info">
+                <div class="div-cabecalho">
+                    <span class="titulo-span">Editar conta</span>
+                    <span class="subtitulo-span">Edite seus dados pessoais.</span>
+                </div>
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Nome</span>
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Fernanda Caramico">
+                </div>
+    
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Email</span>
+                    <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com">
+                </div>
+    
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Cargo</span>
+                    <select name="" class="inp_cadastro">
+                        <option value="">Cargo 1</option>
+                        <option value="">Cargo 2</option>
+                    </select>
+                </div>
+    
+                <button class="btn_adc_cadastro">Salvar</button>
+            </div>
+
+        </div>
+
+        <!-- EDITAR CARGO -->
+
+        <div id="div_editar_cargo" class="opcao_selecionada" style="display: none;">
+            <div class="div_info">
+                <div class="div-cabecalho">
+                    <span class="titulo-span">Editar usuário</span>
+                    <span class="subtitulo-span">Edite o cargo de seus funcionários cadastrados.</span>
+                </div>
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Funcionário</span>
+                    <select name="" class="inp_cadastro">
+                        <option value="">Lucas</option>
+                        <option value="">Gustavo</option>
+                        <option value="">Matheus</option>
+                        <option value="">Leonardo</option>
+                        <option value="">Bianca</option>
+                    </select>
+                </div>  
+    
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Cargo</span>
+                    <select name="" class="inp_cadastro">
+                        <option value="">Cargo 1</option>
+                        <option value="">Cargo 2</option>
+                    </select>
+                </div>
+    
+                <button class="btn_adc_cadastro">Salvar</button>
+            </div>
+
+        </div>
+
+        <!-- ALTERAR SENHA -->
+
+        <div id="div_alterar_senha" class="opcao_selecionada" style="display: none;">
+            <div class="div_info">
+                <div class="div-cabecalho">
+                    <span class="titulo-span">Editar senha</span>
+                    <span class="subtitulo-span">Edite sua senha.</span>
+                </div>
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Senha atual</span>
+                    <div class="div_input">
+                        <input type="password" id="input_alt_senha" class="inp_cadastro" placeholder="Insira sua senha" />
+                        <img src="/img/eye_closed.svg" id="eye_closed_3" class="class_eye_closed" onclick="show_password_3()">
+                    </div>
+                </div>
+
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Nova senha</span>
+                    <div class="div_input">
+                        <input type="password" id="input_nova_senha" class="inp_cadastro" placeholder="Insira sua senha" />
+                        <img src="/img/eye_closed.svg" id="eye_closed_4" class="class_eye_closed" onclick="show_password_4()">
+                    </div>
+                </div>
+    
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input" >Confirmar nova senha</span>
+                    <div class="div_input">
+                        <input type="password" id="input_confirmar_nova_senha" class="inp_cadastro"
+                            placeholder="Insira sua senha" />
+                        <img src="/img/eye_closed.svg" id="eye_closed_5" class="class_eye_closed" onclick="show_password_5()">
+                    </div>
+    
+                </div>
+    
+                <button class="btn_adc_cadastro">Salvar</button>
+            </div>
+
         </div>
         
-        <div class="opcao_configuracao">
-            <img src="img/img_dash/config.svg" class="img_config" alt="">
-            <span>Configuração</span>
-            <img src="img/img_dash/" class="arrow" alt="">
-            
-        </div> -->
     </section>
 
-    <!-- <div id="icone_faq">
-        <a href="FAQ.html"> 
-            <img class="img_faq" src="img/img_dash/question.svg" alt="">
-            <div class="circulo_faq"></div>
-        </a>
-        
-    </div> -->
-    
 </body>
+
 </html>
+
+<script>
+    function adicionarUsuario() {
+        document.getElementById("div_adc_usuario").style.display = "flex";
+        document.getElementById("div_editar_conta").style.display = "none";
+        document.getElementById("div_editar_cargo").style.display = "none";
+        document.getElementById("div_alterar_senha").style.display = "none";
+        document.getElementById("opt_cadastro").style.fontWeight = "700";    
+        document.getElementById("opt_editar_conta").style.fontWeight = "500";    
+        document.getElementById("opt_editar_cargo").style.fontWeight = "500";  
+        document.getElementById("opt_alterar_senha").style.fontWeight = "500";   
+
+    }
+    
+    function editarPerfil(){
+        document.getElementById("div_adc_usuario").style.display = "none";
+        document.getElementById("div_editar_conta").style.display = "flex";
+        document.getElementById("div_editar_cargo").style.display = "none";
+        document.getElementById("div_alterar_senha").style.display = "none";
+        document.getElementById("opt_cadastro").style.fontWeight = "500";    
+        document.getElementById("opt_editar_conta").style.fontWeight = "700";    
+        document.getElementById("opt_editar_cargo").style.fontWeight = "500"; 
+        document.getElementById("opt_alterar_senha").style.fontWeight = "500";   
+
+    }
+    
+    function editarUsuario(){
+        document.getElementById("div_adc_usuario").style.display = "none";
+        document.getElementById("div_editar_conta").style.display = "none";
+        document.getElementById("div_editar_cargo").style.display = "flex";
+        document.getElementById("div_alterar_senha").style.display = "none";
+        document.getElementById("opt_cadastro").style.fontWeight = "500";    
+        document.getElementById("opt_editar_conta").style.fontWeight = "500";    
+        document.getElementById("opt_editar_cargo").style.fontWeight = "700";    
+        document.getElementById("opt_alterar_senha").style.fontWeight = "500";   
+
+
+    }
+
+    function alterarSenha(){
+        document.getElementById("div_adc_usuario").style.display = "none";
+        document.getElementById("div_editar_conta").style.display = "none";
+        document.getElementById("div_editar_cargo").style.display = "none";
+        document.getElementById("div_alterar_senha").style.display = "flex";
+        document.getElementById("opt_cadastro").style.fontWeight = "500";    
+        document.getElementById("opt_editar_conta").style.fontWeight = "500";    
+        document.getElementById("opt_editar_cargo").style.fontWeight = "500";   
+        document.getElementById("opt_alterar_senha").style.fontWeight = "700";   
+    }
+    /* mostrar senha */
+
+    function show_password() {
+        let ipt = document.getElementById("input_senha");
+        let img = document.getElementById("eye_closed");
+
+        if (ipt.type == "password") {
+            ipt.type = "text";
+            img.src = "../../img/open_eye.svg"
+        } else {
+            ipt.type = "password"
+            img.src = "../../img/eye_closed.svg"
+        }
+    }
+
+    function show_password_2() {
+        let ipt = document.getElementById("input_confirmar_senha");
+        let img = document.getElementById("eye_closed_2");
+
+        if (ipt.type == "password") {
+            ipt.type = "text";
+            img.src = "../../img/open_eye.svg"
+        } else {
+            ipt.type = "password"
+            img.src = "../../img/eye_closed.svg"
+        }
+    }
+    
+    function show_password_3() {
+        let ipt = document.getElementById("input_alt_senha");
+        let img = document.getElementById("eye_closed_3");
+
+        if (ipt.type == "password") {
+            ipt.type = "text";
+            img.src = "../../img/open_eye.svg"
+        } else {
+            ipt.type = "password"
+            img.src = "../../img/eye_closed.svg"
+        }
+    }
+    
+    function show_password_4() {
+        let ipt = document.getElementById("input_nova_senha");
+        let img = document.getElementById("eye_closed_4");
+
+        if (ipt.type == "password") {
+            ipt.type = "text";
+            img.src = "../../img/open_eye.svg"
+        } else {
+            ipt.type = "password"
+            img.src = "../../img/eye_closed.svg"
+        }
+    }
+    
+    function show_password_5() {
+        let ipt = document.getElementById("input_confirmar_nova_senha");
+        let img = document.getElementById("eye_closed_5");
+
+        if (ipt.type == "password") {
+            ipt.type = "text";
+            img.src = "../../img/open_eye.svg"
+        } else {
+            ipt.type = "password"
+            img.src = "../../img/eye_closed.svg"
+        }
+    }
+</script>

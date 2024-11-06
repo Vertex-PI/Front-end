@@ -52,7 +52,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    margin-left: 10.5%;
+    margin-left: 11.5%;
     margin-top: 8%;
 }
 
@@ -80,6 +80,8 @@ body {
     background-color: #282d3e;
     width: 24%;
     height: 85%;
+    border: #fcfbfb 1px solid;
+    border-radius: 5px;
 }
 
 .classificacao{

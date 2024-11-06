@@ -43,14 +43,13 @@ a{
 }
 
 .background-recomendacao{
-   background-color: #282d3e;
     width: 85%;
     height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    gap: 12px;
+    gap: 40px;
 }
 
 .section_cabecalho{
@@ -73,9 +72,10 @@ a{
 }
 
 .card-recomendacao{
-    background-color: #222736;
+    background-color: #282d3e;
     width: 22%;
     height: 75%;
+    border: 1px solid #F4EFEC;
     border-radius: 5px;
 
     display: flex;

@@ -286,7 +286,6 @@ body {
 }
 
 /* Dados */
-.dados,
 .card-dados {
   /* background-color: red; */
   display: flex;
@@ -305,12 +304,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
+  flex-wrap: wrap;
 }
 
 .card-dados {
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 40px;
+  height: 140px;
 }
+
 
 .card-dados:not(:last-child) {
   border-right: 1px solid black;
@@ -694,6 +697,16 @@ body {
     height: 35px;
     font-size: 14px;
     margin-right: 15px;
+  }
+
+  .dados {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-dados{
+    margin-left: 0;
   }
 }
 

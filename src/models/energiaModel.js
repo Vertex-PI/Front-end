@@ -18,10 +18,10 @@ function buscarEnergia(anos) {
 //* Função para buscar metas associadas aos usuários
 function buscarMetasUsuario(idUsuario) {
   var instrucaoSql = `SELECT 
-        Mes, 
-        Gastos AS metaGasto, 
-        Kwh AS metaKwh 
-    FROM Metas
+        mes, 
+        gastos AS metaGasto, 
+        kwh AS metaKwh 
+    FROM metas
     WHERE fk_idUsuario = ${idUsuario}
     ORDER BY FIELD(Mes, 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')`;
 
@@ -31,7 +31,7 @@ function buscarMetasUsuario(idUsuario) {
 
 function buscarTodasMetas() {
   var instrucaoSql = `
-    SELECT m.*, u.Nome
+    SELECT m.*, u.nome
     FROM Metas m
     JOIN Usuario u ON m.fk_idUsuario = u.idUsuario;
   `;
@@ -39,7 +39,6 @@ function buscarTodasMetas() {
   console.log("Executando a instrução SQL para buscar metas do usuário: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
-
 
 module.exports = {
   buscarEnergia,

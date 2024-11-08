@@ -16,7 +16,7 @@ function publicar() {
       gasto: parseFloat(valorGasto.replace('R$', '').replace(',', '.')), // Ajuste para o nome correto
       kwh: parseFloat(kwhGasto),
       mes: mesReferencia,
-      fk_id_usuario: idUsuario // Ajuste o nome aqui, se necessário
+      fk_id_usuario: idUsuario 
   };
 
   console.log("Corpo da requisição: ", corpo); // Para depuração
@@ -46,5 +46,4 @@ function publicar() {
   return false;
 }
 
-// Adiciona o evento de clique no botão "Salvar"
 document.querySelector("button").addEventListener("click", publicar);

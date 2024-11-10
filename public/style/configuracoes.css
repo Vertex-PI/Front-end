@@ -18,7 +18,8 @@ body {
     flex-direction: row;
     height: 100vh;
     width: 100vw;
-    background-color: #fbf5f6;
+    background-color: #222736;
+    color: #fcfbfb;
 
     align-items: center;
 }
@@ -28,9 +29,10 @@ a {
     padding: 0;
     text-decoration: none;
     color: unset;
+    color: #fcfbfb;
 }
 
-#section_configuracoes {
+#section-configuracoes {
     /* background-color: rebeccapurple; */
     width: 85%;
     height: 100%;
@@ -42,40 +44,42 @@ a {
 
 }
 
-.div_cabecalho {
+.div_cabecalho_config {
     /* background-color: #1e2230; */
     width: 100%;
-    height: 13.5%;
+    height: 15.5%;
 
-    /* color: #fcfbfb; */
+    color: #fcfbfb;
 
     display: flex;
     flex-direction: column;
 
     padding-left: 40px;
     padding-top: 5px;
-    gap: 23px;
+    gap: 20px;
 
-    border-bottom: 1px solid #282d3e;
+    /* border-bottom: 1px solid #fcfbfb; */
+    box-shadow: 0px 0px 10px #141720;
 }
 
 .titulo_cabecalho {
     font-size: 30px;
     font-weight: 700;
-    color: #272d3e;
-    margin-top: 15px;
+    /* color: #272d3e; */
+    margin-top: 5px;
 }
 
 .opcao_config {
     cursor: pointer;
-    /* color: #fcfbfb; */
+    color: #fcfbfb;
 }
 
 .elementos_config {
     /* background-color: rebeccapurple; */
     width: 100%;
 
-    color: #272d3e;
+    color: #fcfbfb;
+
     font-weight: 500;
 
     display: flex;
@@ -115,56 +119,150 @@ a {
     margin-left: 2vw;
 }
 
-.div_info{
+.div_info {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    /* border: 2px solid red; */
 }
 
-#div_adc_usuario {
+#div-edit-cargo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+#div-usuarios{
+    /* background-color: rebeccapurple; */
+    border: 2px solid #fcfbfb;
+    /* width: 30vw; */
+    width: 45%;
+    margin-left: 20px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.cabecalho_funcionarios{
+    /* background-color: red; */
+    height: 45px;
+    padding-top: 5px;
+    padding-left: 14%;
+    border-bottom: 1px solid #fcfbfb;
+    
+}
+
+.titulo_funcionarios{
+    font-size: 25px; 
+    font-weight: 600; 
+}
+
+#div-adc-usuario {
     width: 70%;
     /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-#div_editar_conta {
+#div-editar-conta {
     width: 70%;
     /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-#div_editar_cargo{
+#div-mudar-cargo {
+    width: 60%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#div-criar-cargo {
     width: 70%;
     /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 
 }
 
-#div_alterar_senha{
+#div-alterar-senha {
     width: 70%;
     /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 
-.span_input{
+#div-modificar-metas {
+    width: 70%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#div-modificar-cargo {
+    width: 70%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.span_input {
     /* background-color: red; */
     width: 50%;
     text-align: start;
+
+}
+
+#span-input-cargos {
+    /* background-color: red; */
+    width: 50%;
+    text-align: start;
+
+}
+
+.div_funcionario{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 25px;
+
+    
+    width: 100%;
+    height: 12%;
+    
+    border-bottom: 2px solid #858585;
+    
+    /* background-color: red; */
+}
+
+.div_infos_funcionario{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -174,7 +272,7 @@ a {
     height: 100%;
 }
 
-.div-cabecalho {
+.div_cabecalho_opcoes {
     width: 65%;
     height: 10%;
 
@@ -182,6 +280,39 @@ a {
     flex-direction: column;
 
     padding-left: 65px;
+    /* background-color: aqua; */
+}
+
+#div-cabecalho-editar-usuario{
+    width: 70%;
+    height: 10%;
+    
+    display: flex;
+    flex-direction: column;
+    
+    padding-left: 65px;
+    /* background-color: aqua; */
+    
+}
+
+.div_cabecalho_metas {
+    width: 80%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+
+    /* padding-left: 65px; */
+    /* background-color: aqua; */
+}
+
+.div_cabecalho_cargos {
+    width: 80%;
+    height: 10%;
+
+    display: flex;
+    flex-direction: column;
+
+    /* padding-left: 65px; */
     /* background-color: aqua; */
 }
 
@@ -195,22 +326,57 @@ a {
     justify-content: center;
     align-items: center;
 
-    /* border-bottom: 2px solid #858585; */
 
     /* margin-bottom: 10px; */
     /* gap: 40px; */
 
 }
 
-.titulo-span {
-    font-size: 27px;
-    font-weight: 600 ;
+.div_inp_editar_usuario {
+    height: 15%;
+    width: 100%;
+    /* background-color: red; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    /* margin-bottom: 10px; */
+    /* gap: 40px; */
+
 }
 
-.subtitulo-span {
+#inp-editar-cargo-usuario{
+    padding: 10px;
+    background-color: #f5f7fa;
+
     font-size: 16px;
-    font-weight: 400 ;
-    color: #1e2230;
+    background-color: transparent;
+    outline: none;
+    font-family: "Inter", sans-serif;
+
+    width: 50%;
+    height: 45px;
+
+    border-radius: 20px;
+    border: 2px solid #fcfbfb;
+
+    color: #c0c0c0;
+
+
+}
+
+.titulo_span {
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.subtitulo_span {
+    font-size: 16px;
+    font-weight: 400;
+    /* color: #1e2230; */
 }
 
 .inp_cadastro {
@@ -228,7 +394,9 @@ a {
 
     /* border: none; */
     border-radius: 20px;
-    border: 2px solid #282d3e;
+    border: 2px solid #fcfbfb;
+
+    color: #c0c0c0;
 
     /* margin-bottom: 20px; */
 
@@ -244,12 +412,101 @@ a {
     /* background-color: aqua; */
 }
 
+.div_metas {
+    /* background-color: red; */
+    border: 1px solid #fcfbfb;
+    width: 80%;
+    height: 60%;
+}
+
+.div_cargos {
+    /* background-color: red; */
+    border: 1px solid #fcfbfb;
+    width: 80%;
+    height: 60%;
+}
+
+.cabecalho_metas{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 80px;
+    /* justify-content: space-around; */
+    padding-left: 50px;
+    padding-top: 15px;
+    border-bottom: 2px solid #858585;
+}
+
+.cabecalho_cargos{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 80px;
+    /* justify-content: space-around; */
+    padding-left: 50px;
+    padding-top: 15px;
+    border-bottom: 2px solid #858585;
+}
+
+.meta{
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    padding-left: 70px;
+    
+    /* background-color: red; */
+    width: 100%;
+    height: 8%;
+
+    border-bottom: 2px solid #858585;
+}
+
+.cargo{
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    padding-left: 70px;
+    
+    /* background-color: red; */
+    width: 100%;
+    height: 8%;
+
+    border-bottom: 2px solid #858585;
+}
+
+.img_item{
+    object-fit: contain;
+    height: 3vh;
+    margin-right: 15px;  
+    cursor: pointer;
+    
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(157deg) brightness(102%) contrast(101%);
+    
+}
+
+.img_item_editar_func{
+    object-fit: contain;
+    height: 3vh;
+    cursor: pointer;
+    
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(157deg) brightness(102%) contrast(101%);
+    
+}
+
+
+.img_trash{
+    filter: invert(12%) sepia(100%) saturate(7454%) hue-rotate(0deg) brightness(99%) contrast(110%);
+    object-fit: contain;
+    height: 3vh;
+    cursor: pointer;
+    margin-right: 15px;
+}
 
 .div_input input {
     width: 100%;
 }
 
-.class_eye_closed{
+.class_eye_closed {
     position: absolute;
     object-fit: contain;
     transform: translateY(-80%);
@@ -257,36 +514,42 @@ a {
     cursor: pointer;
 }
 
-#eye_closed {
+#eye-closed {
     top: 73%;
     right: 28.5%;
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(157deg) brightness(102%) contrast(101%);
+
     /* background-color: red; */
 }
 
-#eye_closed_2 {
+#eye-closed-2 {
     top: 86%;
     right: 28.5%;
-
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(157deg) brightness(102%) contrast(101%);
+    
     /* background-color: rebeccapurple; */
 }
 
-#eye_closed_3 {
+#eye-closed-3 {
     top: 47.8%;
     right: 28.5%;
-
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(157deg) brightness(102%) contrast(101%);
+    
     /* background-color: rebeccapurple; */
 }
 
-#eye_closed_4 {
+#eye-closed-4 {
     top: 60.5%;
     right: 28.5%;
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(157deg) brightness(102%) contrast(101%);
 
     /* background-color: rebeccapurple; */
 }
 
-#eye_closed_5 {
+#eye-closed-5 {
     top: 73%;
     right: 28.5%;
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(157deg) brightness(102%) contrast(101%);
 
     /* background-color: rebeccapurple; */
 }
@@ -307,43 +570,15 @@ a {
     font-family: "Inter", sans-serif;
 }
 
+::-webkit-input-placeholder {
+    color: #c0c0c0;
+}
+
+option {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
 button:hover {
     background-color: #222736;
-}
-
-
-@media (max-width: 1024px) {
-    .cadastro-container {
-        width: 60%;
-        padding: 40px;
-        align-items: center;
-    }
-
-    button {
-        width: 100%;
-        align-self: center;
-    }
-}
-
-@media (max-width: 500px) {
-    .cadastro-container {
-        width: 90%;
-        padding: 20px;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    .login-link {
-        text-align: center;
-    }
 }

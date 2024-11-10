@@ -9,11 +9,12 @@ a{
     height: 100%;
     width: 250px;
     background-color: #1E2230;
+    box-shadow: 1px 0px 10px #141720;
 
     color: #D1D5DB;
 }
 
-#img_user_sidebar {
+#img-user-sidebar {
     object-fit: contain;
     height: 5vh;
     filter: invert(30%) sepia(17%) saturate(182%) hue-rotate(179deg) brightness(97%) contrast(89%);
@@ -51,7 +52,7 @@ a{
     color: #606472;
 }
 
-.section-itens {
+.section_itens {
     display: flex;
     
 }
@@ -102,7 +103,7 @@ a{
     color: red;
 }
 
-.section-logout{
+.section_logout{
     display: flex;
     position: absolute;
     bottom: 0;

@@ -21,7 +21,7 @@
             </div>
         </section>
 
-        <section class="section-itens">
+        <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="">
                 <a href="dashboard.html" class="titulo_item">
@@ -30,7 +30,7 @@
             </div>
         </section>
 
-        <section class="section-itens">
+        <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/stonks.svg" class="img_item" alt="">
                 <a href="metas.html" class="titulo_item">
@@ -67,7 +67,7 @@
             </div>
         </section> -->
 
-        <section class="section-itens">
+        <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
                 <a href="recomendacoes.html" class="titulo_item">
@@ -76,7 +76,7 @@
             </div>
         </section>
 
-        <section class="section-itens">
+        <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/config.svg" id="destaque_svg" class="img_item" alt="">
                 <a style="font-weight: 600; color: white;" href="configuracoes.html" class="titulo_item">
@@ -85,7 +85,7 @@
             </div>
         </section>
 
-        <section class="section-itens">
+        <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/question.svg" class="img_item" alt="">
                 <a href="FAQ.html" class="titulo_item">
@@ -94,7 +94,7 @@
             </div>
         </section>
 
-        <section class="section-logout">
+        <section class="section_logout">
             <div class="div_item">
                 <img src="../../img/img_dash/logout.svg" class="img_logout" alt="">
                 <a href="" class="titulo_logout" onclick="limparSessao()">
@@ -105,63 +105,69 @@
     </aside>
 
 
-    <section id="section_configuracoes">
-        <div class="div_cabecalho">
+    <section id="section-configuracoes">
+        <div class="div_cabecalho_config">
             <span class="titulo_cabecalho">Configurações:</span>
 
             <div class="elementos_config">
-                <span class="opcao_config" id="opt_cadastro" style="font-weight: 700;" onclick="adicionarUsuario()">Cadastro</span>
-                <span class="opcao_config" id="opt_editar_conta" onclick="editarPerfil()">Conta</span>
-                <span class="opcao_config" id="opt_editar_cargo" onclick="editarUsuario()">Editar usuario</span>
-                <span class="opcao_config" id="opt_alterar_senha" onclick="alterarSenha()">Alterar senha</span>
+                <span class="opcao_config" id="opt-cadastro" style="font-weight: 700;" onclick="adicionarUsuario()">Cadastro</span>
+                <span class="opcao_config" id="opt-editar-conta" onclick="editarPerfil()">Conta</span>
+                <span class="opcao_config" id="opt-editar-cargo" onclick="editarUsuario()">Editar usuario</span>
+                <span class="opcao_config" id="opt-criar-cargo" onclick="criarCargo()">Criar cargo</span>
+                <span class="opcao_config" id="opt-alterar-senha" onclick="alterarSenha()">Alterar senha</span>
+                <span class="opcao_config" id="opt-alt-del-metas" onclick="modificarMeta()">Modificar metas</span>
+                <span class="opcao_config" id="opt-alt-del-cargos" onclick="modificarCargo()">Modificar cargos</span>
             </div>
         </div>
 
         <!-- ADICIONAR USUARIO -->
 
-        <div id="div_adc_usuario" class="opcao_selecionada">
+        <div id="div-adc-usuario" class="opcao_selecionada">
             <div class="div_info">
-                <div class="div-cabecalho">
-                    <span class="titulo-span">Adicionar usuário</span>
-                    <span class="subtitulo-span">Adicione um ou mais funcionários para visualizarem sua
+                <div class="div_cabecalho_opcoes">
+                    <span class="titulo_span">Adicionar usuário</span>
+                    <span class="subtitulo_span">Adicione um ou mais funcionários para visualizarem sua
                         dashboard.</span>
                 </div>
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Nome</span>
                     <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara ">
                 </div>
-    
+
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Email</span>
                     <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com">
                 </div>
-    
+
                 <div class="div_inp_adc_usuario">
-                    <span class="span_input" >Cargo</span>
+                    <span class="span_input">Cargo</span>
                     <select name="" class="inp_cadastro">
+                        <option value="" selected disabled>Selecione um cargo</option>
                         <option value="">Cargo 1</option>
                         <option value="">Cargo 2</option>
                     </select>
                 </div>
-    
+
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Senha</span>
                     <div class="div_input">
-                        <input type="password" id="input_senha" class="inp_cadastro" placeholder="Insira sua senha" />
-                        <img src="../../img/eye_closed.svg" id="eye_closed" class="class_eye_closed" onclick="show_password()">
+                        <input type="password" id="input-senha" class="inp_cadastro" placeholder="Insira sua senha" />
+                        <img src="../../img/eye_closed.svg" id="eye-closed" class="class_eye_closed"
+                            onclick="show_password()">
                     </div>
                 </div>
-    
+
                 <div class="div_inp_adc_usuario">
-                    <span class="span_input" >Confirmar senha</span>
+                    <span class="span_input">Confirmar senha</span>
                     <div class="div_input">
-                        <input type="password" id="input_confirmar_senha" class="inp_cadastro"
+                        <input type="password" id="input-confirmar-senha" class="inp_cadastro"
                             placeholder="Insira sua senha" />
-                        <img src="../../img/eye_closed.svg" id="eye_closed_2" class="class_eye_closed" onclick="show_password_2()">
+                        <img src="../../img/eye_closed.svg" id="eye-closed-2" class="class_eye_closed"
+                            onclick="show_password_2()">
                     </div>
-    
+
                 </div>
-    
+
                 <button class="btn_adc_cadastro">Adicionar</button>
             </div>
 
@@ -169,22 +175,24 @@
 
         <!-- EDITAR CONTA -->
 
-        <div id="div_editar_conta" class="opcao_selecionada" style="display: none;">
+        <div id="div-editar-conta" class="opcao_selecionada" style="display: none;">
             <div class="div_info">
-                <div class="div-cabecalho">
-                    <span class="titulo-span">Editar conta</span>
-                    <span class="subtitulo-span">Edite seus dados pessoais.</span>
+                <div class="div_cabecalho_opcoes">
+                    <span class="titulo_span">Editar conta</span>
+                    <span class="subtitulo_span">Edite seus dados pessoais.</span>
                 </div>
+
+
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Nome</span>
-                    <input type="text" class="inp_cadastro" placeholder="Ex.: Fernanda Caramico">
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara">
                 </div>
-    
+
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Email</span>
                     <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com">
                 </div>
-    
+
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Cargo</span>
                     <select name="" class="inp_cadastro">
@@ -192,7 +200,36 @@
                         <option value="">Cargo 2</option>
                     </select>
                 </div>
-    
+
+                <button class="btn_adc_cadastro">Salvar</button>
+            </div>
+
+        </div>
+
+        <!-- CRIAR CARGO -->
+
+        <div id="div-criar-cargo" class="opcao_selecionada" style="display: none;">
+            <div class="div_info">
+                <div class="div_cabecalho_opcoes">
+                    <span class="titulo_span">Criar cargo</span>
+                    <span class="subtitulo_span">Adicione um novo cargo.</span>
+                </div>
+
+
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Cargo:</span>
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Gerente de vendas">
+
+                </div>
+
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Permissão de administrador</span>
+                    <select name="" class="inp_cadastro">
+                        <option value="">Sim</option>
+                        <option value="">Não</option>
+                    </select>
+                </div>
+
                 <button class="btn_adc_cadastro">Salvar</button>
             </div>
 
@@ -200,75 +237,267 @@
 
         <!-- EDITAR CARGO -->
 
-        <div id="div_editar_cargo" class="opcao_selecionada" style="display: none;">
-            <div class="div_info">
-                <div class="div-cabecalho">
-                    <span class="titulo-span">Editar usuário</span>
-                    <span class="subtitulo-span">Edite o cargo de seus funcionários cadastrados.</span>
+        <div id= "div-edit-cargo" class="opcao_selecionada" style="display: none;">
+
+            <div id="div-usuarios" style="display: none;">
+                <div class="cabecalho_funcionarios">
+                    <span class="titulo_funcionarios">Funcionários</span>
                 </div>
-                <div class="div_inp_adc_usuario">
-                    <span class="span_input">Funcionário</span>
-                    <select name="" class="inp_cadastro">
-                        <option value="">Lucas</option>
-                        <option value="">Gustavo</option>
-                        <option value="">Matheus</option>
-                        <option value="">Leonardo</option>
-                        <option value="">Bianca</option>
-                    </select>
-                </div>  
-    
-                <div class="div_inp_adc_usuario">
-                    <span class="span_input">Cargo</span>
-                    <select name="" class="inp_cadastro">
+
+                <div class="div_funcionario">
+                    <div class="div_infos_funcionario">
+                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
+                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
+                    </div>
+                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" onclick="edit_user_img()" alt="">
+                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+
+                </div>
+
+                <div class="div_funcionario">
+                    <div class="div_infos_funcionario">
+                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
+                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
+                    </div>
+                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
+                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+
+                </div>
+
+                <div class="div_funcionario">
+                    <div class="div_infos_funcionario">
+                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
+                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
+                    </div>
+                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
+                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+
+                </div>
+
+                <div class="div_funcionario">
+                    <div class="div_infos_funcionario">
+                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
+                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
+                    </div>
+                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
+                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+
+                </div>
+
+                <div class="div_funcionario">
+                    <div class="div_infos_funcionario">
+                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
+                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
+                    </div>
+                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
+                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+
+                </div>
+
+                <div class="div_funcionario">
+                    <div class="div_infos_funcionario">
+                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
+                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
+                    </div>
+                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
+                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+
+                </div>
+            </div>
+
+            <div class="div_info" id="div-mudar-cargo" style="display: none;">
+                <div id="div-cabecalho-editar-usuario">
+                    <span class="titulo_span">Editar usuário</span>
+                    <span class="subtitulo_span">Edite o cargo de seus funcionários cadastrados.</span>
+                </div>
+
+                <div class="div_inp_editar_usuario">
+                    <span class="span_input" id="span-input-cargos">Cargo</span>
+                    <select name="" class="inp_cadastro" id="inp-editar-cargo-usuario">
                         <option value="">Cargo 1</option>
                         <option value="">Cargo 2</option>
                     </select>
                 </div>
-    
+
                 <button class="btn_adc_cadastro">Salvar</button>
             </div>
 
         </div>
 
+
         <!-- ALTERAR SENHA -->
 
-        <div id="div_alterar_senha" class="opcao_selecionada" style="display: none;">
+        <div id="div-alterar-senha" class="opcao_selecionada" style="display: none;">
             <div class="div_info">
-                <div class="div-cabecalho">
-                    <span class="titulo-span">Editar senha</span>
-                    <span class="subtitulo-span">Edite sua senha.</span>
+                <div class="div_cabecalho_opcoes">
+                    <span class="titulo_span">Editar senha</span>
+                    <span class="subtitulo_span">Edite sua senha.</span>
                 </div>
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Senha atual</span>
                     <div class="div_input">
-                        <input type="password" id="input_alt_senha" class="inp_cadastro" placeholder="Insira sua senha" />
-                        <img src="../../img/eye_closed.svg" id="eye_closed_3" class="class_eye_closed" onclick="show_password_3()">
+                        <input type="password" id="input-alt-senha" class="inp_cadastro"
+                            placeholder="Insira sua senha" />
+                        <img src="../../img/eye_closed.svg" id="eye-closed-3" class="class_eye_closed"
+                            onclick="show_password_3()">
                     </div>
                 </div>
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Nova senha</span>
                     <div class="div_input">
-                        <input type="password" id="input_nova_senha" class="inp_cadastro" placeholder="Insira sua senha" />
-                        <img src="../../img/eye_closed.svg" id="eye_closed_4" class="class_eye_closed" onclick="show_password_4()">
+                        <input type="password" id="input-nova-senha" class="inp_cadastro"
+                            placeholder="Insira sua nova senha" />
+                        <img src="../../img/eye_closed.svg" id="eye-closed-4" class="class_eye_closed"
+                            onclick="show_password_4()">
                     </div>
                 </div>
-    
+
                 <div class="div_inp_adc_usuario">
-                    <span class="span_input" >Confirmar nova senha</span>
+                    <span class="span_input">Confirmar nova senha</span>
                     <div class="div_input">
-                        <input type="password" id="input_confirmar_nova_senha" class="inp_cadastro"
-                            placeholder="Insira sua senha" />
-                        <img src="../../img/eye_closed.svg" id="eye_closed_5" class="class_eye_closed" onclick="show_password_5()">
+                        <input type="password" id="input-confirmar-nova-senha" class="inp_cadastro"
+                            placeholder="Confirme sua nova senha" />
+                        <img src="../../img/eye_closed.svg" id="eye-closed-5" class="class_eye_closed"
+                            onclick="show_password_5()">
                     </div>
-    
+
                 </div>
-    
+
                 <button class="btn_adc_cadastro">Salvar</button>
             </div>
 
         </div>
-        
+
+        <!-- MODIFICAR METAS -->
+
+        <div id="div-modificar-metas" class="opcao_selecionada" style="display: none;">
+            <div class="div_info">
+                <div class="div_cabecalho_metas">
+                    <span class="titulo_span">Modificar metas</span>
+                    <span class="subtitulo_span">Delete ou edite sua meta.</span>
+                </div>
+                <div class="div_metas">
+                    <div class="cabecalho_metas">
+                        <span>Data de criação</span>
+                        <span>Hora</span>
+                        <span>Meta</span>
+                    </div>
+
+                    <div class="meta">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>Meta 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="meta">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>Meta 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="meta">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>Meta 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="meta">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>Meta 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="meta">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>Meta 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="meta">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>Meta 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- MODIFICAR METAS -->
+
+        <div id="div-modificar-cargo" class="opcao_selecionada" style="display: none;">
+            <div class="div_info">
+                <div class="div_cabecalho_cargos">
+                    <span class="titulo_span">Modificar cargos</span>
+                    <span class="subtitulo_span">Delete ou edite seus cargos.</span>
+                </div>
+                <div class="div_cargos">
+                    <div class="cabecalho_cargos">
+                        <span>Data de criação</span>
+                        <span>Hora</span>
+                        <span>Cargo</span>
+                    </div>
+
+                    <div class="cargo">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>cargo 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="cargo">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>cargo 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="cargo">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>cargo 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="cargo">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>cargo 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="cargo">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>cargo 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+                    <div class="cargo">
+                        <span>09/11/2024</span>
+                        <span>12:41</span>
+                        <span>cargo 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
 </body>
@@ -277,58 +506,198 @@
 
 <script>
     function adicionarUsuario() {
-        document.getElementById("div_adc_usuario").style.display = "flex";
-        document.getElementById("div_editar_conta").style.display = "none";
-        document.getElementById("div_editar_cargo").style.display = "none";
-        document.getElementById("div_alterar_senha").style.display = "none";
-        document.getElementById("opt_cadastro").style.fontWeight = "700";    
-        document.getElementById("opt_editar_conta").style.fontWeight = "500";    
-        document.getElementById("opt_editar_cargo").style.fontWeight = "500";  
-        document.getElementById("opt_alterar_senha").style.fontWeight = "500";   
-
+        document.getElementById("div-adc-usuario").style.display = "flex";
+        document.getElementById("div-editar-conta").style.display = "none";
+        document.getElementById("div-mudar-cargo").style.display = "none";
+        document.getElementById("div-edit-cargo").style.display = "none";
+        document.getElementById("div-usuarios").style.display = "none";
+        document.getElementById("div-criar-cargo").style.display = "none";
+        document.getElementById("div-alterar-senha").style.display = "none";
+        document.getElementById("div-modificar-metas").style.display = "none";
+        document.getElementById("div-modificar-cargo").style.display = "none";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "700";
+        document.getElementById("opt-editar-conta").style.fontWeight = "400";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
+        
     }
     
-    function editarPerfil(){
-        document.getElementById("div_adc_usuario").style.display = "none";
-        document.getElementById("div_editar_conta").style.display = "flex";
-        document.getElementById("div_editar_cargo").style.display = "none";
-        document.getElementById("div_alterar_senha").style.display = "none";
-        document.getElementById("opt_cadastro").style.fontWeight = "500";    
-        document.getElementById("opt_editar_conta").style.fontWeight = "700";    
-        document.getElementById("opt_editar_cargo").style.fontWeight = "500"; 
-        document.getElementById("opt_alterar_senha").style.fontWeight = "500";   
-
+    function editarPerfil() {
+        document.getElementById("div-adc-usuario").style.display = "none";
+        document.getElementById("div-editar-conta").style.display = "flex";
+        document.getElementById("div-mudar-cargo").style.display = "none";
+        document.getElementById("div-edit-cargo").style.display = "none";
+        document.getElementById("div-usuarios").style.display = "none";
+        document.getElementById("div-criar-cargo").style.display = "none";
+        document.getElementById("div-alterar-senha").style.display = "none";
+        document.getElementById("div-modificar-metas").style.display = "none";
+        document.getElementById("div-modificar-cargo").style.display = "none";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "400";
+        document.getElementById("opt-editar-conta").style.fontWeight = "700";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
+        
     }
     
-    function editarUsuario(){
-        document.getElementById("div_adc_usuario").style.display = "none";
-        document.getElementById("div_editar_conta").style.display = "none";
-        document.getElementById("div_editar_cargo").style.display = "flex";
-        document.getElementById("div_alterar_senha").style.display = "none";
-        document.getElementById("opt_cadastro").style.fontWeight = "500";    
-        document.getElementById("opt_editar_conta").style.fontWeight = "500";    
-        document.getElementById("opt_editar_cargo").style.fontWeight = "700";    
-        document.getElementById("opt_alterar_senha").style.fontWeight = "500";   
-
-
+    function editarUsuario() {
+        document.getElementById("div-adc-usuario").style.display = "none";
+        document.getElementById("div-editar-conta").style.display = "none";
+        document.getElementById("div-edit-cargo").style.display = "flex";
+        document.getElementById("div-mudar-cargo").style.display = "none";
+        document.getElementById("div-usuarios").style.display = "flex";
+        document.getElementById("div-criar-cargo").style.display = "none";
+        document.getElementById("div-alterar-senha").style.display = "none";
+        document.getElementById("div-modificar-metas").style.display = "none";
+        document.getElementById("div-modificar-cargo").style.display = "none";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "400";
+        document.getElementById("opt-editar-conta").style.fontWeight = "400";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "700";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
+        
+        
     }
-
-    function alterarSenha(){
-        document.getElementById("div_adc_usuario").style.display = "none";
-        document.getElementById("div_editar_conta").style.display = "none";
-        document.getElementById("div_editar_cargo").style.display = "none";
-        document.getElementById("div_alterar_senha").style.display = "flex";
-        document.getElementById("opt_cadastro").style.fontWeight = "500";    
-        document.getElementById("opt_editar_conta").style.fontWeight = "500";    
-        document.getElementById("opt_editar_cargo").style.fontWeight = "500";   
-        document.getElementById("opt_alterar_senha").style.fontWeight = "700";   
+    
+    function criarCargo() {
+        document.getElementById("div-adc-usuario").style.display = "none";
+        document.getElementById("div-editar-conta").style.display = "none";
+        document.getElementById("div-mudar-cargo").style.display = "none";
+        document.getElementById("div-edit-cargo").style.display = "none";
+        document.getElementById("div-usuarios").style.display = "none";
+        document.getElementById("div-criar-cargo").style.display = "flex";
+        document.getElementById("div-alterar-senha").style.display = "none";
+        document.getElementById("div-modificar-metas").style.display = "none";
+        document.getElementById("div-modificar-cargo").style.display = "none";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "400";
+        document.getElementById("opt-editar-conta").style.fontWeight = "400";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "700";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
+        
     }
+    
+    function alterarSenha() {
+        document.getElementById("div-adc-usuario").style.display = "none";
+        document.getElementById("div-editar-conta").style.display = "none";
+        document.getElementById("div-mudar-cargo").style.display = "none";
+        document.getElementById("div-edit-cargo").style.display = "none";
+        document.getElementById("div-usuarios").style.display = "none";
+        document.getElementById("div-criar-cargo").style.display = "none";
+        document.getElementById("div-alterar-senha").style.display = "flex";
+        document.getElementById("div-modificar-metas").style.display = "none";
+        document.getElementById("div-modificar-cargo").style.display = "none";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "400";
+        document.getElementById("opt-editar-conta").style.fontWeight = "400";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "700";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
+    }
+    
+    function modificarMeta() {
+        document.getElementById("div-adc-usuario").style.display = "none";
+        document.getElementById("div-editar-conta").style.display = "none";
+        document.getElementById("div-edit-cargo").style.display = "none";
+        document.getElementById("div-mudar-cargo").style.display = "none";
+        document.getElementById("div-usuarios").style.display = "none";
+        document.getElementById("div-criar-cargo").style.display = "none";
+        document.getElementById("div-alterar-senha").style.display = "none";
+        document.getElementById("div-modificar-metas").style.display = "flex";
+        document.getElementById("div-modificar-cargo").style.display = "none";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "400";
+        document.getElementById("opt-editar-conta").style.fontWeight = "400";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "700";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
+    }
+    
+    function criarCargo() {
+        document.getElementById("div-adc-usuario").style.display = "none";
+        document.getElementById("div-editar-conta").style.display = "none";
+        document.getElementById("div-mudar-cargo").style.display = "none";
+        document.getElementById("div-edit-cargo").style.display = "none";
+        document.getElementById("div-usuarios").style.display = "none";
+        document.getElementById("div-criar-cargo").style.display = "none";
+        document.getElementById("div-alterar-senha").style.display = "none";
+        document.getElementById("div-modificar-metas").style.display = "none";
+        document.getElementById("div-criar-cargo").style.display = "flex";
+        document.getElementById("div-modificar-cargo").style.display = "none";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "400";
+        document.getElementById("opt-editar-conta").style.fontWeight = "400";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "700";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
+    }
+    
+    function modificarCargo() {
+        document.getElementById("div-adc-usuario").style.display = "none";
+        document.getElementById("div-editar-conta").style.display = "none";
+        document.getElementById("div-mudar-cargo").style.display = "none";
+        document.getElementById("div-edit-cargo").style.display = "none";
+        document.getElementById("div-usuarios").style.display = "none";
+        document.getElementById("div-criar-cargo").style.display = "none";
+        document.getElementById("div-alterar-senha").style.display = "none";
+        document.getElementById("div-modificar-metas").style.display = "none";
+        document.getElementById("div-modificar-cargo").style.display = "flex";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "400";
+        document.getElementById("opt-editar-conta").style.fontWeight = "400";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "700";
+    }
+    
+    function edit_user_img() {
+        document.getElementById("div-adc-usuario").style.display = "none";
+        document.getElementById("div-editar-conta").style.display = "none";
+        document.getElementById("div-mudar-cargo").style.display = "flex";
+        document.getElementById("div-edit-cargo").style.display = "flex";
+        document.getElementById("div-usuarios").style.display = "flex";
+        document.getElementById("div-criar-cargo").style.display = "none";
+        document.getElementById("div-alterar-senha").style.display = "none";
+        document.getElementById("div-modificar-metas").style.display = "none";
+        document.getElementById("div-modificar-cargo").style.display = "none";
+        
+        document.getElementById("opt-cadastro").style.fontWeight = "400";
+        document.getElementById("opt-editar-conta").style.fontWeight = "400";
+        document.getElementById("opt-editar-cargo").style.fontWeight = "700";
+        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
+        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
+        document.getElementById("opt-alt-del-cargos").style.fontWeight = "700";
+    }
+    
     /* mostrar senha */
-
+    
     function show_password() {
-        let ipt = document.getElementById("input_senha");
-        let img = document.getElementById("eye_closed");
-
+        let ipt = document.getElementById("input-senha");
+        let img = document.getElementById("eye-closed");
+        
         if (ipt.type == "password") {
             ipt.type = "text";
             img.src = "../../img/open_eye.svg"
@@ -339,8 +708,8 @@
     }
 
     function show_password_2() {
-        let ipt = document.getElementById("input_confirmar_senha");
-        let img = document.getElementById("eye_closed_2");
+        let ipt = document.getElementById("input-confirmar-senha");
+        let img = document.getElementById("eye-closed-2");
 
         if (ipt.type == "password") {
             ipt.type = "text";
@@ -350,10 +719,10 @@
             img.src = "../../img/eye_closed.svg"
         }
     }
-    
+
     function show_password_3() {
-        let ipt = document.getElementById("input_alt_senha");
-        let img = document.getElementById("eye_closed_3");
+        let ipt = document.getElementById("input-alt-senha");
+        let img = document.getElementById("eye-closed-3");
 
         if (ipt.type == "password") {
             ipt.type = "text";
@@ -363,10 +732,10 @@
             img.src = "../../img/eye_closed.svg"
         }
     }
-    
+
     function show_password_4() {
-        let ipt = document.getElementById("input_nova_senha");
-        let img = document.getElementById("eye_closed_4");
+        let ipt = document.getElementById("input-nova-senha");
+        let img = document.getElementById("eye-closed-4");
 
         if (ipt.type == "password") {
             ipt.type = "text";
@@ -376,10 +745,10 @@
             img.src = "../../img/eye_closed.svg"
         }
     }
-    
+
     function show_password_5() {
-        let ipt = document.getElementById("input_confirmar_nova_senha");
-        let img = document.getElementById("eye_closed_5");
+        let ipt = document.getElementById("input-confirmar-nova-senha");
+        let img = document.getElementById("eye-closed-5");
 
         if (ipt.type == "password") {
             ipt.type = "text";

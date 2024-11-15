@@ -15,15 +15,15 @@ function listar(req, res) {
 }
 
 function publicar(req, res) {
-    var gasto = req.body.gasto; // Ajustado para 'gasto'
-    var kwh = req.body.kwh;
+    var gastoEmReais = req.body.gastoEmReais; // Ajustado para 'gastoEmReais'
+    var gastoEnergetico = req.body.gastoEnergetico;
     var mes = req.body.mes;
     var idUsuario = req.params.idUsuario;
 
     // Verifica se os campos estão indefinidos
-    if (gasto === undefined) {
-        return res.status(400).send("O gasto está indefinido!"); // 'gasto' no singular
-    } else if (kwh === undefined) {
+    if (gastoEmReais === undefined) {
+        return res.status(400).send("O gasto está indefinido!"); // 'gastoEmReais' no singular
+    } else if (gastoEnergetico === undefined) {
         return res.status(400).send("A kWh está indefinida!");
     } else if (mes === undefined) {
         return res.status(400).send("O mês está indefinido!");
@@ -32,7 +32,7 @@ function publicar(req, res) {
     }
 
     // Chama a função do modelo para inserir os dados
-    metasModel.publicar(gasto, kwh, mes, idUsuario)
+    metasModel.publicar(gastoEmReais, gastoEnergetico, mes, idEmpresa)
         .then(function (resultado) {
             res.json(resultado);
         })
@@ -45,8 +45,8 @@ function publicar(req, res) {
 
 
 function editar(req, res) {
-  var novoGasto = req.body.gasto;
-  var novoKwh = req.body.kwh;
+  var novoGasto = req.body.gastoEmReais;
+  var novoKwh = req.body.gastoEnergetico;
   var novoMes = req.body.mes;
   var idMetas = req.params.idMetas;
 

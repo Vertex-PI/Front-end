@@ -18,20 +18,20 @@ function buscarEnergia(req, res) {
 }
 
 // Função para buscar metas associadas a um usuário específico
-function buscarMetasUsuario(req, res) {
-  const idUsuario = req.params.idUsuario;
+function buscarMetasEmpresa(req, res) {
+  const idEmpresa = req.params.idUsuaidEmpresario;
 
-  console.log(`Recuperando metas de energia para o usuário com ID: ${idUsuario}`);
+  console.log(`Recuperando metas de energia para a empresa com ID: ${idEmpresa}`);
 
-  energiaModel.buscarMetasUsuario(idUsuario).then(function (resultado) {
+  energiaModel.buscarMetasEmpresa(idEmpresa).then(function (resultado) {
     if (resultado.length > 0) {
       res.status(200).json(resultado);
     } else {
-      res.status(204).send("Nenhuma meta encontrada para este usuário!");
+      res.status(204).send("Nenhuma meta encontrada para essa empresa!");
     }
   }).catch(function (erro) {
     console.log(erro);
-    console.log("Houve um erro ao buscar as metas do usuário.", erro.sqlMessage);
+    console.log("Houve um erro ao buscar as metas do empresa.", erro.sqlMessage);
     res.status(500).json(erro.sqlMessage);
   });
 }
@@ -52,6 +52,6 @@ function buscarTodasMetas(req, res) {
 
 module.exports = {
   buscarEnergia,
-  buscarMetasUsuario,
+  buscarMetasEmpresa,
   buscarTodasMetas
 };

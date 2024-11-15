@@ -5,32 +5,31 @@ function listar() {
     var instrucaoSql = `
         SELECT 
             m.idMetas,
-            m.gastos,
-            m.kwh,
+            m.gastoEmReais, 
+            m.gastoEnergetico,
             m.mes,
-            u.idUsuario,
-            u.nome,
-            u.email
-        FROM Metas a
-            INNER JOIN Usuario u
-                ON m.fk_idUsuario = u.id;
+            e.idEmpresa,
+            e.nome, 
+        FROM Metas ,
+            INNER JOIN Empresa e
+                ON m.fk_idEmpresa = e.id;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function publicar(Gastos, Kwh, mes, fk_idUsuario) {
+function publicar(gastoEmReais, gastoEnergetico, mes, fk_idEmpresa) {
     var instrucaoSql = `
-        INSERT INTO Metas (gastos, kwh, mes, fk_idUsuario) VALUES (${Gastos}, ${Kwh}, '${mes}', ${fk_idUsuario});
+        INSERT INTO Metas (gastoEmReais, gastoEnergetico, mes, fk_idEmpresa) VALUES (${gastoEmReais}, ${gastoEnergetico}, '${mes}', ${fk_idEmpresa});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function editar(idMetas,Gastos, Kwh, mes) {
+function editar(idMetas, gastoEmReais, Kwh, mes) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novaDescricao, idAviso);
     var instrucaoSql = `
-        UPDATE metas SET Gastos = '${Gastos}', kwh = '${Kwh}', mes='${mes}' WHERE idMetas = ${idMetas};
+        UPDATE metas SET gastoEmReais = '${gastoEmReais}', gastoEnergetico = '${gastoEnergetico}', mes='${mes}' WHERE idMetas = ${idMetas};
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

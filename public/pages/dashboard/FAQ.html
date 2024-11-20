@@ -2,18 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ</title>
-    <link rel="stylesheet" href="../../style/FAQ.css">
-    <link rel="stylesheet" href="../../style/components/aside_dash.css">
+    <link rel="stylesheet" href="/public/style/FAQ.css" />
+    <link rel="stylesheet" href="../../style/components/aside_dash.css" />
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
 </head>
 
 <body>
-
     <aside id="sidebar">
-        
         <section id="sidebar-cliente">
             <!-- <img src="img/img_dash/Default_pfp.png" id="img_user_sidebar" alt=""> -->
             <div class="infos_cliente">
@@ -21,25 +19,21 @@
                 <span class="descricao_cliente">Seja bem-vindo(a)!!</span>
             </div>
         </section>
-        
+
         <section class="section_itens">
             <div class="div_item">
-                <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="">
-                <a href="dashboard.html" class="titulo_item">
-                Dashboard
-                </a>
+                <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="" />
+                <a href="dashboard.html" class="titulo_item"> Dashboard </a>
             </div>
         </section>
-        
+
         <section class="section_itens">
             <div class="div_item">
-                <img src="../../img/img_dash/stonks.svg" class="img_item" alt="">
-                <a href="metas.html" class="titulo_item">
-                Metas
-                </a>
+                <img src="../../img/img_dash/stonks.svg" class="img_item" alt="" />
+                <a href="metas.html" class="titulo_item"> Metas </a>
             </div>
         </section>
-        
+
         <!-- <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
@@ -67,43 +61,39 @@
                 </a>
             </div>
         </section> -->
-        
-        <section class="section_itens">
+
+        <!-- <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
                 <a href="recomendacoes.html" class="titulo_item">
                     Recomendações
                 </a>
             </div>
+        </section> -->
+
+        <section class="section_itens">
+            <div class="div_item">
+                <img src="../../img/img_dash/config.svg" class="img_item" alt="" />
+                <a href="configuracoes.html" class="titulo_item"> Configurações </a>
+            </div>
         </section>
 
         <section class="section_itens">
             <div class="div_item">
-                <img src="../../img/img_dash/config.svg" class="img_item" alt="">
-                <a href="configuracoes.html" class="titulo_item">
-                    Configurações
-                </a>
-            </div>
-        </section>
-        
-        <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/question.svg" id="destaque_svg" class="img_item" alt="">
-                <a style="font-weight: 600; color: white;"  href="FAQ.html" class="titulo_item">
+                <img src="../../img/img_dash/question.svg" id="destaque_svg" class="img_item" alt="" />
+                <a style="font-weight: 600; color: white" href="FAQ.html" class="titulo_item">
                     Perguntas frequentes
                 </a>
             </div>
         </section>
-    
+
         <section class="section_logout">
             <div class="div_item">
-                <img src="../../img/img_dash/logout.svg" class="img_logout" alt="">
-                <a href="" class="titulo_logout" onclick="limparSessao()">
-                    Sair
-                </a>
+                <img src="../../img/img_dash/logout.svg" class="img_logout" alt="" />
+                <a href="" class="titulo_logout" onclick="limparSessao()"> Sair </a>
             </div>
         </section>
-</aside>
+    </aside>
 
     <main id="main_faq">
         <section id="back_area">
@@ -113,106 +103,159 @@
                 <span class="subtitulo_faq">Ficou com dúvida? Temos a resposta!</span>
             </section>
         </section>
-        
+
         <section class="section-cards-faq">
-
             <div class="card-faq">
                 <div class="classificacao">
                     <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
-                    <div class="circulo"></div>
-                    <span class="titulo_classificacao">Titulo 1</span>
+                    <img src="/public/img/img_dash/func_beneficios.svg" class="img_titulo_classificacao" alt="" />
+                    <span class="titulo_classificacao">Funcionalidades e Benefícios</span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan('span_resposta_1')">Quais benefícios a Casa
+                        Civil pode esperar ao usar esse sistema?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan('span_resposta_1')" class="span_resposta"
+                        id="span_resposta_1">
+                        Os benefícios incluem a redução dos custos de energia elétrica, a
+                        diminuição da pegada de carbono e a melhoria da eficiência
+                        operacional, além de permitir a economia de recursos públicos para
+                        outras áreas prioritárias.
+                    </span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan('span_resposta_2')">A solução é compatível com
+                        sistemas existentes?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan('span_resposta_2')" class="span_resposta"
+                        id="span_resposta_2">
+                        Sim, a solução foi projetada para ser flexível e compatível com
+                        sistemas existentes, facilitando sua implementação e evitando a
+                        necessidade de substituir tecnologias já em uso.
+                    </span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan('span_resposta_3')">É necessário treinamento
+                        para usar o sistema?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan('span_resposta_3')" class="span_resposta"
+                        id="span_resposta_3">
+                        A solução foi desenvolvida para ser intuitiva e de fácil uso.
+                        Mesmo assim, oferecemos treinamentos e suporte técnico para a
+                        equipe da Casa Civil, garantindo que todos estejam preparados para
+                        aproveitar ao máximo os recursos disponíveis.
+                    </span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
-                </div>
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan(`span_resposta_4`)">Não consigo inserir uma nova base de dados. O que devo fazer?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
-                </div>
-
-            </div>
-
-            <div class="card-faq">
-                <div class="classificacao">
-                    <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
-                    <div class="circulo"></div>
-                    <span class="titulo_classificacao">Titulo 2</span>
-                </div>
-
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
-                </div>
-
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
-                </div>
-
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
-                </div>
-
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
-                </div>
-
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                    <span style="display: none" onclick="switchStateSpan(`span_resposta_4`)" class="span_resposta"
+                        id="span_resposta_4">
+                        A base de dados é inserida manualmente por nós. Sempre que houver
+                        uma nova base de dados a ser inserida , pedimos que nos encaminhe
+                        para o email <strong>vertex@gmail.com</strong>.
+                    </span>
                 </div>
             </div>
 
+            <!-- PROBLEMAS TECNICOS -->
+
             <div class="card-faq">
                 <div class="classificacao">
-                    <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
-                    <div class="circulo"></div>
-                    <span class="titulo_classificacao">Titulo 3</span>
+                    <img src="/public/img/img_dash/prob_tec.svg" class="img_titulo_classificacao" alt="" />
+                    <span class="titulo_classificacao">Problemas Técnicos</span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan('span_resposta_5')">Esqueci minha senha. Como
+                        posso recuperá-la?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan('span_resposta_5')" class="span_resposta"
+                        id="span_resposta_5">
+                        Pedimos que abra um chamado clicando <strong><a href="https://faleconosco.hipporello.net/desk/form/df95a30ba4004e0aaed1f0996c02b1fe">aqui</a></strong> e descreva a situação em "Mensagem".
+                    </span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan('span_resposta_6')">O sistema está demorando
+                        para carregar ou não responde. O que fazer?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan('span_resposta_6')" class="span_resposta"
+                        id="span_resposta_6">
+                        Isso pode ser causado por instabilidade na conexão de internet ou manutenção do sistema. Recarregue a página ou tente acessar novamente mais tarde. Caso o problema persista, verifique se há atualizações programadas no site ou <strong><a href="https://faleconosco.hipporello.net/desk/form/df95a30ba4004e0aaed1f0996c02b1fe">entre em contato com o suporte</a></strong>.
+                    </span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan('span_resposta_7')">Minhas informações de
+                        consumo não estão atualizadas. Como resolver isso?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan('span_resposta_7')" class="span_resposta"
+                        id="span_resposta_7">
+                        Primeiro, verifique se os dispositivos de monitoramento estão corretamente conectados e funcionando. Caso estejam, <strong><a href="https://faleconosco.hipporello.net/desk/form/df95a30ba4004e0aaed1f0996c02b1fe">entre em contato com o suporte técnico</a></strong> para verificar se há problemas no envio ou processamento dos dados.
+                    </span>
+                </div>
+            </div>
+
+            <!-- ATENDIMENTO -->
+
+            <div class="card-faq">
+                <div class="classificacao">
+                    <img src="/public/img/img_dash/atendimento.svg" class="img_titulo_classificacao" alt="" />
+                    <span class="titulo_classificacao">Atendimento</span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan(`span_resposta_8`)">Qual o horário de atendimento?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan(`span_resposta_8`)" class="span_resposta"
+                        id="span_resposta_8">
+                        Das 09hrs às 20hrs (somente em dias úteis).
+                    </span>
                 </div>
 
-                <div class="div_pergunta">
-                    <span class="span_pergunta">Pergunta aqui!</span> <img class="arrow_expandir_pergunta"
-                        src="/img/img_dash/back_arrow_blue.svg" alt="">
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan(`span_resposta_9`)">Como cancelo o serviço?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan(`span_resposta_9`)" class="span_resposta"
+                        id="span_resposta_9">
+                        Para cancelar o serviço, é necessário abrir um chamado para possamos entrar em contato. Você pode fazer isso clicando <strong><a href="https://faleconosco.hipporello.net/desk/form/df95a30ba4004e0aaed1f0996c02b1fe">aqui</a></strong>.
+                    </span>
+                </div>
+
+                <div class="div_faq">
+                    <span class="span_pergunta" onclick="switchStateSpan(`span_resposta_10`)">Qual o tempo de espera para um retorno?
+                        <img src="/public/img/img_dash/back_arrow_white.svg" class="arrow_expandir_pergunta" />
+                    </span>
+
+                    <span style="display: none" onclick="switchStateSpan(`span_resposta_10`)" class="span_resposta"
+                        id="span_resposta_10">
+                        Tempo mínimo: 1 hora. <br>
+                        Tempo máximo: em até 1 dia. <br>
+                        OBS.: Atendimento apenas em dias úteis. <br>
+                    </span>
                 </div>
             </div>
         </section>
@@ -220,3 +263,43 @@
 </body>
 
 </html>
+
+<script>
+    const perguntas = document.querySelectorAll(".div_faq");
+    const respostas = document.querySelectorAll(".span_resposta");
+
+    perguntas.forEach((pergunta) => {
+        pergunta.addEventListener("click", () => {
+            pergunta.classList.toggle("expanded");
+            perguntas.forEach((p) => {
+                if (p != pergunta) {
+                    p.classList.remove("expanded");
+                    const arrow = p.querySelector(".arrow_expandir_pergunta");
+                    arrow.style.transform = "rotate(0deg)";
+                }
+            });
+            const arrow = pergunta.querySelector(".arrow_expandir_pergunta");
+            if (pergunta.classList.contains("expanded")) {
+                arrow.style.transform = "rotate(180deg)";
+            } else {
+                arrow.style.transform = "rotate(0deg)";
+            }
+        });
+    });
+
+    function switchStateSpan(id) {
+        let span = document.getElementById(id);
+        if (span.style.display == "none") {
+            span.style.display = "block";
+        } else {
+            span.style.display = "none";
+        }
+        respostas.forEach((resposta) => {
+            if (resposta.id != id) {
+                resposta.style.display = "none";
+            }
+        });
+    }
+
+
+</script>

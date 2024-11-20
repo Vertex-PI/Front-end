@@ -61,9 +61,9 @@ function entrar() {
 
     if (ipt.type == "password") {
       ipt.type = "text";
-      img.src = "../../img/open_eye.svg"
+      img.src = "../img/open_eye.svg"
     } else {
       ipt.type = "password"
-      img.src = "../../img/eye_closed.svg"
+      img.src = "../img/eye_closed.svg"
     }
   }

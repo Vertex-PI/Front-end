@@ -20,7 +20,7 @@ body {
 #back_area{
     /* background-color: red; */
     width: 80vw;
-    height: 15vh;
+    height: 13vh;
 
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ body {
 .section-cards-faq{
     /* background-color: rebeccapurple; */
     width: 100%;
-    height: 70%;
+    height: 80%;
     gap: 4vh;
     display: flex;
     justify-content: center;
@@ -52,8 +52,8 @@ body {
     display: flex;
     flex-direction: column;
 
-    margin-left: 11.5%;
-    margin-top: 8%;
+    margin-left: 0.5%;
+    /* margin-top: 8%; */
 }
 
 .titulo_faq{
@@ -64,13 +64,13 @@ body {
 
 #main_faq{
     /* background-color:blue; */
-    width: 80%;
+    width: 85%;
     height: 100%;
     
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;  
     align-items: center;
+    justify-content: center;
 
     /* margin-left: 7%; */
 
@@ -78,8 +78,8 @@ body {
 
 .card-faq{
     background-color: #282d3e;
-    width: 24%;
-    height: 85%;
+    width: 30%;
+    height: 100%;
     border: #fcfbfb 1px solid;
     border-radius: 5px;
 }
@@ -90,20 +90,27 @@ body {
     align-items: center;
     height: 8vh;
     gap: 15px;
+    margin-bottom: 7px;
 
 }
 
 .titulo_classificacao{
     font-size: 20px;
     /* color: #222736; */
-    font-weight: 500;
+    font-weight: 700;
 
 }
 
-.div_pergunta{
-    /* background-color: red;    */
+/* .div_faq{
+    background-color: rebeccapurple;
     width: 85%;
-    height: 6vh;
+    height: 60%;
+}
+
+.div_pergunta{
+    background-color: red;   
+    width: 100%;
+    height: 13%;
 
     display: flex;
     flex-direction: row;
@@ -112,26 +119,59 @@ body {
     border-bottom: 1.5px solid #909090;
 
     margin-left: 2vw;
-    margin-top: 2vh;
+     margin-top: 2vh; 
+    cursor: pointer;
 
 }
 
 .span_pergunta{
-    /* color: #222736; */
-    font-weight: 500;
+     color: #222736; 
+    font-weight: 400;
+} */    
+
+.div_faq{
+    /* background-color: red; */
+    border-bottom: 2px solid #b1b1b1;
+    width: 100%;
+    /* margin-top: 15px; */
+}
+
+.span_pergunta {
+    /* background-color: aqua; */
+    list-style: decimal;
+    
+    font-size: 17px;
+    color: rgb(222, 220, 220);
+
+    padding: 20px 20px 20px ;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.span_resposta{
+    color: rgb(222, 220, 220);
+    font-size: 15px;
+
+    margin-left: 20px;
+    margin-right: 12px;
+    margin-bottom: 10px;
 }
 
 .arrow_expandir_pergunta{
     object-fit: contain;
     height: 2.5vh;
     rotate: 270deg;
-    filter: invert(97%) sepia(3%) saturate(12%) hue-rotate(180deg) brightness(103%) contrast(102%);
+    transition: transform 0.3s ease;
 }
 
-.circulo{
-    background-color: #fcfbfb;
-    width:40px;
-    height: 40px;
-    margin-left: 2vh;
-    border-radius: 100px;
-}
+.img_titulo_classificacao{
+    object-fit: contain;
+    height: 5vh;
+    margin-left: 3vh;
+}   

@@ -53,4 +53,3 @@ function publicar() {
   return false;
 }
 
-document.getElementById("btnSalvar").addEventListener("click", publicar);

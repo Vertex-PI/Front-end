@@ -67,14 +67,14 @@
             </div>
         </section> -->
 
-        <section class="section_itens">
+        <!-- <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
                 <a href="recomendacoes.html" class="titulo_item">
                     Recomendações
                 </a>
             </div>
-        </section>
+        </section> -->
 
         <section class="section_itens">
             <div class="div_item">
@@ -509,26 +509,6 @@
 <script src="../../js/metas/metas.js"></script>
 
 <script>
-    function adicionarUsuario() {
-        document.getElementById("div-adc-usuario").style.display = "flex";
-        document.getElementById("div-editar-conta").style.display = "none";
-        document.getElementById("div-mudar-cargo").style.display = "none";
-        document.getElementById("div-edit-cargo").style.display = "none";
-        document.getElementById("div-usuarios").style.display = "none";
-        document.getElementById("div-criar-cargo").style.display = "none";
-        document.getElementById("div-alterar-senha").style.display = "none";
-        document.getElementById("div-modificar-metas").style.display = "none";
-        document.getElementById("div-modificar-cargo").style.display = "none";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "700";
-        document.getElementById("opt-editar-conta").style.fontWeight = "400";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
-        
-    }
     
     function editarPerfil() {
         document.getElementById("div-adc-usuario").style.display = "none";
@@ -545,49 +525,6 @@
         document.getElementById("opt-editar-conta").style.fontWeight = "700";
         document.getElementById("opt-editar-cargo").style.fontWeight = "400";
         document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
-        
-    }
-    
-    function editarUsuario() {
-        document.getElementById("div-adc-usuario").style.display = "none";
-        document.getElementById("div-editar-conta").style.display = "none";
-        document.getElementById("div-edit-cargo").style.display = "flex";
-        document.getElementById("div-mudar-cargo").style.display = "none";
-        document.getElementById("div-usuarios").style.display = "flex";
-        document.getElementById("div-criar-cargo").style.display = "none";
-        document.getElementById("div-alterar-senha").style.display = "none";
-        document.getElementById("div-modificar-metas").style.display = "none";
-        document.getElementById("div-modificar-cargo").style.display = "none";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "400";
-        document.getElementById("opt-editar-conta").style.fontWeight = "400";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "700";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
-        
-        
-    }
-    
-    function criarCargo() {
-        document.getElementById("div-adc-usuario").style.display = "none";
-        document.getElementById("div-editar-conta").style.display = "none";
-        document.getElementById("div-mudar-cargo").style.display = "none";
-        document.getElementById("div-edit-cargo").style.display = "none";
-        document.getElementById("div-usuarios").style.display = "none";
-        document.getElementById("div-criar-cargo").style.display = "flex";
-        document.getElementById("div-alterar-senha").style.display = "none";
-        document.getElementById("div-modificar-metas").style.display = "none";
-        document.getElementById("div-modificar-cargo").style.display = "none";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "400";
-        document.getElementById("opt-editar-conta").style.fontWeight = "400";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "700";
         document.getElementById("opt-alterar-senha").style.fontWeight = "400";
         document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
         document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
@@ -612,88 +549,6 @@
         document.getElementById("opt-alterar-senha").style.fontWeight = "700";
         document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
         document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
-    }
-    
-    function modificarMeta() {
-        document.getElementById("div-adc-usuario").style.display = "none";
-        document.getElementById("div-editar-conta").style.display = "none";
-        document.getElementById("div-edit-cargo").style.display = "none";
-        document.getElementById("div-mudar-cargo").style.display = "none";
-        document.getElementById("div-usuarios").style.display = "none";
-        document.getElementById("div-criar-cargo").style.display = "none";
-        document.getElementById("div-alterar-senha").style.display = "none";
-        document.getElementById("div-modificar-metas").style.display = "flex";
-        document.getElementById("div-modificar-cargo").style.display = "none";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "400";
-        document.getElementById("opt-editar-conta").style.fontWeight = "400";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "700";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
-    }
-    
-    function criarCargo() {
-        document.getElementById("div-adc-usuario").style.display = "none";
-        document.getElementById("div-editar-conta").style.display = "none";
-        document.getElementById("div-mudar-cargo").style.display = "none";
-        document.getElementById("div-edit-cargo").style.display = "none";
-        document.getElementById("div-usuarios").style.display = "none";
-        document.getElementById("div-criar-cargo").style.display = "none";
-        document.getElementById("div-alterar-senha").style.display = "none";
-        document.getElementById("div-modificar-metas").style.display = "none";
-        document.getElementById("div-criar-cargo").style.display = "flex";
-        document.getElementById("div-modificar-cargo").style.display = "none";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "400";
-        document.getElementById("opt-editar-conta").style.fontWeight = "400";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "700";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
-    }
-    
-    function modificarCargo() {
-        document.getElementById("div-adc-usuario").style.display = "none";
-        document.getElementById("div-editar-conta").style.display = "none";
-        document.getElementById("div-mudar-cargo").style.display = "none";
-        document.getElementById("div-edit-cargo").style.display = "none";
-        document.getElementById("div-usuarios").style.display = "none";
-        document.getElementById("div-criar-cargo").style.display = "none";
-        document.getElementById("div-alterar-senha").style.display = "none";
-        document.getElementById("div-modificar-metas").style.display = "none";
-        document.getElementById("div-modificar-cargo").style.display = "flex";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "400";
-        document.getElementById("opt-editar-conta").style.fontWeight = "400";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "700";
-    }
-    
-    function edit_user_img() {
-        document.getElementById("div-adc-usuario").style.display = "none";
-        document.getElementById("div-editar-conta").style.display = "none";
-        document.getElementById("div-mudar-cargo").style.display = "flex";
-        document.getElementById("div-edit-cargo").style.display = "flex";
-        document.getElementById("div-usuarios").style.display = "flex";
-        document.getElementById("div-criar-cargo").style.display = "none";
-        document.getElementById("div-alterar-senha").style.display = "none";
-        document.getElementById("div-modificar-metas").style.display = "none";
-        document.getElementById("div-modificar-cargo").style.display = "none";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "400";
-        document.getElementById("opt-editar-conta").style.fontWeight = "400";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "700";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "700";
     }
     
     /* mostrar senha */

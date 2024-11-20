@@ -18,7 +18,9 @@ function publicar(req, res) {
     var gastoEmReais = req.body.gastoEmReais; // Ajustado para 'gastoEmReais'
     var gastoEnergetico = req.body.gastoEnergetico;
     var mes = req.body.mes;
-    var idUsuario = req.params.idUsuario;
+    var idEmpresa = req.body.idEmpresa;
+
+    var fk_idEmpresa = sessionStorage.getItem("fk_idEmpresa");
 
     // Verifica se os campos estão indefinidos
     if (gastoEmReais === undefined) {
@@ -27,12 +29,12 @@ function publicar(req, res) {
         return res.status(400).send("A kWh está indefinida!");
     } else if (mes === undefined) {
         return res.status(400).send("O mês está indefinido!");
-    } else if (idUsuario === undefined) {
-        return res.status(403).send("O ID do usuário está indefinido!");
+    }else if (!fk_idEmpresa) {
+        return res.status(403).send("A empresa não está indefinido!");
     }
 
     // Chama a função do modelo para inserir os dados
-    metasModel.publicar(gastoEmReais, gastoEnergetico, mes, idEmpresa)
+    metasModel.publicar(gastoEmReais, gastoEnergetico, mes, fk_idEmpresa)
         .then(function (resultado) {
             res.json(resultado);
         })

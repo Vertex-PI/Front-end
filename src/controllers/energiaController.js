@@ -19,7 +19,7 @@ function buscarEnergia(req, res) {
 
 // Função para buscar metas associadas a um usuário específico
 function buscarMetasEmpresa(req, res) {
-  const idEmpresa = req.params.idUsuaidEmpresario;
+  const idEmpresa = req.params.idEmpresa;
 
   console.log(`Recuperando metas de energia para a empresa com ID: ${idEmpresa}`);
 
@@ -31,7 +31,7 @@ function buscarMetasEmpresa(req, res) {
     }
   }).catch(function (erro) {
     console.log(erro);
-    console.log("Houve um erro ao buscar as metas do empresa.", erro.sqlMessage);
+    console.log("Houve um erro ao buscar as metas da empresa.", erro.sqlMessage);
     res.status(500).json(erro.sqlMessage);
   });
 }

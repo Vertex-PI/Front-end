@@ -3,16 +3,16 @@ var database = require("../database/config")
 function listar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucaoSql = `
-        SELECT 
-            m.idMetas,
-            m.gastoEmReais, 
-            m.gastoEnergetico,
-            m.mes,
-            e.idEmpresa,
-            e.nome, 
-        FROM Metas ,
-            INNER JOIN Empresa e
-                ON m.fk_idEmpresa = e.id;
+            SELECT 
+                        m.idMeta,
+                        m.gastoEmReais, 
+                        m.gastoEnergetico,
+                        m.mes,
+                        e.idEmpresa,
+                        e.nome
+                    FROM Metas m
+                        INNER JOIN Empresa e
+                            ON m.fk_idEmpresa = e.idEmpresa;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -20,13 +20,13 @@ function listar() {
 
 function publicar(gastoEmReais, gastoEnergetico, mes, fk_idEmpresa) {
     var instrucaoSql = `
-        INSERT INTO Metas (gastoEmReais, gastoEnergetico, mes, fk_idEmpresa) VALUES (${gastoEmReais}, ${gastoEnergetico}, '${mes}', ${fk_idEmpresa});
+        INSERT INTO Metas (gastoEmReais, gastoEnergetico, mes, fk_idEmpresa) VALUES (?, ?, ?, ?);
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+    return database.executar(instrucaoSql, [gastoEmReais, gastoEnergetico, mes, fk_idEmpresa]);
 }
 
-function editar(idMetas, gastoEmReais, Kwh, mes) {
+function editar(idMetas, gastoEmReais, gastoEnergetico, mes) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novaDescricao, idAviso);
     var instrucaoSql = `
         UPDATE metas SET gastoEmReais = '${gastoEmReais}', gastoEnergetico = '${gastoEnergetico}', mes='${mes}' WHERE idMetas = ${idMetas};

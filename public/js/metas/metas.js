@@ -1,27 +1,34 @@
 function publicar() {
-  var idUsuario = sessionStorage.ID_USUARIO;
+  // var idUsuario = sessionStorage.getItem("ID_USUARIO");
+  var idEmpresa = sessionStorage.getItem("ID_EMPRESA");
+
+    if( !idEmpresa){
+        console.log("Valor de idEmpresa:", idEmpresa);
+        window.alert("Erro: Usuário não autenticado.");
+        return false;
+    }
 
   // Captura os valores dos inputs
-  var valorGasto = document.querySelector("input[placeholder='R$00,00']").value;
-  var kwhGasto = document.querySelector("input[placeholder='5000']").value;
-  var mesReferencia = document.querySelector("select").value;
+  var gastoEmReais = parseFloat(document.getElementById("gastoEmReais").value.trim());
+  var gastoEnergetico = parseFloat(document.getElementById("gastoEnergetico").value.trim());
+  var mesReferencia = document.getElementById("mesReferencia").value;
 
   // Verifica se todos os campos foram preenchidos
-  if (!valorGasto || !kwhGasto || !mesReferencia) {
+  if (isNaN(gastoEmReais) || isNaN(gastoEnergetico) || !mesReferencia) {
       window.alert("Por favor, preencha todos os campos!");
       return false;
   }
 
   var corpo = {
-      gasto: parseFloat(valorGasto.replace('R$', '').replace(',', '.')), // Ajuste para o nome correto
-      kwh: parseFloat(kwhGasto),
+      gasto: gastoEmReais, // Ajuste para o nome correto
+      kwh: gastoEnergetico,
       mes: mesReferencia,
-      fk_id_usuario: idUsuario 
+      fk_idEmpresa: idEmpresa 
   };
 
   console.log("Corpo da requisição: ", corpo); // Para depuração
 
-  fetch(`/metas/publicar/${idUsuario}`, {
+  fetch(`/metas/publicar/${idEmpresa}`, {
       method: "post",
       headers: {
           "Content-Type": "application/json"
@@ -32,7 +39,7 @@ function publicar() {
       console.log("Corpo da resposta: ", respostaCorpo); // Mostra no console
 
       if (resposta.ok) {
-          window.alert("Meta publicada com sucesso pelo usuário de ID: " + idUsuario + "!");
+          window.alert("Meta publicada com sucesso pela Empresa: " + idEmpresa + "!");
           window.location = "../pages/dashboard/metas.html";
       } else if (resposta.status == 404) {
           window.alert("Erro 404: Página não encontrada!");
@@ -44,27 +51,5 @@ function publicar() {
   });
 
   return false;
-}
-
-document.querySelector("button").addEventListener("click", publicar);
-
-function modificarMeta() {
-    document.getElementById("div-adc-usuario").style.display = "none";
-    document.getElementById("div-editar-conta").style.display = "none";
-    document.getElementById("div-edit-cargo").style.display = "none";
-    document.getElementById("div-mudar-cargo").style.display = "none";
-    document.getElementById("div-usuarios").style.display = "none";
-    document.getElementById("div-criar-cargo").style.display = "none";
-    document.getElementById("div-alterar-senha").style.display = "none";
-    document.getElementById("div-modificar-metas").style.display = "flex";
-    document.getElementById("div-modificar-cargo").style.display = "none";
-    
-    document.getElementById("opt-cadastro").style.fontWeight = "400";
-    document.getElementById("opt-editar-conta").style.fontWeight = "400";
-    document.getElementById("opt-editar-cargo").style.fontWeight = "400";
-    document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-    document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-    document.getElementById("opt-alt-del-metas").style.fontWeight = "700";
-    document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
 }
 

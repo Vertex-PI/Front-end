@@ -105,25 +105,26 @@
         <div id="background_meta">
             <span class="titulo_meta">Definir meta:</span>
             <span>Valor em reais que pretende gastar:</span>
-            <input class="input_design" type="number"  placeholder="R$00,00">
+            <input class="input_design" type="number"  placeholder="R$00,00" id="gastoEmReais">
             <span>KHW que pretende gastar:</span>
-            <input class="input_design" type="number" name="" id="" placeholder="5000">
+            <input class="input_design" type="number" name="" id="gastoEnergetico" placeholder="5000">
             <span>Mês referente:</span>
-            <select class="input_design" name="" id="">
-                <option value="">Janeiro</option>
-                <option value="">Fevereiro</option>
-                <option value="">Março</option>
-                <option value="">Abril</option>
-                <option value="">Maio</option>
-                <option value="">Junho</option>
-                <option value="">Julho</option>
-                <option value="">Agosto</option>
-                <option value="">Setembro</option>
-                <option value="">Outubro</option>
-                <option value="">Novembro</option>
-                <option value="">Dezembro</option>
+            <select class="input_design" name="" id="mesReferencia">
+                <option value="" disabled selected>Selecione o mês</option>
+                <option value="Janeiro">Janeiro</option>
+                <option value="Fevereiro">Fevereiro</option>
+                <option value="Março">Março</option>
+                <option value="Abril">Abril</option>
+                <option value="Maio">Maio</option>
+                <option value="Junho">Junho</option>
+                <option value="Julho">Julho</option>
+                <option value="Agosto">Agosto</option>
+                <option value="Setembro">Setembro</option>
+                <option value="Outubro">Outubro</option>
+                <option value="Novembro">Novembro</option>
+                <option value="Dezembro">Dezembro</option>
             </select>
-            <button>Salvar</button>
+            <button id="btnSalvar">Salvar</button>
 
         </div>
 

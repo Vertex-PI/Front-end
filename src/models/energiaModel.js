@@ -7,7 +7,7 @@ function buscarEnergia(anos) {
         SUM(gastoEnergetico) AS totalKwh, 
         SUM(gastoEmReais) AS totalGasto
     FROM Energia
-    WHERE Ano IN (${anos.join(", ")})
+    WHERE ano IN (${anos.join(", ")})
     GROUP BY mes, ano
     ORDER BY ano, FIELD(mes, 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')`;
 
@@ -16,13 +16,13 @@ function buscarEnergia(anos) {
 }
 
 //* Função para buscar metas associadas aos usuários
-function buscarMetasUsuario(idUsuario) {
+function buscarMetasEmpresa(idEmpresa) {
   var instrucaoSql = `SELECT 
         mes, 
         gastoEmReais AS metaGasto, 
         gastoEnergetico AS metaKwh 
     FROM metas
-    WHERE fk_idUsuario = ${idUsuario}
+    WHERE fk_idEmpresa = ${idEmpresa}
     ORDER BY FIELD(Mes, 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')`;
 
   console.log("Executando a instrução SQL para buscar metas da empresa: \n" + instrucaoSql);
@@ -31,7 +31,7 @@ function buscarMetasUsuario(idUsuario) {
 
 function buscarTodasMetas() {
   var instrucaoSql = `
-    SELECT m.*, u.nome
+    SELECT m.*, e.nome
     FROM Metas m
     JOIN Empresa e ON m.fk_idEmpresa = e.idEmpresa;
   `;
@@ -42,5 +42,6 @@ function buscarTodasMetas() {
 
 module.exports = {
   buscarEnergia,
-  buscarTodasMetas
+  buscarTodasMetas,
+  buscarMetasEmpresa
 };

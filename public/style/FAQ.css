@@ -166,7 +166,6 @@ body {
 .arrow_expandir_pergunta{
     object-fit: contain;
     height: 2.5vh;
-    rotate: 270deg;
     transition: transform 0.3s ease;
 }
 

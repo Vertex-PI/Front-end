@@ -316,6 +316,12 @@ a {
     /* background-color: aqua; */
 }
 
+#funcionarios-lista {
+    max-height: 400px;  /* Defina um valor de altura adequado */
+    overflow-y: auto;
+}
+
+
 .div_inp_adc_usuario {
     height: 15%;
     width: 100%;

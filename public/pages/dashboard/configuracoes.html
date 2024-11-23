@@ -141,10 +141,8 @@
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Cargo</span>
-                    <select name="" class="inp_cadastro">
+                    <select id="select_cargo" name="" class="inp_cadastro">
                         <option value="" selected disabled>Selecione um cargo</option>
-                        <option value="">Cargo 1</option>
-                        <option value="">Cargo 2</option>
                     </select>
                 </div>
 
@@ -235,7 +233,7 @@
 
         </div>
 
-        <!-- EDITAR CARGO -->
+        <!-- EDITAR USUÁRIO -->
 
         <div id= "div-edit-cargo" class="opcao_selecionada" style="display: none;">
 
@@ -244,83 +242,27 @@
                     <span class="titulo_funcionarios">Funcionários</span>
                 </div>
 
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
+                <div id="funcionarios-lista">
+                    <!-- Os funcionários serão listados aqui dinamicamente -->
+                </div>
+                
+                <!-- Formulário de edição de cargo -->
+                <div class="div_info" id="div-mudar-cargo" style="display: none;">
+                    <div id="div-cabecalho-editar-usuario">
+                        <span class="titulo_span">Editar usuário</span>
+                        <span class="subtitulo_span">Edite o cargo de seus funcionários cadastrados.</span>
                     </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" onclick="edit_user_img()" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
+                
+                    <div class="div_inp_editar_usuario">
+                        <span class="span_input" id="span-input-cargos">Cargo</span>
+                        <select name="" class="inp_cadastro" id="inp-editar-cargo-usuario">
+                            <!-- As opções de cargos vão ser populadas dinamicamente -->
+                        </select>
                     </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
+                
+                    <button class="btn_adc_cadastro" onclick="salvarCargo()">Salvar</button>
                 </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-            </div>
-
-            <div class="div_info" id="div-mudar-cargo" style="display: none;">
-                <div id="div-cabecalho-editar-usuario">
-                    <span class="titulo_span">Editar usuário</span>
-                    <span class="subtitulo_span">Edite o cargo de seus funcionários cadastrados.</span>
-                </div>
-
-                <div class="div_inp_editar_usuario">
-                    <span class="span_input" id="span-input-cargos">Cargo</span>
-                    <select name="" class="inp_cadastro" id="inp-editar-cargo-usuario">
-                        <option value="">Cargo 1</option>
-                        <option value="">Cargo 2</option>
-                    </select>
-                </div>
-
-                <button class="btn_adc_cadastro">Salvar</button>
-            </div>
+                
 
         </div>
 
@@ -433,8 +375,8 @@
             </div>
 
         </div>
-        <!-- MODIFICAR METAS -->
 
+        <!-- MODIFICAR CARGO -->
         <div id="div-modificar-cargo" class="opcao_selecionada" style="display: none;">
             <div class="div_info">
                 <div class="div_cabecalho_cargos">

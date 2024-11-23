@@ -19,6 +19,7 @@ var cargosRouter = require("./src/routes/cargos");
 var metasRouter = require("./src/routes/metas");
 var generoRouter = require("./src/routes/genero");
 var energiaRouter = require("./src/routes/energia");
+var empresaRouter = require("./src/routes/empresa");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,9 +30,11 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use("/usuarios", usuariosRouter); 
 app.use("/cargos", cargosRouter);
-app.use("/metas", metasRouter)
-app.use("/genero", generoRouter)
-app.use("/energia", energiaRouter)
+app.use("/metas", metasRouter);
+app.use("/genero", generoRouter);
+app.use("/energia", energiaRouter);
+app.use("/empresa", empresaRouter);
+
 
 
 app.listen(PORTA_APP, function () {

@@ -52,7 +52,18 @@ function deletar(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function listar() {
+    var instrucaoSql = `
+      SELECT u.idUsuario, u.nome, u.email, c.Nome AS cargo 
+      FROM Usuario u
+      JOIN Cargos c ON u.fk_cargos = c.idCargos;
+    `;
+    return database.executar(instrucaoSql);
+  }
+  
+
 module.exports = {
+    listar,
     autenticar,
     cadastrar, 
     buscarPorEmail,

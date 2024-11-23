@@ -185,3 +185,103 @@ function listar() {
     });
 }
 
+function listarUsuarios() {
+  fetch("/usuarios/listar", {
+    method: "GET",
+  })
+  .then(function (resposta) {
+    resposta.json().then((usuarios) => {
+      usuarios.forEach((usuario) => {
+        console.log(usuario);
+      });
+    });
+  })
+  .catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+  });
+}
+
+function carregarFuncionarios() {
+  // Funcionários devem se exibidos aqui
+  const funcionarios = [
+
+  ];
+
+  // Local onde os funcionários serão exibidos
+  const listaFuncionarios = document.getElementById('funcionarios-lista');
+  listaFuncionarios.innerHTML = '';  // Limpa a lista existente
+
+  // Itera sobre cada funcionário e cria os elementos HTML
+  funcionarios.forEach(funcionario => {
+      const funcionarioDiv = document.createElement('div');
+      funcionarioDiv.classList.add('div_funcionario');
+      funcionarioDiv.id = `funcionario-${funcionario.idUsuario}`;
+
+      funcionarioDiv.innerHTML = `
+          <div class="div_infos_funcionario">
+              <span id="nome-funcionario-${funcionario.idUsuario}" style="font-size: 17px; font-weight: 500;">${funcionario.nome}</span>
+              <span id="cargo-funcionario-${funcionario.idCargo}" style="font-size: 13px; font-weight: 400;">${funcionario.cargo}</span>
+          </div>
+          <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" onclick="editarCargo(${funcionario.idCargo})" alt="Editar">
+          <img src="../../img/img_dash/trash-bin.svg" class="img_trash" onclick="excluirFuncionario(${funcionario.idUsuario})" alt="Excluir">
+      `;
+
+      listaFuncionarios.appendChild(funcionarioDiv);
+  });
+}
+
+
+function editarCargo(idCargo) {
+  // Recupera o cargo atual do funcionário e exibe no select de edição
+  const cargoAtual = document.getElementById(`cargo-funcionario-${idCargo}`).innerText;
+  
+  // Exibe o formulário de edição
+  document.getElementById('div-mudar-cargo').style.display = 'block';
+
+  // Preencher o select com cargos disponíveis
+  const select = document.getElementById('inp-editar-cargo-usuario');
+  select.innerHTML = `
+      <option value="cargo1" ${cargoAtual === 'Cargo 1' ? 'selected' : ''}>Cargo 1</option>
+      <option value="cargo2" ${cargoAtual === 'Cargo 2' ? 'selected' : ''}>Cargo 2</option>
+      <option value="cargo3" ${cargoAtual === 'Cargo 3' ? 'selected' : ''}>Cargo 3</option>
+  `;
+
+  // Salvar alterações
+  function salvarCargo() {
+      const novoCargo = select.value;
+
+      // Enviar os dados para o servidor para atualizar o cargo do funcionário
+      fetch(`/editar-cargo/${idCargo}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ cargo: novoCargo })
+      }).then(response => {
+          if (response.ok) {
+              // Atualiza a interface
+              document.getElementById(`cargo-funcionario-${idCargo}`).innerText = novoCargo;
+              document.getElementById('div-mudar-cargo').style.display = 'none';
+          }
+      });
+  }
+}
+
+// Função para excluir um funcionário
+function excluirFuncionario(funcionarioId) {
+  // Confirmar antes de excluir
+  if (confirm('Tem certeza que deseja excluir este funcionário?')) {
+      // Enviar solicitação para excluir o funcionário
+      fetch(`/excluir-funcionario/${funcionarioId}`, {
+          method: 'DELETE'
+      }).then(response => {
+          if (response.ok) {
+              // Remove o funcionário da interface
+              const funcionarioDiv = document.getElementById(`funcionario-${funcionarioId}`);
+              funcionarioDiv.remove();
+          }
+      });
+  }
+}
+
+// Chama a função para carregar os funcionários na inicialização
+carregarFuncionarios();
+

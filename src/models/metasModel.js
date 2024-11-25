@@ -20,7 +20,7 @@ function listar() {
 
 function publicar(gastoEmReais, gastoEnergetico, mes, fk_idEmpresa) {
     var instrucaoSql = `
-        INSERT INTO Metas (gastoEmReais, gastoEnergetico, mes, fk_idEmpresa) VALUES (?, ?, ?, ?);
+        INSERT INTO Metas (gastoEmReais, gastoEnergetico, mes, fk_empresa) VALUES (${gastoEmReais}, ${gastoEnergetico}, '${mes}', ${fk_idEmpresa});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql, [gastoEmReais, gastoEnergetico, mes, fk_idEmpresa]);

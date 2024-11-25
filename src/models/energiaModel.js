@@ -33,7 +33,7 @@ function buscarTodasMetas() {
   var instrucaoSql = `
     SELECT m.*, e.nome
     FROM Metas m
-    JOIN Empresa e ON m.fk_idEmpresa = e.idEmpresa;
+    JOIN Empresa e ON m.fk_empresa = e.idEmpresa
   `;
 
   console.log("Executando a instrução SQL para buscar metas da empresa: \n" + instrucaoSql);

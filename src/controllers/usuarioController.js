@@ -21,10 +21,9 @@ function autenticar(req, res) {
             email: resultadoAutenticar[0].email,
             nome: resultadoAutenticar[0].nome,
             senha: resultadoAutenticar[0].senha,
-            sexo: resultadoAutenticar[0].sexo,
-            cargo: resultadoAutenticar[0].Nome,
             idCargo: resultadoAutenticar[0].idCargos,
-            fk_idEmpresa: resultadoAutenticar[0].fk_idEmpresa
+            fk_idEmpresa: resultadoAutenticar[0].fk_idEmpresa,
+            temPermissaoAdm: resultadoAutenticar[0].temPermissaoAdm
           });
           
         } else if (resultadoAutenticar.length == 0) {
@@ -46,32 +45,30 @@ function autenticar(req, res) {
 
 
 function cadastrar(req, res) {
-
   var nome = req.body.nomeServer;
   var email = req.body.emailServer;
   var senha = req.body.senhaServer;
-  var sexo = req.body.sexoServer;
   var cargoId = req.body.cargoServer;
+  var fk_idEmpresa = req.body.fk_idEmpresa; 
 
   if (nome == undefined) {
     res.status(400).send("Seu nome está undefined!");
   } else if (email == undefined) {
     res.status(400).send("Seu email está undefined!");
   } else if (senha == undefined) {
-    res.status(400).send("Sua senha está undefined!");
-  } else if (sexo == undefined) {
-    res.status(400).send("Seu sexo está undefined!");
+    res.status(400).send("Sua senha está undefined!"); 
   } else if (cargoId == undefined) {
     res.status(400).send("Seu cargo está undefined!");
+  } else if (fk_idEmpresa == undefined) { 
+    res.status(400).send("A empresa está undefined!");
   } else {
-    // Verificar se o email já existe no banco de dados
     usuarioModel.buscarPorEmail(email)
       .then(function (resultado) {
         if (resultado.length > 0) {
           res.status(409).send("Email já cadastrado!");
         } else {
           usuarioModel
-            .cadastrar(nome, email, senha, sexo, cargoId)
+            .cadastrar(nome, email, senha, cargoId, fk_idEmpresa)
             .then(function (resultadoCadastro) {
               res.json(resultadoCadastro);
             })
@@ -89,7 +86,47 @@ function cadastrar(req, res) {
   }
 }
 
+function editar(req, res) {
+  const idUsuario = req.params.idUsuario;
+  const { nome, email, cargo } = req.body;
+
+  if (!idUsuario || !nome || !email || !cargo) {
+      res.status(400).send("Todos os campos devem ser preenchidos corretamente.");
+      return;
+  }
+
+  usuarioModel.editar(nome, email, cargo, idUsuario)
+      .then((resultado) => {
+          res.json({ message: "Usuário atualizado com sucesso!" });
+      })
+      .catch((erro) => {
+          console.log("Houve um erro ao editar usuário: ", erro.sqlMessage);
+          res.status(500).json(erro.sqlMessage);
+      });
+}
+
+function editarSenha(req, res) {
+  const idUsuario = req.params.idUsuario;
+  const { senha } = req.body;
+
+  if (!idUsuario || !senha ) {
+      res.status(400).send("Todos os campos devem ser preenchidos corretamente.");
+      return;
+  }
+
+  usuarioModel.editarSenha(senha, idUsuario)
+      .then((resultado) => {
+          res.json({ message: "Senha atualizado com sucesso!" });
+      })
+      .catch((erro) => {
+          console.log("Houve um erro ao editar usuário: ", erro.sqlMessage);
+          res.status(500).json(erro.sqlMessage);
+      });
+}
+
 module.exports = {
   autenticar,
   cadastrar,
+  editar,
+  editarSenha
 };

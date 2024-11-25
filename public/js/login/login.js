@@ -32,10 +32,10 @@ function entrar() {
             sessionStorage.ID_USUARIO = json.id;
             sessionStorage.NOME_USUARIO = json.nome;
             sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.SENHA = json.senha;
             sessionStorage.ID_CARGO = json.idCargo;
-            sessionStorage.CARGOS = json.cargo
             sessionStorage.ID_EMPRESA = json.fk_idEmpresa;
-
+            sessionStorage.PERMISSAO = json.temPermissaoAdm;
 
             setTimeout(function () {
               window.location = "../pages/dashboard/dashboard.html";

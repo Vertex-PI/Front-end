@@ -5,15 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ</title>
-    <link rel="stylesheet" href="../../../public/style/FAQ.css" />
+    <link rel="stylesheet" href="../../style/FAQ.css" />
     <link rel="stylesheet" href="../../style/components/aside_dash.css" />
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
 </head>
 
-<body>
+<body onload="validarSessao()">
     <aside id="sidebar">
         <section id="sidebar-cliente">
-            <!-- <img src="img/img_dash/Default_pfp.png" id="img_user_sidebar" alt=""> -->
             <div class="infos_cliente">
                 <span class="nome_cliente">Olá <span id="b_usuario">Visitante</span>!</span>
                 <span class="descricao_cliente">Seja bem-vindo(a)!!</span>
@@ -22,65 +21,28 @@
 
         <section class="section_itens">
             <div class="div_item">
-                <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="" />
+                <a href="dashboard.html"><img src="../../img/img_dash/dashboard.svg" class="img_item" alt="" /></a>
                 <a href="dashboard.html" class="titulo_item"> Dashboard </a>
             </div>
         </section>
 
         <section class="section_itens">
             <div class="div_item">
-                <img src="../../img/img_dash/stonks.svg" class="img_item" alt="" />
+                <a href="metas.html"><img src="../../img/img_dash/stonks.svg" class="img_item" alt="" /></a>
                 <a href="metas.html" class="titulo_item"> Metas </a>
             </div>
         </section>
 
-        <!-- <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
-                <a href="cadastro.html" class="titulo_item">
-                    Adicionar usuário
-                </a>
-            </div>
-        </section>
-    
-        
         <section class="section_itens">
             <div class="div_item">
-                <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                <a href="editar_perfil.html" class="titulo_item">
-                    Editar perfil
-                </a>
-            </div>
-        </section>
-        
-        <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/edit_user.svg" class="img_item" alt="">
-                <a href="editar_usuario.html" class="titulo_item">
-                    Editar usuário
-                </a>
-            </div>
-        </section> -->
-
-        <!-- <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
-                <a href="recomendacoes.html" class="titulo_item">
-                    Recomendações
-                </a>
-            </div>
-        </section> -->
-
-        <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/config.svg" class="img_item" alt="" />
+                <a href="configuracoes.html"><img src="../../img/img_dash/config.svg" class="img_item" alt="" /></a>
                 <a href="configuracoes.html" class="titulo_item"> Configurações </a>
             </div>
         </section>
 
         <section class="section_itens">
             <div class="div_item">
-                <img src="../../img/img_dash/question.svg" id="destaque_svg" class="img_item" alt="" />
+                <a style="font-weight: 600; color: white" href="FAQ.html"></a><img src="../../img/img_dash/question.svg" id="destaque_svg" class="img_item" alt="" /></a>
                 <a style="font-weight: 600; color: white" href="FAQ.html" class="titulo_item">
                     Perguntas frequentes
                 </a>
@@ -97,7 +59,6 @@
 
     <main id="main_faq">
         <section id="back_area">
-            <!-- <a href="dashboard.html"><img draggable="false" src="../../img/img_dash/back_arrow_blue.svg" id="img_back" alt=""></a> -->
             <section id="section_titulo_faq">
                 <span class="titulo_faq">FAQ</span>
                 <span class="subtitulo_faq">Ficou com dúvida? Temos a resposta!</span>
@@ -107,8 +68,7 @@
         <section class="section-cards-faq">
             <div class="card-faq">
                 <div class="classificacao">
-                    <!-- <img class="img_card" src="img/img_dash/email-icon-white-png-czeuf6p73yswq724.png" alt=""> -->
-                    <img src="/public/img/img_dash/func_beneficios.svg" class="img_titulo_classificacao" alt="" />
+                    <img src="../../img/img_dash/func_beneficios.svg" class="img_titulo_classificacao" alt="" />
                     <span class="titulo_classificacao">Funcionalidades e Benefícios</span>
                 </div>
 
@@ -174,7 +134,7 @@
 
             <div class="card-faq">
                 <div class="classificacao">
-                    <img src="/public/img/img_dash/prob_tec.svg" class="img_titulo_classificacao" alt="" />
+                    <img src="../../img/img_dash/prob_tec.svg" class="img_titulo_classificacao" alt="" />
                     <span class="titulo_classificacao">Problemas Técnicos</span>
                 </div>
 
@@ -219,7 +179,7 @@
 
             <div class="card-faq">
                 <div class="classificacao">
-                    <img src="/public/img/img_dash/atendimento.svg" class="img_titulo_classificacao" alt="" />
+                    <img src="../../img/img_dash/atendimento.svg" class="img_titulo_classificacao" alt="" />
                     <span class="titulo_classificacao">Atendimento</span>
                 </div>
 
@@ -264,42 +224,5 @@
 
 </html>
 
-<script>
-    const perguntas = document.querySelectorAll(".div_faq");
-    const respostas = document.querySelectorAll(".span_resposta");
-
-    perguntas.forEach((pergunta) => {
-        pergunta.addEventListener("click", () => {
-            pergunta.classList.toggle("expanded");
-            perguntas.forEach((p) => {
-                if (p != pergunta) {
-                    p.classList.remove("expanded");
-                    const arrow = p.querySelector(".arrow_expandir_pergunta");
-                    arrow.style.transform = "rotate(0deg)";
-                }
-            });
-            const arrow = pergunta.querySelector(".arrow_expandir_pergunta");
-            if (pergunta.classList.contains("expanded")) {
-                arrow.style.transform = "rotate(180deg)";
-            } else {
-                arrow.style.transform = "rotate(0deg)";
-            }
-        });
-    });
-
-    function switchStateSpan(id) {
-        let span = document.getElementById(id);
-        if (span.style.display == "none") {
-            span.style.display = "block";
-        } else {
-            span.style.display = "none";
-        }
-        respostas.forEach((resposta) => {
-            if (resposta.id != id) {
-                resposta.style.display = "none";
-            }
-        });
-    }
-
-
-</script>
+<script src="../../js/dash/sessao.js"></script>
+<script src="../../js/faq/faq.js"></script>

@@ -7,10 +7,11 @@
     <title>Configurações</title>
     <link rel="stylesheet" href="../../style/configuracoes.css">
     <link rel="stylesheet" href="../../style/components/aside_dash.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
 </head>
 
-<body>
+<body onload="listarCargos(), listarCargosEditar(), validarSessao()">
     <aside id="sidebar">
 
         <section id="sidebar-cliente">
@@ -39,42 +40,7 @@
             </div>
         </section>
 
-        <!-- <section class="section-itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
-                <a href="cadastro.html" class="titulo_item">
-                    Adicionar usuário
-                </a>
-            </div>
-        </section>
-    
-        
-        <section class="section-itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                <a href="editar_perfil.html" class="titulo_item">
-                    Editar perfil
-                </a>
-            </div>
-        </section>
-        
-        <section class="section-itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/edit_user.svg" class="img_item" alt="">
-                <a href="editar_usuario.html" class="titulo_item">
-                    Editar usuário
-                </a>
-            </div>
-        </section> -->
 
-        <!-- <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
-                <a href="recomendacoes.html" class="titulo_item">
-                    Recomendações
-                </a>
-            </div>
-        </section> -->
 
         <section class="section_itens">
             <div class="div_item">
@@ -131,27 +97,25 @@
                 </div>
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Nome</span>
-                    <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara ">
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara" id="input_nome">
                 </div>
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Email</span>
-                    <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com">
+                    <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com" id="input_email">
                 </div>
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Cargo</span>
-                    <select name="" class="inp_cadastro">
+                    <select name="" class="inp_cadastro" id="select_cargo">
                         <option value="" selected disabled>Selecione um cargo</option>
-                        <option value="">Cargo 1</option>
-                        <option value="">Cargo 2</option>
                     </select>
                 </div>
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Senha</span>
                     <div class="div_input">
-                        <input type="password" id="input-senha" class="inp_cadastro" placeholder="Insira sua senha" />
+                        <input type="password" id="input_senha" class="inp_cadastro" placeholder="Insira sua senha"/>
                         <img src="../../img/eye_closed.svg" id="eye-closed" class="class_eye_closed"
                             onclick="show_password()">
                     </div>
@@ -160,15 +124,15 @@
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Confirmar senha</span>
                     <div class="div_input">
-                        <input type="password" id="input-confirmar-senha" class="inp_cadastro"
-                            placeholder="Insira sua senha" />
+                        <input type="password" id="input_confirmar_senha" class="inp_cadastro"
+                            placeholder="Confirme sua senha" />
                         <img src="../../img/eye_closed.svg" id="eye-closed-2" class="class_eye_closed"
                             onclick="show_password_2()">
                     </div>
 
                 </div>
 
-                <button class="btn_adc_cadastro">Adicionar</button>
+                <button class="btn_adc_cadastro" onclick="cadastrarUsuario()">Adicionar</button>
             </div>
 
         </div>
@@ -185,23 +149,22 @@
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Nome</span>
-                    <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara">
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara" id="inp_nome_editar">
                 </div>
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Email</span>
-                    <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com">
+                    <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com" id="inp_email_editar">
                 </div>
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Cargo</span>
-                    <select name="" class="inp_cadastro">
-                        <option value="">Cargo 1</option>
-                        <option value="">Cargo 2</option>
+                    <select name="" class="inp_cadastro" id="select_cargo_editar">
+                        <option value="" selected disabled>Selecione um cargo</option>
                     </select>
                 </div>
 
-                <button class="btn_adc_cadastro">Salvar</button>
+                <button class="btn_adc_cadastro" onclick="editar()">Salvar</button>
             </div>
 
         </div>
@@ -218,19 +181,19 @@
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Cargo:</span>
-                    <input type="text" class="inp_cadastro" placeholder="Ex.: Gerente de vendas">
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Gerente de vendas" id="inp_nome_cargos_cadastrar">
 
                 </div>
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Permissão de administrador</span>
-                    <select name="" class="inp_cadastro">
-                        <option value="">Sim</option>
-                        <option value="">Não</option>
+                    <select name="" class="inp_cadastro" id="inp_permissao_cargos_cadastrar">
+                        <option value="SIM">Sim</option>
+                        <option value="NAO">Não</option>
                     </select>
                 </div>
 
-                <button class="btn_adc_cadastro">Salvar</button>
+                <button class="btn_adc_cadastro" onclick="cadastrarCargo()">Cadastrar</button>
             </div>
 
         </div>
@@ -364,7 +327,7 @@
 
                 </div>
 
-                <button class="btn_adc_cadastro">Salvar</button>
+                <button class="btn_adc_cadastro" onclick="editarSenha()">Salvar</button>
             </div>
 
         </div>
@@ -504,117 +467,17 @@
 
 </html>
 
+<script  src="../../js/dash/sessao.js"></script>
 <script src="../../js/configuracoes/cargo.js"></script>
 <script src="../../js/configuracoes/usuario.js"></script>
 <script src="../../js/metas/metas.js"></script>
+<script src="../../js/configuracoes/config.js"></script>
 
-<script>
-    
-    function editarPerfil() {
-        document.getElementById("div-adc-usuario").style.display = "none";
-        document.getElementById("div-editar-conta").style.display = "flex";
-        document.getElementById("div-mudar-cargo").style.display = "none";
-        document.getElementById("div-edit-cargo").style.display = "none";
-        document.getElementById("div-usuarios").style.display = "none";
-        document.getElementById("div-criar-cargo").style.display = "none";
-        document.getElementById("div-alterar-senha").style.display = "none";
-        document.getElementById("div-modificar-metas").style.display = "none";
-        document.getElementById("div-modificar-cargo").style.display = "none";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "400";
-        document.getElementById("opt-editar-conta").style.fontWeight = "700";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
-        
-    }
-    
-    function alterarSenha() {
-        document.getElementById("div-adc-usuario").style.display = "none";
-        document.getElementById("div-editar-conta").style.display = "none";
-        document.getElementById("div-mudar-cargo").style.display = "none";
-        document.getElementById("div-edit-cargo").style.display = "none";
-        document.getElementById("div-usuarios").style.display = "none";
-        document.getElementById("div-criar-cargo").style.display = "none";
-        document.getElementById("div-alterar-senha").style.display = "flex";
-        document.getElementById("div-modificar-metas").style.display = "none";
-        document.getElementById("div-modificar-cargo").style.display = "none";
-        
-        document.getElementById("opt-cadastro").style.fontWeight = "400";
-        document.getElementById("opt-editar-conta").style.fontWeight = "400";
-        document.getElementById("opt-editar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-criar-cargo").style.fontWeight = "400";
-        document.getElementById("opt-alterar-senha").style.fontWeight = "700";
-        document.getElementById("opt-alt-del-metas").style.fontWeight = "400";
-        document.getElementById("opt-alt-del-cargos").style.fontWeight = "400";
-    }
-    
-    /* mostrar senha */
-    
-    function show_password() {
-        let ipt = document.getElementById("input-senha");
-        let img = document.getElementById("eye-closed");
-        
-        if (ipt.type == "password") {
-            ipt.type = "text";
-            img.src = "../../img/open_eye.svg"
-        } else {
-            ipt.type = "password"
-            img.src = "../../img/eye_closed.svg"
-        }
-    }
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    function show_password_2() {
-        let ipt = document.getElementById("input-confirmar-senha");
-        let img = document.getElementById("eye-closed-2");
+<!-- puxando arquivos para funcionar os cruds -->
+ <script src="../../js/usuario/adicionarUsuario.js"></script>
+ <script src="../../js/usuario/editarUsuario.js"></script>
+ <script src="../../js/usuario/editarSenhaUsuario.js"></script>
 
-        if (ipt.type == "password") {
-            ipt.type = "text";
-            img.src = "../../img/open_eye.svg"
-        } else {
-            ipt.type = "password"
-            img.src = "../../img/eye_closed.svg"
-        }
-    }
-
-    function show_password_3() {
-        let ipt = document.getElementById("input-alt-senha");
-        let img = document.getElementById("eye-closed-3");
-
-        if (ipt.type == "password") {
-            ipt.type = "text";
-            img.src = "../../img/open_eye.svg"
-        } else {
-            ipt.type = "password"
-            img.src = "../../img/eye_closed.svg"
-        }
-    }
-
-    function show_password_4() {
-        let ipt = document.getElementById("input-nova-senha");
-        let img = document.getElementById("eye-closed-4");
-
-        if (ipt.type == "password") {
-            ipt.type = "text";
-            img.src = "../../img/open_eye.svg"
-        } else {
-            ipt.type = "password"
-            img.src = "../../img/eye_closed.svg"
-        }
-    }
-
-    function show_password_5() {
-        let ipt = document.getElementById("input-confirmar-nova-senha");
-        let img = document.getElementById("eye-closed-5");
-
-        if (ipt.type == "password") {
-            ipt.type = "text";
-            img.src = "../../img/open_eye.svg"
-        } else {
-            ipt.type = "password"
-            img.src = "../../img/eye_closed.svg"
-        }
-    }
-</script>
+ <script src="../../js/cargos/cadastrarCargo.js"></script>

@@ -6,6 +6,7 @@
     <title>Metas</title>
     <link rel="stylesheet" href="../../style/metas.css">
     <link rel="stylesheet" href="../../style/components/aside_dash.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
 </head>
 <body>
@@ -36,43 +37,6 @@
                 </a>
             </div>
         </section>
-        
-        <!-- <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
-                <a href="cadastro.html" class="titulo_item">
-                    Adicionar usuário
-                </a>
-            </div>
-        </section>
-    
-        
-        <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                <a href="editar_perfil.html" class="titulo_item">
-                    Editar perfil
-                </a>
-            </div>
-        </section>
-        
-        <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/edit_user.svg" class="img_item" alt="">
-                <a href="editar_usuario.html" class="titulo_item">
-                    Editar usuário
-                </a>
-            </div>
-        </section> -->
-        
-        <!-- <section class="section_itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
-                <a href="recomendacoes.html" class="titulo_item">
-                    Recomendações
-                </a>
-            </div>
-        </section> -->
 
         <section class="section_itens">
             <div class="div_item">
@@ -124,7 +88,7 @@
                 <option value="Novembro">Novembro</option>
                 <option value="Dezembro">Dezembro</option>
             </select>
-            <button id="btnSalvar">Salvar</button>
+            <button id="btnSalvar" onclick="publicar()">Salvar</button>
 
         </div>
 
@@ -134,3 +98,4 @@
 </html> 
 
 <script src="../../js/metas/metas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

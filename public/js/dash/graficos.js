@@ -1,120 +1,121 @@
 const coresEmpresa = [
-  "rgba(54, 162, 235, 0.5)", 
-  "rgba(255, 206, 86, 0.5)",  
-  "rgba(75, 192, 192, 0.5)", 
+  "rgba(54, 162, 235, 1)",
+  "rgba(255, 206, 86, 0.5)",
+  "rgba(75, 192, 192, 0.5)",
   "rgba(153, 102, 255, 0.5)",
-  "rgba(255, 159, 64, 0.5)",  
-
+  "rgba(255, 159, 64, 0.5)",
 ];
 
-
-//? Não entendi mas funcionou ->
-//* Função para plotar os gráficos com dados de energia e metas de usuários
-function plotarGraficos(resposta, metas) {
+// Função para plotar os gráficos com dados de energia e metas
+function plotarGraficos(dadosEnergia, metas) {
   console.log("Iniciando plotagem dos gráficos...");
+  console.log("Dados de Energia:", dadosEnergia);
+  console.log("Metas:", metas);
 
-  // Verificando se já existe um gráfico e destruindo-o
-  const canvasKwh = document.getElementById('myChart');
-  const canvasGasto = document.getElementById('myChart2');
-
-  if (window.canvasKwh) {
-    window.canvasKwh.destroy(); // Destroi o gráfico de KWh, se já existir
-  }
-  if (window.canvasGasto) {
-    window.canvasGasto.destroy(); // Destroi o gráfico de Gasto, se já existir
+  if (!Array.isArray(dadosEnergia) || !Array.isArray(metas)) {
+    console.error("Os dados ou metas não são arrays válidos.");
+    return;
   }
 
-  const labels = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+  // Labels dos meses
+  const labels = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho",
+    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro",
+  ];
+
   const dadosKwh = {};
   const dadosGasto = {};
   const metasPorEmpresa = {};
-  if(resposta){
-    resposta.forEach(registro => {
-      const ano = registro.ano;
-      if (!dadosKwh[ano]) {
-        dadosKwh[ano] = new Array(12).fill(0);
-        dadosGasto[ano] = new Array(12).fill(0);
-      }
-  
-      const mesIndex = labels.indexOf(registro.mes.charAt(0).toUpperCase() + registro.mes.slice(1));
-      if (mesIndex !== -1) {
-        dadosKwh[ano][mesIndex] += parseFloat(registro.totalKwh);
-        dadosGasto[ano][mesIndex] += parseFloat(registro.totalGasto);
-      }
-    });
-  }else{
-    console.log("Dados de energia não recebidos corretamente", resposta);
-  }
 
-  if(metas){
+  // Processando dados de energia
+  dadosEnergia.forEach((registro, index) => {
+    console.log(`Processando registro de energia [${index}]:`, registro);
+    const ano = registro.ano;
+    if (!dadosKwh[ano]) {
+      dadosKwh[ano] = new Array(12).fill(0);
+      dadosGasto[ano] = new Array(12).fill(0);
+    }
 
-    metas.forEach((meta, index) => {
-      const idEmpresa = meta.fk_idEmpresa;
-      const mesIndex = labels.indexOf(meta.mes.charAt(0).toUpperCase() + meta.mes.slice(1));
-  
-      if (mesIndex !== -1) {
-        if (!metasPorEmpresa[idEmpresa]) {
-          metasPorEmpresa[idEmpresa] = {
-            metasKwh: new Array(12).fill(0),
-            metasGasto: new Array(12).fill(0),
-            nome: meta.nome,
-            cor: coresEmpresa[index % coresEmpresa.length],
-          };
-        }
-  
-        metasPorEmpresa[idEmpresa].metasKwh[mesIndex] = parseFloat(meta.Kwh);
-        metasPorEmpresa[idEmpresa].metasGasto[mesIndex] = parseFloat(meta.Gastos);
-      }
-    });
-  }else{
-    console.log("Metas não recebidas corretamente", resposta);
-  }
+    const mesIndex = labels.indexOf(
+      registro.mes?.charAt(0).toUpperCase() + registro.mes?.slice(1)
+    );
+    if (mesIndex !== -1) {
+      dadosKwh[ano][mesIndex] += parseFloat(registro.totalKwh) || 0;
+      dadosGasto[ano][mesIndex] += parseFloat(registro.totalGasto) || 0;
+    }
+  });
 
-  const datasetsKwh = Object.keys(dadosKwh).map(ano => ({
-    label: ano,
+  // Processando metas
+  metas.forEach((meta, index) => {
+    const mesIndex = labels.indexOf(
+      meta.mes?.charAt(0).toUpperCase() + meta.mes?.slice(1)
+    );
+    if (mesIndex === -1) {
+      console.warn(`Mês inválido na meta: ${meta.mes}`);
+      return;
+    }
+
+    const idEmpresa = meta.fk_empresa; // Usando 'fk_empresa' para a chave da empresa
+    if (!metasPorEmpresa[idEmpresa]) {
+      metasPorEmpresa[idEmpresa] = {
+        metasKwh: new Array(12).fill(0),
+        metasGasto: new Array(12).fill(0),
+        nome: meta.nome,
+        cor: coresEmpresa[index % coresEmpresa.length],
+      };
+    }
+
+    metasPorEmpresa[idEmpresa].metasKwh[mesIndex] = parseFloat(meta.gastoEnergetico) || 0;
+    metasPorEmpresa[idEmpresa].metasGasto[mesIndex] = parseFloat(meta.gastoEmReais) || 0;
+  });
+
+  // Configuração dos datasets para Kwh e Gasto
+  const datasetsKwh = Object.keys(dadosKwh).map((ano) => ({
+    label: `Consumo de Energia (${ano})`,
     data: dadosKwh[ano],
-    backgroundColor: "rgba(255, 140, 0, 0.5)",
-    borderColor: "rgba(255, 140, 0)",
-    borderWidth: 2.5,
+    backgroundColor: "rgba(54, 162, 235, 0.5)",
+    borderColor: "rgba(54, 162, 235)",
+    borderWidth: 2,
     barPercentage: 0.4,
-    zIndex: 1
   }));
 
-  const datasetsGasto = Object.keys(dadosGasto).map(ano => ({
-    label: ano,
+  const datasetsGasto = Object.keys(dadosGasto).map((ano) => ({
+    label: `Gasto Total (${ano})`,
     data: dadosGasto[ano],
-    backgroundColor: "rgba(255, 206, 86, 0.5)",
-    borderColor: "rgba(255, 206, 86)",
-    borderWidth: 2.5,
+    backgroundColor: "rgba(255, 99, 132, 0.5)",
+    borderColor: "rgba(255, 99, 132)",
+    borderWidth: 2,
     barPercentage: 0.4,
-    zIndex: 1
-    
   }));
 
-  Object.keys(metasPorEmpresa).forEach(idEmpresa => {
+  // Adicionando as metas ao gráfico
+  Object.keys(metasPorEmpresa).forEach((idEmpresa) => {
     const metasEmpresa = metasPorEmpresa[idEmpresa];
 
     datasetsKwh.push({
-      label: `Meta Kwh ${metasEmpresa.nome}`,
+      label: `Meta Kwh (${metasEmpresa.nome})`,
       data: metasEmpresa.metasKwh,
       type: "line",
       borderColor: metasEmpresa.cor,
       fill: false,
-      tension: 0.1,
-      zIndex: 2
+      tension: 0.1, 
+      zIndex: 10,
+      order: 2,
     });
 
     datasetsGasto.push({
-      label: `Meta Gasto ${metasEmpresa.nome}`,
+      label: `Meta Gasto (${metasEmpresa.nome})`,
       data: metasEmpresa.metasGasto,
       type: "line",
       borderColor: metasEmpresa.cor,
       fill: false,
       tension: 0.1,
-      zIndex: 2
+      zIndex: 10,
+      order: 2,
     });
   });
 
+  // Configuração do gráfico de Kwh
   const configKwh = {
     type: "bar",
     data: {
@@ -126,15 +127,16 @@ function plotarGraficos(resposta, metas) {
         y: {
           beginAtZero: true,
           ticks: {
-            callback: function(value) {
-              return value.toLocaleString() + ' kWh';
-            }
+            callback: function (value) {
+              return value.toLocaleString() + " kWh";
+            },
           },
         },
       },
     },
   };
 
+  // Configuração do gráfico de Gasto
   const configGasto = {
     type: "bar",
     data: {
@@ -146,61 +148,49 @@ function plotarGraficos(resposta, metas) {
         y: {
           beginAtZero: true,
           ticks: {
-            callback: function(value) {
-              return 'R$ ' + value.toLocaleString();
-            }
+            callback: function (value) {
+              return "R$ " + value.toLocaleString();
+            },
           },
         },
       },
     },
   };
 
-  window.canvasKwh = new Chart(document.getElementById('myChart'), configKwh);
-  window.canvasGasto = new Chart(document.getElementById('myChart2'), configGasto);
+  const canvasKwh = document.getElementById("myChart");
+  const canvasGasto = document.getElementById("myChart2");
+
+  if (window.canvasKwh) window.canvasKwh.destroy();
+  if (window.canvasGasto) window.canvasGasto.destroy();
+
+  window.canvasKwh = new Chart(canvasKwh, configKwh);
+  window.canvasGasto = new Chart(canvasGasto, configGasto);
 }
 
-// Função para obter dados de energia e metas
+// Função para obter dados do backend e chamar a plotagem
 function obterDadosGrafico() {
-  // Cria um objeto para armazenar os dados
-  let resultados = {};
-
-  fetch('/energia/energia') // Rota para dados de energia
-    .then(response => {
+  fetch("/energia/energia")
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`Erro ao carregar dados de energia: ${response.status}`);
       }
       return response.json();
     })
-    .then(dados => {
-      console.log("Dados de enrgia recebidos:", dados); //Log de depuração
-      
-      if(Array.isArray(dados) && dados.length > 0){
-        // Armazena os dados no objeto
-        resultados.dados = dados;
-        return fetch(`/energia/metas`); // Rota para todas as metas dos usuários
-      }else{
-        throw new Error("Dados de energia mal formatados ou vazios");
-      }
+    .then((dadosEnergia) => {
+      return fetch("/energia/metas")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Erro ao carregar as metas: ${response.status}`);
+          }
+          return response.json().then((metas) => {
+            plotarGraficos(dadosEnergia, metas);
+          });
+        });
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Erro ao carregar as metas: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(metas => {
-      console.log("Metas recebidas:", metas); // Adicionando log de depuração
-      if (Array.isArray(metas) && metas.length > 0) {
-        // Usa os dados armazenados e as metas
-        plotarGraficos(resultados.dados, metas); // Passa os dados e as metas para a função
-      } else {
-        throw new Error("Metas mal formatadas ou vazias");
-      }
-    })
-    .catch(error => {
-      console.error("Erro ao carregar os dados ou as metas: ", error);
+    .catch((error) => {
+      console.error("Erro ao carregar os dados ou as metas:", error);
     });
 }
 
-// Chamando a função
+// Chamando a função para obter os dados e exibir os gráficos
 obterDadosGrafico();

@@ -124,9 +124,89 @@ function editarSenha(req, res) {
       });
 }
 
+function editarCargo(req, res) {
+  const idUsuario = req.params.idUsuario;
+  const { cargo } = req.body;
+
+  if (!idUsuario || !cargo ) {
+      res.status(400).send("Todos os campos devem ser preenchidos corretamente.");
+      return;
+  }
+
+  usuarioModel.editarCargo(cargo, idUsuario)
+      .then((resultado) => {
+          res.json({ message: "Senha atualizado com sucesso!" });
+      })
+      .catch((erro) => {
+          console.log("Houve um erro ao editar usuário: ", erro.sqlMessage);
+          res.status(500).json(erro.sqlMessage);
+      });
+}
+
+function listar(req, res) {
+  usuarioModel.listar().then(function (resultado) {
+      if (resultado.length > 0) {
+          res.status(200).json(resultado);
+      } else {
+          res.status(204).send("Nenhum resultado encontrado!")
+      }
+  }).catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+  });
+}
+
+function deletar(req, res) {
+  const idUsuario = req.params.idUsuario;
+
+  usuarioModel.deletar(idUsuario)
+      .then(
+          function (resultado) {
+              res.json(resultado);
+          }
+      )
+      .catch(
+          function (erro) {
+              console.log(erro);
+              console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
+              res.status(500).json(erro.sqlMessage);
+          }
+      );
+}
+
+function listarPorUsuario(req, res) {
+  var idUsuario = req.params.idUsuario;
+
+  usuarioModel.listarPorUsuario(idUsuario)
+      .then(
+          function (resultado) {
+              if (resultado.length > 0) {
+                  res.status(200).json(resultado);
+              } else {
+                  res.status(204).send("Nenhum resultado encontrado!");
+              }
+          }
+      )
+      .catch(
+          function (erro) {
+              console.log(erro);
+              console.log(
+                  "Houve um erro ao buscar os usuarios: ",
+                  erro.sqlMessage
+              );
+              res.status(500).json(erro.sqlMessage);
+          }
+      );
+}
+
 module.exports = {
   autenticar,
   cadastrar,
   editar,
-  editarSenha
+  deletar,
+  editarSenha, 
+  editarCargo,
+  listar,
+  listarPorUsuario
 };

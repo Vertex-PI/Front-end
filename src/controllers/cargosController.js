@@ -1,4 +1,5 @@
 var cargosModel = require("../models/cargosModel");
+const { deletar } = require("./metasController");
 
 function listar(req, res) {
   cargosModel.listar().then((resultado) => {
@@ -46,8 +47,40 @@ function cadastrar(req, res) {
   }
 }
 
+function editar(req, res) {
+  var novoNome = req.body.nomeCargo;
+  var novoPermissao = req.body.permissao;
+  var idCargos= req.params.idCargos;
+
+  metasModel.editar(idCargos ,novoNome, novoPermissao)
+    .then(function (resultado) {
+      res.json(resultado);
+    })
+    .catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao editar a meta: ", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function deletar(req, res) {
+  var idCargos = req.params.idCargos;
+
+  metasModel.deletar(idCargos)
+    .then(function (resultado) {
+      res.json(resultado);
+    })
+    .catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao deletar o Cargo: ", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
   buscarPorId,
   listar,
   cadastrar,
+  editar,
+  deletar
 };

@@ -7,7 +7,7 @@ router.get("/listar", function (req, res) {
     metasController.listar(req, res);
 });
 
-router.post("/publicar/:idUsuario", function (req, res) {
+router.post("/publicar/:idEmpresa", function (req, res) {
     metasController.publicar(req, res);
 });
 

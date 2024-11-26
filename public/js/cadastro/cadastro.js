@@ -124,7 +124,6 @@ function cadastrar() {
   }
 
 
-
   /* ------------------------------ VERIFICANDO SE TODOS OS CAMPOS ESTÃO CORRETOS ----------------------------- */
 
   var nomeVar = input_nome.value;
@@ -186,30 +185,3 @@ function listar() {
     });
 }
 
-/* mostrar senha */
-
-function show_password() {
-  let ipt = document.getElementById("input_senha");
-  let img = document.getElementById("open_eye_1");
-
-  if (ipt.type == "password") {
-      ipt.type = "text";
-      img.src = "../../img/open_eye.svg"
-  } else {
-      ipt.type = "password"
-      img.src = "../../img/eye_closed.svg"
-  }
-}
-
-function show_password_2() {
-  let ipt = document.getElementById("input_confirmar_senha");
-  let img = document.getElementById("open_eye_2");
-
-  if (ipt.type == "password") {
-      ipt.type = "text";
-      img.src = "../../img/open_eye.svg"
-  } else {
-      ipt.type = "password"
-      img.src = "../../img/eye_closed.svg"
-  }
-}

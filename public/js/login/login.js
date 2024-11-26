@@ -32,8 +32,10 @@ function entrar() {
             sessionStorage.ID_USUARIO = json.id;
             sessionStorage.NOME_USUARIO = json.nome;
             sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.SENHA = json.senha;
             sessionStorage.ID_CARGO = json.idCargo;
-            sessionStorage.CARGOS = json.cargo;
+            sessionStorage.ID_EMPRESA = json.fk_idEmpresa;
+            sessionStorage.PERMISSAO = json.temPermissaoAdm;
 
             setTimeout(function () {
               window.location = "../pages/dashboard/dashboard.html";
@@ -61,9 +63,9 @@ function entrar() {
 
     if (ipt.type == "password") {
       ipt.type = "text";
-      img.src = "../../img/open_eye.svg"
+      img.src = "../img/open_eye.svg"
     } else {
       ipt.type = "password"
-      img.src = "../../img/eye_closed.svg"
+      img.src = "../img/eye_closed.svg"
     }
   }

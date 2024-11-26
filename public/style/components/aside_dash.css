@@ -9,11 +9,12 @@ a{
     height: 100%;
     width: 250px;
     background-color: #1E2230;
+    box-shadow: 1px 0px 10px #141720;
 
     color: #D1D5DB;
 }
 
-#img_user_sidebar {
+#img-user-sidebar {
     object-fit: contain;
     height: 5vh;
     filter: invert(30%) sepia(17%) saturate(182%) hue-rotate(179deg) brightness(97%) contrast(89%);
@@ -27,9 +28,7 @@ a{
     gap: 25px;
     padding: 25px;
 
-
     border-bottom: 1px solid #282d3e;
-
 
     /* background-color: rebeccapurple; */
 
@@ -53,7 +52,7 @@ a{
     color: #606472;
 }
 
-.section-itens {
+.section_itens {
     display: flex;
     
 }
@@ -87,10 +86,6 @@ a{
     
 }
 
-/* #dashboard_svg_2{
-    filter: invert(100%) sepia(17%) saturate(0%) hue-rotate(179deg) brightness(97%) contrast(89%);
-} */
-
 #edit_svg{
     object-fit: contain;
     height: 3vh;
@@ -108,8 +103,9 @@ a{
     color: red;
 }
 
-.section-logout{
+.section_logout{
     display: flex;
     position: absolute;
     bottom: 0;
 }
+

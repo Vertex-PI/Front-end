@@ -9,8 +9,8 @@ router.get("/energia", function (req, res) {
 });
 
 // Rota para buscar metas de um usuário específico
-router.get("/metas/:idUsuario", function (req, res) {
-    energiaController.buscarMetasUsuario(req, res);
+router.get("/metas/:idEmpresa", function (req, res) {
+    energiaController.buscarMetasEmpresa(req, res);
 });
 
 // Rota para buscar metas de todos os usuários

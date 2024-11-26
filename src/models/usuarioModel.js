@@ -3,7 +3,7 @@ var database = require("../database/config")
 function autenticar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucaoSql = `
-        SELECT u.idUsuario, u.Nome, u.Senha, u.Email, u.fk_idGenero, c.idCargos, c.Nome 
+        SELECT u.idUsuario, u.nome, u.senha, u.email, u.fk_idEmpresa, c.idCargos, c.temPermissaoAdm
         FROM Usuario u
         JOIN Cargos c ON u.fk_cargos = c.idCargos
         WHERE u.email = '${email}' AND u.senha = '${senha}';
@@ -13,30 +13,39 @@ function autenticar(email, senha) {
 }
 
 //! Trocar o js do front 
-function cadastrar(nome,senha, email, sexo, cargoId, idGenero) {
+function cadastrar(nome,senha, email,cargoId,fk_idEmpresa) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
     
     var instrucaoSql = `
-        INSERT INTO Usuario(Nome, Senha, Email, fk_cargos, fk_idGenero) VALUES ('${nome}', '${email}', '${senha}', '${sexo}', '${cargoId}', '${idGenero}');
+        INSERT INTO Usuario(nome, senha, email, fk_cargos, fk_idEmpresa) VALUES ('${nome}', '${email}', '${senha}', '${cargoId}', '${fk_idEmpresa}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
 function buscarPorEmail (email) {
-    var instrucao = `SELECT * FROM Usuario WHERE Email = '${email}'`;
+    var instrucao = `SELECT * FROM Usuario WHERE email = '${email}'`;
     return database.executar(instrucao);
   }
 
-  function editar(idUsuario, nome,senha, email, idGenero , cargoId) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novaDescricao, idAviso);
+function editar(nomeNovo, emailNovo, cargoIdNovo, idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", idUsuario, nomeNovo , emailNovo, cargoIdNovo);
     var instrucaoSql = `
         UPDATE Usuario SET 
-        Nome = '${nome}', 
-        Senha = '${senha}', 
-        Email = '${email}',
-        fk_cargos = '${cargoId}',
-        fk_idGenero = '${idGenero}',
+        nome = '${nomeNovo}',  
+        email = '${emailNovo}',
+        fk_cargos = ${cargoIdNovo}
+        WHERE idUsuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function editarSenha(senhaNovo, idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", senhaNovo);
+    var instrucaoSql = `
+        UPDATE Usuario SET 
+        senha = '${senhaNovo}'
         WHERE idUsuario = ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -44,9 +53,42 @@ function buscarPorEmail (email) {
 }
 
 function deletar(idUsuario) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function deletar():", idAviso);
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function deletar():", idUsuario);
     var instrucaoSql = `
         DELETE FROM Usuario WHERE idUsuario= ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function listar() {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucaoSql = `
+     select u.*, c.nome as cargo from Usuario u 
+        join Cargos c
+        where u.fk_cargos = c.idCargos;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function editarCargo(cargoNovo, idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", cargoNovo);
+    var instrucaoSql = `
+        UPDATE Usuario SET 
+        fk_cargos = '${cargoNovo}'
+        WHERE idUsuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function listarPorUsuario(idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorUsuario()");
+    var instrucaoSql = `
+       select u.*, c.nome as cargo from Usuario u 
+        join Cargos c on u.fk_cargos = c.idCargos
+        where u.idUsuario = ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -57,5 +99,9 @@ module.exports = {
     cadastrar, 
     buscarPorEmail,
     editar,
-    deletar
+    editarSenha,
+    editarCargo,
+    deletar, 
+    listar,
+    listarPorUsuario
 };

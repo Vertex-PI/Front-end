@@ -1,50 +1,88 @@
 function publicar() {
-  var idUsuario = sessionStorage.ID_USUARIO;
-
-  // Captura os valores dos inputs
-  var valorGasto = document.querySelector("input[placeholder='R$00,00']").value;
-  var kwhGasto = document.querySelector("input[placeholder='5000']").value;
-  var mesReferencia = document.querySelector("select").value;
-
-  // Verifica se todos os campos foram preenchidos
-  if (!valorGasto || !kwhGasto || !mesReferencia) {
-      window.alert("Por favor, preencha todos os campos!");
+    var idEmpresa = sessionStorage.ID_EMPRESA;
+  
+    // Valida o ID da empresa
+    if (!idEmpresa) {
+      console.log("Valor de idEmpresa:", idEmpresa);
+      Swal.fire({
+        icon: "error",
+        title: "Erro",
+        text: "Usuário não autenticado.",
+        backdrop: false,
+      });
       return false;
-  }
-
-  var corpo = {
-      gasto: parseFloat(valorGasto.replace('R$', '').replace(',', '.')), // Ajuste para o nome correto
-      kwh: parseFloat(kwhGasto),
+    }
+  
+    // Obtém os valores do formulário
+    var gastoEmReais = parseFloat(document.getElementById("gastoEmReais").value.trim());
+    var gastoEnergetico = parseFloat(document.getElementById("gastoEnergetico").value.trim());
+    var mesReferencia = document.getElementById("mesReferencia").value;
+  
+    // Valida os campos do formulário
+    if (isNaN(gastoEmReais) || isNaN(gastoEnergetico) || !mesReferencia) {
+      Swal.fire({
+        icon: "warning",
+        title: "Atenção",
+        text: "Por favor, preencha todos os campos!",
+        backdrop: false,
+      });
+      return false;
+    }
+  
+    // Cria o corpo da requisição
+    var corpo = {
+      gastoEmReais: gastoEmReais,
+      gastoEnergetico: gastoEnergetico,
       mes: mesReferencia,
-      fk_id_usuario: idUsuario // Ajuste o nome aqui, se necessário
-  };
-
-  console.log("Corpo da requisição: ", corpo); // Para depuração
-
-  fetch(`/metas/publicar/${idUsuario}`, {
+      fk_idEmpresa: idEmpresa,
+    };
+  
+    console.log("Corpo da requisição: ", corpo);
+  
+    // Envia a requisição ao backend
+    fetch(`/metas/publicar/${idEmpresa}`, {
       method: "post",
       headers: {
-          "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(corpo)
-  }).then(async function (resposta) {
-      const respostaCorpo = await resposta.text(); // Lê o corpo da resposta
-      console.log("Corpo da resposta: ", respostaCorpo); // Mostra no console
-
-      if (resposta.ok) {
-          window.alert("Meta publicada com sucesso pelo usuário de ID: " + idUsuario + "!");
-          window.location = "../pages/dashboard/metas.html";
-      } else if (resposta.status == 404) {
-          window.alert("Erro 404: Página não encontrada!");
-      } else {
-          throw new Error("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-      }
-  }).catch(function (erro) {
-      console.log(`#ERRO: ${erro}`);
-  });
-
-  return false;
-}
-
-// Adiciona o evento de clique no botão "Salvar"
-document.querySelector("button").addEventListener("click", publicar);
+      body: JSON.stringify(corpo),
+    })
+      .then(async function (resposta) {
+        const respostaCorpo = await resposta.text();
+        console.log("Corpo da resposta: ", respostaCorpo);
+  
+        if (resposta.ok) {
+          // Exibe um alerta de sucesso usando SweetAlert2
+          Swal.fire({
+            icon: "success",
+            title: "Sucesso",
+            text: `Meta publicada com sucesso pela Empresa: ${idEmpresa}!`,
+            backdrop: false,
+          }).then(() => {
+            // Redireciona para outra página após o alerta
+            window.location = "./metas.html";
+          });
+        } else if (resposta.status == 404) {
+          Swal.fire({
+            icon: "error",
+            title: "Erro 404",
+            text: "Página não encontrada!",
+            backdrop: false,
+          });
+        } else {
+          throw new Error(`Houve um erro ao tentar realizar a postagem! Código da resposta: ${resposta.status}`);
+        }
+      })
+      .catch(function (erro) {
+        console.error(`#ERRO: ${erro}`);
+        Swal.fire({
+          icon: "error",
+          title: "Erro",
+          text: `Ocorreu um erro inesperado: ${erro.message}`,
+          backdrop: false,
+        });
+      });
+  
+    return false;
+  }
+  

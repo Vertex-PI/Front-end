@@ -28,19 +28,103 @@ Antes de rodar o projeto, certifique-se de ter os seguintes itens instalados:
 
 ## Instalação
 
-### Instalação pelo docker
+### Configuração do projeto via AWS(linux)
 
-Crie a imagem para rodar o node:
+Execute uma instancia aws linux com as configurações de sua preferencia. Habilite as portas de entrada nos grupos de segurança(3333 para o site e 3306 para o banco de dados) e hailite a função IAM.
+
+Apos todas as configurações crie um arquivo .sh na sua instacia:
+
 ```bash
-  docker build --pull --rm -f "dockerfile" -t frontend:latest "."
-```
-Crie o container que ira rodar na porta 3333 e utilizara a imagem criada
-para o node:
-```bash
-  docker run -d --name ContainerNode -p 3333:3333 frontend:latest
+sudo nano nome_arquivo.sh
 ```
 
-### Instalação via CLI
+É dentro do arquvio cole o codigo abaixo e salve o mesmo:
+
+```bash
+#!/bin/bash
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install docker.io docker-compose -y
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+if [ -z "$(sudo docker network ls --filter name=rede-vertex -q)" ]; then
+  sudo docker network create rede-vertex
+fi
+
+echo "Criando diretórios para arquivos locais, se necessário..."
+mkdir -p ~/dockerBD/arquivos_sql
+mkdir -p ~/dockerND
+mkdir -p ~/dockerJAVA
+
+echo "Criando arquivo docker-compose.yml..."
+cat <<EOL > ~/docker-compose.yml
+version: '3.8'
+
+services:
+  db:
+    image: gusttarizerio/vertex:imagem-bd-vertex
+    container_name: container-bd-vertex
+    environment:
+      MYSQL_ROOT_PASSWORD: urubu100
+      MYSQL_DATABASE: Vertex
+    ports:
+      - "3306:3306"
+    networks:
+      - rede-vertex
+    volumes:
+      - db_data:/var/lib/mysql
+
+  node-app:
+    image: gusttarizerio/vertex:imagem-node-vertex
+    container_name: container-node-vertex
+    ports:
+      - "3333:3333"
+    networks:
+      - rede-vertex
+    depends_on:
+      - db
+
+  java-app:
+    image: gusttarizerio/vertex:imagem-java-vertex
+    container_name: container-java-vertex
+    networks:
+      - rede-vertex
+    depends_on:
+      - db
+      - node-app
+
+networks:
+  rede-vertex:
+
+volumes:
+  db_data:
+
+EOL
+
+
+echo "Iniciando os containers com Docker Compose..."
+cd ~
+sudo docker-compose up -d
+
+echo "Containers MySQL, Node.js e Java foram configurados e iniciados com sucesso usando imagens do Docker Hub!"
+```
+
+Apos salvar o arquivo de as permissões necessarias para execução:
+```bash
+sudo chmod +x nome_arquivo.sh
+```
+Execute o arquivo:
+```bash
+./nome_arquivo.sh
+```
+Abra o site com o ipv4 publico da instancia:
+```bash
+http://ip.da.instancia:3333
+```
+
+### Instalação via CLI (Windows)
 
 ### 1. Clone o repositório
 

@@ -46,12 +46,14 @@ a{
 #background_meta{
     background-color: #282d3e;
     width: 70%;
-    height: 70%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #fcfbfb;
+    border: #fcfbfb 1px solid;
+    border-radius: 5px;
 }
 
 .titulo_meta{
@@ -69,12 +71,13 @@ a{
     display: flex;
     align-items: center;
     background-color: #f5f7fa;
-    border: none;
+    border: 2px solid #fcfbfb;
     border-bottom: 1px solid #d3d3d3;
     height: 40px;
     width: 50%;
-    border-radius: 2px;
+    border-radius: 18px;
     margin-bottom: 15px;
+    padding: 10px;
 }
 
 button{

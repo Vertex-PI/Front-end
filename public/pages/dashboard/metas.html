@@ -6,6 +6,7 @@
     <title>Metas</title>
     <link rel="stylesheet" href="../../style/metas.css">
     <link rel="stylesheet" href="../../style/components/aside_dash.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
 </head>
 <body>
@@ -19,62 +20,34 @@
             </div>
         </section>
         
-        <section class="section-itens">
+        <section class="section_itens">
             <div class="div_item">
+                <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="">
                 <a href="dashboard.html" class="titulo_item">
-                    <img src="../../img/img_dash/dashboard.svg" class="img_item" alt="">
                 Dashboard
                 </a>
             </div>
         </section>
         
-        <section class="section-itens">
+        <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/stonks.svg" id="destaque_svg" class="img_item" alt="">
-                <a style="font-weight: 600; color: white;"  href="metas.html" class="titulo_item">
+                <a style="font-weight: 600; color: white;" href="metas.html" class="titulo_item">
                 Metas
                 </a>
             </div>
         </section>
-        
-        <section class="section-itens">
+
+        <section class="section_itens">
             <div class="div_item">
-                <img src="../../img/img_dash/adduser.svg" class="img_item" alt="">
-                <a href="cadastro.html" class="titulo_item">
-                    Adicionar usuário
-                </a>
-            </div>
-        </section>
-    
-        
-        <section class="section-itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                <a href="editar_perfil.html" class="titulo_item">
-                    Editar perfil
+                <img src="../../img/img_dash/config.svg" class="img_item" alt="">
+                <a  href="configuracoes.html" class="titulo_item">
+                    Configurações
                 </a>
             </div>
         </section>
         
-        <section class="section-itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/edit_user.svg" class="img_item" alt="">
-                <a href="editar_usuario.html" class="titulo_item">
-                    Editar usuário
-                </a>
-            </div>
-        </section>
-        
-        <section class="section-itens">
-            <div class="div_item">
-                <img src="../../img/img_dash/lightbulb-svgrepo-com.svg" class="img_item" alt="">
-                <a href="" class="titulo_item">
-                    Recomendações
-                </a>
-            </div>
-        </section>
-        
-        <section class="section-itens">
+        <section class="section_itens">
             <div class="div_item">
                 <img src="../../img/img_dash/question.svg" class="img_item" alt="">
                 <a href="FAQ.html" class="titulo_item">
@@ -83,7 +56,7 @@
             </div>
         </section>
     
-        <section class="section-logout">
+        <section class="section_logout">
             <div class="div_item">
                 <img src="../../img/img_dash/logout.svg" class="img_logout" alt="">
                 <a href="" class="titulo_logout" onclick="limparSessao()">
@@ -92,35 +65,37 @@
             </div>
         </section>
 </aside>
+    <section id="section_meta">
+        <div id="background_meta">
+            <span class="titulo_meta">Definir meta:</span>
+            <span>Valor em reais que pretende gastar:</span>
+            <input class="input_design" type="number"  placeholder="R$00,00" id="gastoEmReais">
+            <span>KHW que pretende gastar:</span>
+            <input class="input_design" type="number" name="" id="gastoEnergetico" placeholder="5000">
+            <span>Mês referente:</span>
+            <select class="input_design" name="" id="mesReferencia">
+                <option value="" disabled selected>Selecione o mês</option>
+                <option value="Janeiro">Janeiro</option>
+                <option value="Fevereiro">Fevereiro</option>
+                <option value="Março">Março</option>
+                <option value="Abril">Abril</option>
+                <option value="Maio">Maio</option>
+                <option value="Junho">Junho</option>
+                <option value="Julho">Julho</option>
+                <option value="Agosto">Agosto</option>
+                <option value="Setembro">Setembro</option>
+                <option value="Outubro">Outubro</option>
+                <option value="Novembro">Novembro</option>
+                <option value="Dezembro">Dezembro</option>
+            </select>
+            <button id="btnSalvar" onclick="publicar()">Salvar</button>
 
-<section id="section_meta">
-    <div id="background_meta">
-        <span class="titulo_meta">Definir meta:</span>
-        <span>Valor em reais que pretende gastar:</span>
-        <input class="input_design" type="number" id="valorGasto" placeholder="R$00,00">
-        <span>KHW que pretende gastar:</span>
-        <input class="input_design" type="number" id="kwhGasto" placeholder="5000">
-        <span>Mês referente:</span>
-        <select class="input_design" id="mesReferencia">
-            <option value="Janeiro">Janeiro</option>
-            <option value="Fevereiro">Fevereiro</option>
-            <option value="Março">Março</option>
-            <option value="Abril">Abril</option>
-            <option value="Maio">Maio</option>
-            <option value="Junho">Junho</option>
-            <option value="Julho">Julho</option>
-            <option value="Agosto">Agosto</option>
-            <option value="Setembro">Setembro</option>
-            <option value="Outubro">Outubro</option>
-            <option value="Novembro">Novembro</option>
-            <option value="Dezembro">Dezembro</option>
-        </select>
-        <button onclick="">Salvar</button>
-    </div>
-</section>
+        </div>
 
+    </section>
     
 </body>
 </html> 
 
 <script src="../../js/metas/metas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

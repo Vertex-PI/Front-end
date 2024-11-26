@@ -19,4 +19,9 @@ router.get("/editar/:idCargo", function (req, res) {
   cargosController.editar(req, res);
 });
 
+router.delete("/deletar/:idCargo", function (req, res) {
+  cargosController.deletar(req, res);
+});
+
+
 module.exports = router;

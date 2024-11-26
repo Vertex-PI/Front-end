@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
 </head>
 
-<body onload="listarCargos(), listarCargosEditar(), validarSessao()">
+<body onload="listarCargos(), listarCargosEditar(), validarSessao(), atualizarListaFuncionarios(), listarCargosUsuarios()">
     <aside id="sidebar">
 
         <section id="sidebar-cliente">
@@ -198,95 +198,35 @@
 
         </div>
 
-        <!-- EDITAR CARGO -->
+        <!-- EDITAR CARGO USUARIO -->
 
-        <div id= "div-edit-cargo" class="opcao_selecionada" style="display: none;">
-
+        <div id="div-edit-cargo" class="opcao_selecionada" style="display: none;">
+            <!-- Lista de Funcionários -->
             <div id="div-usuarios" style="display: none;">
                 <div class="cabecalho_funcionarios">
                     <span class="titulo_funcionarios">Funcionários</span>
                 </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" onclick="edit_user_img()" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
-
-                <div class="div_funcionario">
-                    <div class="div_infos_funcionario">
-                        <span style="font-size: 17px; font-weight: 500;">Nome do funcionario</span>
-                        <span style="font-size: 13px; font-weight: 400;">cargo do funcionario</span>
-                    </div>
-                    <img src="../../img/img_dash/edit.svg" class="img_item_editar_func" alt="">
-                    <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-
-                </div>
+                <!-- Lista de funcionários será gerada dinamicamente aqui -->
             </div>
-
+        
+            <!-- Edição de Cargo -->
             <div class="div_info" id="div-mudar-cargo" style="display: none;">
                 <div id="div-cabecalho-editar-usuario">
                     <span class="titulo_span">Editar usuário</span>
                     <span class="subtitulo_span">Edite o cargo de seus funcionários cadastrados.</span>
                 </div>
-
+        
                 <div class="div_inp_editar_usuario">
                     <span class="span_input" id="span-input-cargos">Cargo</span>
-                    <select name="" class="inp_cadastro" id="inp-editar-cargo-usuario">
-                        <option value="">Cargo 1</option>
-                        <option value="">Cargo 2</option>
+                    <select class="inp_cadastro" id="inp-editar-cargo-usuario">
+                        <!-- Lista de cargos será preenchida dinamicamente -->
                     </select>
                 </div>
+        
+                <button class="btn_adc_cadastro" onclick="salvarEdicaoCargo(idFuncionarioGlobal)">Salvar</button>
 
-                <button class="btn_adc_cadastro">Salvar</button>
             </div>
-
-        </div>
-
+        </div>        
 
         <!-- ALTERAR SENHA -->
 
@@ -479,5 +419,6 @@
  <script src="../../js/usuario/adicionarUsuario.js"></script>
  <script src="../../js/usuario/editarUsuario.js"></script>
  <script src="../../js/usuario/editarSenhaUsuario.js"></script>
+ <script src="../../js/usuario/editarCargoUsuario.js"></script>
 
  <script src="../../js/cargos/cadastrarCargo.js"></script>

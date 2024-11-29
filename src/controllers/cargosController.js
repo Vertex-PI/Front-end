@@ -63,10 +63,10 @@ function editar(req, res) {
     });
 }
 
-function deletar(req, res) {
+function deletarCargo(req, res) {
   var idCargos = req.params.idCargos;
 
-  metasModel.deletar(idCargos)
+  metasModel.deletarCargo(idCargos)
     .then(function (resultado) {
       res.json(resultado);
     })
@@ -82,5 +82,5 @@ module.exports = {
   listar,
   cadastrar,
   editar,
-  deletar
+  deletarCargo
 };

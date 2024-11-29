@@ -201,15 +201,23 @@
         <!-- EDITAR CARGO USUARIO -->
 
         <div id="div-edit-cargo" class="opcao_selecionada" style="display: none;">
-            <!-- Lista de Funcionários -->
-            <div id="div-usuarios" style="display: none;">
-                <div class="cabecalho_funcionarios">
-                    <span class="titulo_funcionarios">Funcionários</span>
-                </div>
-                <!-- Lista de funcionários será gerada dinamicamente aqui -->
+            <div class="div_cabecalho_func_pai" id="div_cabecalho_func_pai">
+                <span class="titulo_span">Editar</span>
+                    <span class="subtitulo_span">Edite um funcionário.</span>
             </div>
+            <div class="div_cabecalho_func_filho" id="div_cabecalho_func_filho">
+                <p>Funcionários</p>
+                <p>Editar</p>
+                <p>Deletar</p>
+            </div>
+    
+            <!-- Lista de Funcionários -->
+                <div id="div-usuarios" style="display: none;">
+                    <!-- Lista de funcionários será gerada dinamicamente aqui -->
+                </div>
+ 
         
-            <!-- Edição de Cargo -->
+            <!-- Edição de Cargo -->    
             <div class="div_info" id="div-mudar-cargo" style="display: none;">
                 <div id="div-cabecalho-editar-usuario">
                     <span class="titulo_span">Editar usuário</span>
@@ -276,58 +284,26 @@
 
         <div id="div-modificar-metas" class="opcao_selecionada" style="display: none;">
             <div class="div_info">
-                <div class="div_cabecalho_metas">
-                    <span class="titulo_span">Modificar metas</span>
-                    <span class="subtitulo_span">Delete ou edite sua meta.</span>
+                <div class="div_cabecalho_meta_pai" id="div_cabecalho_meta_pai">
+                    <span class="titulo_span">Editar</span>
+                    <span class="subtitulo_span">Edite um funcionário.</span>
                 </div>
-                <div class="div_metas">
-                    <div class="cabecalho_metas">
-                        <span>Data de criação</span>
-                        <span>Hora</span>
-                        <span>Meta</span>
-                    </div>
+                <div class="div_cabecalho_meta_filho" id="div_cabecalho_meta_filho">
+                    <p>Metas</p>
+                    <p>Editar</p>
+                    <p>Deletar</p>
+                </div>
 
-                    <div class="meta">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>Meta 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="meta">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>Meta 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="meta">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>Meta 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="meta">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>Meta 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="meta">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>Meta 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="meta">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>Meta 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                          <!-- Edição de Meta -->
+                <div id="div_metas" class="div_metas">
+                    <div id="div_listarMetas">
+                        <!-- Lista de Metas será gerada dinamicamente aqui -->
+                        <!-- Deixei aqui só para ver os campos que tinha então era a meta a imagem de deletar e a imagem de excluir -->
+                        <!-- <div class="meta">
+                            <span>Meta 1</span>
+                            <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                            <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                        </div> -->                  
                     </div>
 
 
@@ -336,65 +312,29 @@
             </div>
 
         </div>
-        <!-- MODIFICAR METAS -->
+        <!-- MODIFICAR CARGOS -->
 
         <div id="div-modificar-cargo" class="opcao_selecionada" style="display: none;">
             <div class="div_info">
-                <div class="div_cabecalho_cargos">
+                <div class="div_cabecalho_cargo_pai" id="div_cabecalho_cargo_pai">
                     <span class="titulo_span">Modificar cargos</span>
                     <span class="subtitulo_span">Delete ou edite seus cargos.</span>
                 </div>
+                <div class="div_cabecalho_cargo_filho" id="div_cabecalho_cargo_filho">
+                    <p>Cargos</p>
+                    <p>Editar</p>
+                    <p>Deletar</p>
+                </div>
                 <div class="div_cargos">
-                    <div class="cabecalho_cargos">
-                        <span>Data de criação</span>
-                        <span>Hora</span>
-                        <span>Cargo</span>
-                    </div>
-
-                    <div class="cargo">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>cargo 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="cargo">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>cargo 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="cargo">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>cargo 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="cargo">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>cargo 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="cargo">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>cargo 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
-                    <div class="cargo">
-                        <span>09/11/2024</span>
-                        <span>12:41</span>
-                        <span>cargo 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div>
 
 
+                    <!-- Lista de Metas será gerada dinamicamente aqui -->
+                    <!-- Deixei aqui só para ver os campos que tinha então era a meta a imagem de deletar e a imagem de excluir -->
+                    <!-- <div class="cargo">
+                        <span>cargo 1</span>
+                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
+                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
+                    </div> -->
                 </div>
 
             </div>

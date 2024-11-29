@@ -1,3 +1,4 @@
+const { deletarCargo } = require("../controllers/cargosController");
 var database = require("../database/config");
 
 function buscarPorId(id) {
@@ -40,4 +41,4 @@ function deletar(idCargo) {
   return database.executar(instrucaoSql);
 }
 
-module.exports = { buscarPorId, listar, cadastrar, editar, deletar };
+module.exports = { buscarPorId, listar, cadastrar, editar };

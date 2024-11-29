@@ -51,6 +51,7 @@ function edit_user_img() {
     document.getElementById("div-alterar-senha").style.display = "none";
     document.getElementById("div-modificar-metas").style.display = "none";
     document.getElementById("div-modificar-cargo").style.display = "none";
+    document.getElementById("div_cabecalho_func_filho").style.display = "none";
     
     document.getElementById("opt-cadastro").style.fontWeight = "400";
     document.getElementById("opt-editar-conta").style.fontWeight = "400";

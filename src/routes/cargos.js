@@ -20,7 +20,7 @@ router.put("/editar/:idCargo", function (req, res) {
 });
 
 router.delete("/deletar/:idCargo", function (req, res) {
-  cargosController.deletar(req, res);
+  cargosController.deletarCargo(req, res);
 });
 
 module.exports = router;

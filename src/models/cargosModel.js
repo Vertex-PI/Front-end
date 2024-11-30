@@ -1,4 +1,3 @@
-const { deletarCargo } = require("../controllers/cargosController");
 var database = require("../database/config");
 
 function buscarPorId(id) {
@@ -7,7 +6,7 @@ function buscarPorId(id) {
   return database.executar(instrucaoSql);
 }
 
-function listar() {
+function listarCargos() {
   var instrucaoSql = `SELECT * FROM Cargos`;
 
   return database.executar(instrucaoSql);
@@ -24,7 +23,7 @@ function cadastrar(nome, temPermissaoAdm) {
 }
 
 function editar(idCargo, nomeCargo, temPermissaoAdm) {
-  console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novaDescricao, idAviso);
+  console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", idCargo, nomeCargo, temPermissaoAdm);
   var instrucaoSql = `
       UPDATE Cargos SET nome = '${nomeCargo}', temPermissaoAdm = '${temPermissaoAdm}' WHERE idCargos = ${idCargo};
   `;
@@ -32,13 +31,24 @@ function editar(idCargo, nomeCargo, temPermissaoAdm) {
   return database.executar(instrucaoSql);
 }
 
-function deletar(idCargo) {
-  console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function deletar():", idAviso);
+function deletarCargo(idCargos) {
+  console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function deletar():", idCargos);
   var instrucaoSql = `
-      DELETE FROM Cargos WHERE idCargos = ${idCargo};
+      DELETE FROM Cargos WHERE idCargos = ${idCargos};
   `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
 
-module.exports = { buscarPorId, listar, cadastrar, editar };
+function verificarAssociacao(idCargos) {
+  console.log("Verificando associação do cargo com um usuário: ", idCargos);
+
+  var instrucaoSql = `
+    SELECT * FROM Usuario WHERE fk_cargos = ${idCargos};
+  `;
+
+  console.log("Executando a instrução SQL para verificar associação: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
+module.exports = { buscarPorId, listarCargos, cadastrar, editar, deletarCargo, verificarAssociacao };

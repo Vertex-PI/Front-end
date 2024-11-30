@@ -5,6 +5,8 @@ function editarCargo(idFuncionario) {
     idFuncionarioGlobal = idFuncionario; // Armazena o ID do funcionário
     document.getElementById("div-usuarios").style.display = "none";
     document.getElementById("div-mudar-cargo").style.display = "block";
+    document.getElementById("div_cabecalho_func_pai").style.display = "none";
+    document.getElementById("div_cabecalho_func_filho").style.display = "none";
 
 
     // Carregar os dados do funcionário via API
@@ -19,35 +21,10 @@ function editarCargo(idFuncionario) {
         .catch(err => console.error("Erro ao buscar dados do funcionário:", err));
 }
 
-// Função para atualizar o cargo do funcionário
-document.querySelector(".btn_adc_cadastro").addEventListener("click", function () {
-    const novoCargo = document.getElementById("inp-editar-cargo-usuario").value;
-    const idFuncionario = document.getElementById("inp-editar-cargo-usuario").dataset.idFuncionario; // Recuperar ID armazenado
-
-    if (!idFuncionario) {
-        alert("ID do funcionário não encontrado!");
-        return;
-    }
-
-    fetch(`/usuarios/editarCargo/${idFuncionario}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ cargo: novoCargo })
-    })
-        .then(res => {
-            if (res.ok) {
-                alert("Cargo atualizado com sucesso!");
-                window.location.reload();
-            } else {
-                alert("Erro ao atualizar o cargo!");
-            }
-        })
-        .catch(err => console.error("Erro ao atualizar o cargo:", err));
-});
 
 function deletarFuncionario(idFuncionario) {
+    const idUsuario = sessionStorage.getItem("ID_USUARIO");
+
     if (!idFuncionario || isNaN(idFuncionario)) {
         console.error("ID inválido para exclusão:", idFuncionario);
         Swal.fire({
@@ -86,8 +63,14 @@ function deletarFuncionario(idFuncionario) {
                             title: "Sucesso",
                             text: "Funcionário deletado com sucesso!",
                             backdrop: false,
+                        }).then(() => {
+                            if (idFuncionario == idUsuario) {
+                                sessionStorage.clear(); 
+                                window.location.href = "../../index.html"; 
+                            } else {
+                                atualizarListaFuncionarios(); 
+                            }
                         });
-                        atualizarListaFuncionarios(); // Atualizar lista sem recarregar a página
                     } else {
                         Swal.fire({
                             icon: "error",
@@ -149,7 +132,7 @@ function listarCargosUsuarios() {
     // Limpar opções existentes antes de carregar novas
     selectCargo.innerHTML = "<option value=''>Selecione um cargo</option>";
 
-    fetch("/cargos/listar", {
+    fetch("/cargos/listarCargos", {
         method: "GET",
     })
         .then((resposta) =>
@@ -180,6 +163,7 @@ function salvarEdicaoCargo(idFuncionario) {
             icon: "warning",
             title: "Atenção",
             text: "Por favor, selecione um cargo válido!",
+            backdrop: false,
         });
         return;
     }
@@ -199,6 +183,8 @@ function salvarEdicaoCargo(idFuncionario) {
                     text: "Cargo atualizado com sucesso!",
                 }).then(() => {
                     document.getElementById("div-mudar-cargo").style.display = "none";
+                    document.getElementById("div_cabecalho_func_pai").style.display = "flex";
+                    document.getElementById("div_cabecalho_func_filho").style.display = "flex";
                     atualizarListaFuncionarios(); // Atualiza a lista de funcionários
                 });
             } else {
@@ -206,6 +192,7 @@ function salvarEdicaoCargo(idFuncionario) {
                     icon: "error",
                     title: "Erro",
                     text: "Houve um problema ao atualizar o cargo do funcionário.",
+                    backdrop: false,
                 });
             }
         })
@@ -215,6 +202,7 @@ function salvarEdicaoCargo(idFuncionario) {
                 icon: "error",
                 title: "Erro",
                 text: "Erro de conexão com o servidor. Tente novamente mais tarde.",
+                backdrop: false,
             });
         });
 }

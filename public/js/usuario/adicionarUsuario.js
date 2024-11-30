@@ -108,10 +108,6 @@ function cadastrarUsuario() {
       })
         .then(function (resposta) {
           if (resposta.ok) {
-            sessionStorage.setItem("NOME_USUARIO", nome);
-            sessionStorage.setItem("EMAIL_USUARIO", email);
-            sessionStorage.setItem("CARGO_USUARIO", cargo);
-            sessionStorage.setItem("SENHA", senha);
 
             Swal.fire({
               icon: "success",
@@ -145,7 +141,7 @@ function cadastrarUsuario() {
   }
   
   function listarCargos() {
-    fetch("/cargos/listar", {
+    fetch("/cargos/listarCargos", {
       method: "GET",
     })
       .then(function (resposta) {

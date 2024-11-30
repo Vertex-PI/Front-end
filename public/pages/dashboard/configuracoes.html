@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="../../style/components/aside_dash.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="icon" type="image/x-icon" href="../../img/1-removebg-preview.png" />
+    <link rel="stylesheet" href="../../style/metas.css">
 </head>
 
-<body onload="listarCargos(), listarCargosEditar(), validarSessao(), atualizarListaFuncionarios(), listarCargosUsuarios()">
+<body
+    onload="listarCargos(), listarCargosEditar(), validarSessao(), atualizarListaFuncionarios(), listarCargosUsuarios()">
     <aside id="sidebar">
 
         <section id="sidebar-cliente">
@@ -76,65 +78,15 @@
             <span class="titulo_cabecalho">Configurações:</span>
 
             <div class="elementos_config">
-                <span class="opcao_config" id="opt-cadastro" style="font-weight: 700;" onclick="adicionarUsuario()">Cadastro</span>
-                <span class="opcao_config" id="opt-editar-conta" onclick="editarPerfil()">Conta</span>
+                <span class="opcao_config" id="opt-editar-conta" style="font-weight: 700; display: block;"
+                    onclick="editarPerfil()">Conta</span>
+                <span class="opcao_config" id="opt-cadastro" onclick="adicionarUsuario()">Cadastro</span>
                 <span class="opcao_config" id="opt-editar-cargo" onclick="editarUsuario()">Editar usuario</span>
                 <span class="opcao_config" id="opt-criar-cargo" onclick="criarCargo()">Criar cargo</span>
                 <span class="opcao_config" id="opt-alterar-senha" onclick="alterarSenha()">Alterar senha</span>
                 <span class="opcao_config" id="opt-alt-del-metas" onclick="modificarMeta()">Modificar metas</span>
                 <span class="opcao_config" id="opt-alt-del-cargos" onclick="modificarCargo()">Modificar cargos</span>
             </div>
-        </div>
-
-        <!-- ADICIONAR USUARIO -->
-
-        <div id="div-adc-usuario" class="opcao_selecionada">
-            <div class="div_info">
-                <div class="div_cabecalho_opcoes">
-                    <span class="titulo_span">Adicionar usuário</span>
-                    <span class="subtitulo_span">Adicione um ou mais funcionários para visualizarem sua
-                        dashboard.</span>
-                </div>
-                <div class="div_inp_adc_usuario">
-                    <span class="span_input">Nome</span>
-                    <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara" id="input_nome">
-                </div>
-
-                <div class="div_inp_adc_usuario">
-                    <span class="span_input">Email</span>
-                    <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com" id="input_email">
-                </div>
-
-                <div class="div_inp_adc_usuario">
-                    <span class="span_input">Cargo</span>
-                    <select name="" class="inp_cadastro" id="select_cargo">
-                        <option value="" selected disabled>Selecione um cargo</option>
-                    </select>
-                </div>
-
-                <div class="div_inp_adc_usuario">
-                    <span class="span_input">Senha</span>
-                    <div class="div_input">
-                        <input type="password" id="input_senha" class="inp_cadastro" placeholder="Insira sua senha"/>
-                        <img src="../../img/eye_closed.svg" id="eye-closed" class="class_eye_closed"
-                            onclick="show_password()">
-                    </div>
-                </div>
-
-                <div class="div_inp_adc_usuario">
-                    <span class="span_input">Confirmar senha</span>
-                    <div class="div_input">
-                        <input type="password" id="input_confirmar_senha" class="inp_cadastro"
-                            placeholder="Confirme sua senha" />
-                        <img src="../../img/eye_closed.svg" id="eye-closed-2" class="class_eye_closed"
-                            onclick="show_password_2()">
-                    </div>
-
-                </div>
-
-                <button class="btn_adc_cadastro" onclick="cadastrarUsuario()">Adicionar</button>
-            </div>
-
         </div>
 
         <!-- EDITAR CONTA -->
@@ -169,6 +121,58 @@
 
         </div>
 
+        <!-- ADICIONAR USUARIO -->
+
+        <div id="div-adc-usuario" class="opcao_selecionada">
+            <div class="div_info">
+                <div class="div_cabecalho_opcoes">
+                    <span class="titulo_span">Adicionar usuário</span>
+                    <span class="subtitulo_span">Adicione um ou mais funcionários para visualizarem sua
+                        dashboard.</span>
+                </div>
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Nome</span>
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Ana Clara" id="input_nome">
+                </div>
+
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Email</span>
+                    <input type="text" class="inp_cadastro" placeholder="exemplo@exemplo.com" id="input_email">
+                </div>
+
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Cargo</span>
+                    <select name="" class="inp_cadastro" id="select_cargo">
+                        <option value="" selected disabled>Selecione um cargo</option>
+                    </select>
+                </div>
+
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Senha</span>
+                    <div class="div_input">
+                        <input type="password" id="input_senha" class="inp_cadastro" placeholder="Insira sua senha" />
+                        <img src="../../img/eye_closed.svg" id="eye-closed" class="class_eye_closed"
+                            onclick="show_password()">
+                    </div>
+                </div>
+
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Confirmar senha</span>
+                    <div class="div_input">
+                        <input type="password" id="input_confirmar_senha" class="inp_cadastro"
+                            placeholder="Confirme sua senha" />
+                        <img src="../../img/eye_closed.svg" id="eye-closed-2" class="class_eye_closed"
+                            onclick="show_password_2()">
+                    </div>
+
+                </div>
+
+                <button class="btn_adc_cadastro" onclick="cadastrarUsuario()">Adicionar</button>
+            </div>
+
+        </div>
+
+
         <!-- CRIAR CARGO -->
 
         <div id="div-criar-cargo" class="opcao_selecionada" style="display: none;">
@@ -181,7 +185,8 @@
 
                 <div class="div_inp_adc_usuario">
                     <span class="span_input">Cargo:</span>
-                    <input type="text" class="inp_cadastro" placeholder="Ex.: Gerente de vendas" id="inp_nome_cargos_cadastrar">
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Gerente de vendas"
+                        id="inp_nome_cargos_cadastrar">
 
                 </div>
 
@@ -201,40 +206,41 @@
         <!-- EDITAR CARGO USUARIO -->
 
         <div id="div-edit-cargo" class="opcao_selecionada" style="display: none;">
-            <div class="div_cabecalho_func_pai" id="div_cabecalho_func_pai">
+
+            <div class="div_cabecalho_func_pai" id="div_cabecalho_func_pai" style="display: flex;">
                 <span class="titulo_span">Editar</span>
-                    <span class="subtitulo_span">Edite um funcionário.</span>
+                <span class="subtitulo_span">Edite um funcionário.</span>
             </div>
-            <div class="div_cabecalho_func_filho" id="div_cabecalho_func_filho">
+            <div class="div_cabecalho_func_filho" id="div_cabecalho_func_filho" style="display: flex;">
                 <p>Funcionários</p>
                 <p>Editar</p>
                 <p>Deletar</p>
             </div>
-    
+
             <!-- Lista de Funcionários -->
-                <div id="div-usuarios" style="display: none;">
-                    <!-- Lista de funcionários será gerada dinamicamente aqui -->
-                </div>
- 
-        
-            <!-- Edição de Cargo -->    
+            <div id="div-usuarios" style="display: none;">
+                <!-- Lista de funcionários será gerada dinamicamente aqui -->
+            </div>
+
+
+            <!-- Edição de Cargo -->
             <div class="div_info" id="div-mudar-cargo" style="display: none;">
                 <div id="div-cabecalho-editar-usuario">
                     <span class="titulo_span">Editar usuário</span>
                     <span class="subtitulo_span">Edite o cargo de seus funcionários cadastrados.</span>
                 </div>
-        
+
                 <div class="div_inp_editar_usuario">
                     <span class="span_input" id="span-input-cargos">Cargo</span>
                     <select class="inp_cadastro" id="inp-editar-cargo-usuario">
                         <!-- Lista de cargos será preenchida dinamicamente -->
                     </select>
                 </div>
-        
+
                 <button class="btn_adc_cadastro" onclick="salvarEdicaoCargo(idFuncionarioGlobal)">Salvar</button>
 
             </div>
-        </div>        
+        </div>
 
         <!-- ALTERAR SENHA -->
 
@@ -283,35 +289,44 @@
         <!-- MODIFICAR METAS -->
 
         <div id="div-modificar-metas" class="opcao_selecionada" style="display: none;">
-            <div class="div_info">
+            <div class="div_info" id="div_info">
+                <!-- Cabeçalho Principal -->
                 <div class="div_cabecalho_meta_pai" id="div_cabecalho_meta_pai">
-                    <span class="titulo_span">Editar</span>
-                    <span class="subtitulo_span">Edite um funcionário.</span>
+                    <span class="titulo_span">Metas</span>
+                    <span class="subtitulo_span">Edite ou exclua metas existentes.</span>
                 </div>
+
+                <!-- Sub-Cabeçalho -->
                 <div class="div_cabecalho_meta_filho" id="div_cabecalho_meta_filho">
-                    <p>Metas</p>
+                    <p>Nome da Meta</p>
                     <p>Editar</p>
                     <p>Deletar</p>
                 </div>
 
-                          <!-- Edição de Meta -->
+                <!-- Lista de Metas -->
                 <div id="div_metas" class="div_metas">
                     <div id="div_listarMetas">
-                        <!-- Lista de Metas será gerada dinamicamente aqui -->
-                        <!-- Deixei aqui só para ver os campos que tinha então era a meta a imagem de deletar e a imagem de excluir -->
-                        <!-- <div class="meta">
-                            <span>Meta 1</span>
-                            <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                            <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                        </div> -->                  
+                        <!-- Os itens de meta serão carregados dinamicamente aqui -->
                     </div>
-
-
                 </div>
-
             </div>
-
+            <section id="section_meta" style="display: none; width: 100%; height: 80%;">
+                <div id="background_meta">
+                    <span class="titulo_meta">Editar Meta:</span>
+                    <span>Valor em reais que pretende gastar:</span>
+                    <input class="input_design" type="number" id="gastoEmReais" placeholder="R$00,00">
+                    <span>KWH que pretende gastar:</span>
+                    <input class="input_design" type="number" id="gastoEnergetico" placeholder="5000">
+                    <span>Mês referente:</span>
+                    <div>
+                        <button id="btnSalvar" onclick="salvarEdicaoMeta()">Salvar</button>
+                        <button onclick="cancelarEdicaoMeta()">Cancelar</button>
+                    </div>
+                </div>
+            </section>
         </div>
+
+
         <!-- MODIFICAR CARGOS -->
 
         <div id="div-modificar-cargo" class="opcao_selecionada" style="display: none;">
@@ -325,21 +340,41 @@
                     <p>Editar</p>
                     <p>Deletar</p>
                 </div>
-                <div class="div_cargos">
+                <div class="div_cargos" id="div_cargos">
+                    <!-- Lista de Cargos será gerada dinamicamente aqui -->
+                </div>
+            </div>
+        </div>
 
-
-                    <!-- Lista de Metas será gerada dinamicamente aqui -->
-                    <!-- Deixei aqui só para ver os campos que tinha então era a meta a imagem de deletar e a imagem de excluir -->
-                    <!-- <div class="cargo">
-                        <span>cargo 1</span>
-                        <img src="../../img/img_dash/edit.svg" class="img_item" alt="">
-                        <img src="../../img/img_dash/trash-bin.svg" class="img_trash" alt="">
-                    </div> -->
+        <!-- Formulário de Edição de Cargo -->
+        <!-- Formulário de Edição de Cargo -->
+        <div id="div-editar-cargo" class="opcao_selecionada" style="display: none;">
+            <div class="div_info">
+                <div class="div_cabecalho_opcoes">
+                    <span class="titulo_span">Editar cargo</span>
+                    <span class="subtitulo_span">Modifique os dados do cargo.</span>
                 </div>
 
-            </div>
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Cargo:</span>
+                    <input type="text" class="inp_cadastro" placeholder="Ex.: Gerente de vendas"
+                        id="inp_nome_cargo_editar">
+                </div>
 
+                <div class="div_inp_adc_usuario">
+                    <span class="span_input">Permissão de administrador</span>
+                    <select name="" class="inp_cadastro" id="inp_permissao_cargo_editar">
+                        <option value="SIM">Sim</option>
+                        <option value="NAO">Não</option>
+                    </select>
+                </div>
+
+                <button class="btn_adc_cadastro" onclick="salvarEdicaoCargoPorNome()">Salvar alterações</button>
+                <button class="btn_adc_cadastro cancelar" onclick="cancelarEdicaoCargo()">Cancelar</button>
+            </div>
         </div>
+
+
 
     </section>
 
@@ -347,18 +382,21 @@
 
 </html>
 
-<script  src="../../js/dash/sessao.js"></script>
+<script src="../../js/dash/sessao.js"></script>
+<script src="../../js/configuracoes/config.js"></script>
 <script src="../../js/configuracoes/cargo.js"></script>
 <script src="../../js/configuracoes/usuario.js"></script>
 <script src="../../js/metas/metas.js"></script>
-<script src="../../js/configuracoes/config.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- puxando arquivos para funcionar os cruds -->
- <script src="../../js/usuario/adicionarUsuario.js"></script>
- <script src="../../js/usuario/editarUsuario.js"></script>
- <script src="../../js/usuario/editarSenhaUsuario.js"></script>
- <script src="../../js/usuario/editarCargoUsuario.js"></script>
+<script src="../../js/cargos/editarCargos.js"></script>
+<script src="../../js/usuario/adicionarUsuario.js"></script>
+<script src="../../js/usuario/editarUsuario.js"></script>
+<script src="../../js/usuario/editarSenhaUsuario.js"></script>
+<script src="../../js/usuario/editarCargoUsuario.js"></script>
+<script src="../../js/permissoes/permissao.js"></script>
 
- <script src="../../js/cargos/cadastrarCargo.js"></script>
+<script src="../../js/metas/editarMetas.js"></script>
+<script src="../../js/cargos/cadastrarCargo.js"></script>

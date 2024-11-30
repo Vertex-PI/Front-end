@@ -92,7 +92,7 @@ function editar() {
             // Atualiza os dados no sessionStorage
             sessionStorage.setItem("NOME_USUARIO", nome);
             sessionStorage.setItem("EMAIL_USUARIO", email);
-            sessionStorage.setItem("CARGO_USUARIO", cargo);
+            sessionStorage.setItem("ID_CARGO", cargo);
   
             Swal.fire({
               icon: "success",
@@ -126,7 +126,7 @@ function editar() {
   }
 
 function listarCargosEditar(cargoSelecionado) {
-  fetch("/cargos/listar", {
+  fetch("/cargos/listarCargos", {
     method: "GET",
   })
     .then((resposta) => {

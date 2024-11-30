@@ -1,8 +1,8 @@
 var cargosModel = require("../models/cargosModel");
 const { deletar } = require("./metasController");
 
-function listar(req, res) {
-  cargosModel.listar().then((resultado) => {
+function listarCargos(req, res) {
+  cargosModel.listarCargos().then((resultado) => {
     res.status(200).json(resultado);
   });
 }
@@ -52,7 +52,7 @@ function editar(req, res) {
   var novoPermissao = req.body.permissao;
   var idCargos= req.params.idCargos;
 
-  metasModel.editar(idCargos ,novoNome, novoPermissao)
+  cargosModel.editar(idCargos ,novoNome, novoPermissao)
     .then(function (resultado) {
       res.json(resultado);
     })
@@ -63,24 +63,51 @@ function editar(req, res) {
     });
 }
 
-function deletarCargo(req, res) {
-  var idCargos = req.params.idCargos;
+function verificarAssociacao(req, res) {
+  const idCargos = req.params.idCargos;
 
-  metasModel.deletarCargo(idCargos)
+  cargosModel.verificarAssociacao(idCargos)
     .then(function (resultado) {
-      res.json(resultado);
+      if (resultado.length > 0) {
+        res.json({ associado: true });
+      } else {
+        res.json({ associado: false });
+      }
     })
     .catch(function (erro) {
-      console.log(erro);
-      console.log("Houve um erro ao deletar o Cargo: ", erro.sqlMessage);
-      res.status(500).json(erro.sqlMessage);
+      console.log("Erro ao verificar a associação do cargo:", erro);
+      res.status(500).json({ error: "Erro ao verificar a associação do cargo." });
     });
 }
 
+function deletarCargo(req, res) {
+  const idCargos = req.params.idCargos;
+
+  cargosModel.verificarAssociacao(idCargos)
+    .then((resultado) => {
+      if (resultado.length > 0) {
+        res.status(400).json({ mensagem: 'Este cargo está associado a um usuário e não pode ser deletado!' });
+      } else {
+        cargosModel.deletarCargo(idCargos)
+          .then((resultado) => {
+            res.json(resultado);
+          })
+          .catch((erro) => {
+            console.log('Erro ao deletar o cargo:', erro);
+            res.status(500).json(erro);
+          });
+      }
+    })
+    .catch((erro) => {
+      console.error('Erro ao verificar a associação do cargo:', erro);
+      res.status(500).json(erro);
+    });
+}
 module.exports = {
   buscarPorId,
-  listar,
+  listarCargos,
   cadastrar,
   editar,
-  deletarCargo
+  deletarCargo,
+  verificarAssociacao
 };

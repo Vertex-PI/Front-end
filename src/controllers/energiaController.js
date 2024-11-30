@@ -1,7 +1,7 @@
 var energiaModel = require("../models/energiaModel");
 
 function buscarEnergia(req, res) {
-  const anos = [2023, 2024]; // Modifique conforme necessário
+  const anos = [2023, 2024]; 
   console.log(`Recuperando dados de energia para os anos: ${anos.join(", ")}`);
 
   energiaModel.buscarEnergia(anos).then(function (resultado) {
@@ -17,7 +17,6 @@ function buscarEnergia(req, res) {
   });
 }
 
-// Função para buscar metas associadas a um usuário específico
 function buscarMetasEmpresa(req, res) {
   const idEmpresa = req.params.idEmpresa;
 
@@ -37,7 +36,6 @@ function buscarMetasEmpresa(req, res) {
 }
 
 function buscarTodasMetas(req, res) {
-    // Implementação para buscar todas as metas no banco de dados
     energiaModel.buscarTodasMetas().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);

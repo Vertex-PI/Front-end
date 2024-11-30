@@ -3,8 +3,8 @@ var router = express.Router();
 
 var metasController = require("../controllers/metasController");
 
-router.get("/listar", function (req, res) {
-    metasController.listar(req, res);
+router.get("/listarMetas", function (req, res) {
+    metasController.listarMetas(req, res);
 });
 
 router.post("/publicar/:idEmpresa", function (req, res) {
@@ -16,7 +16,7 @@ router.put("/editar/:idMetas", function (req, res) {
 });
 
 router.delete("/deletar/:idMetas", function (req, res) {
-    metasController.deletar(req, res);
+    metasController.deletarMetas(req, res);
 });
 
 

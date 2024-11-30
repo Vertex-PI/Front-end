@@ -8,18 +8,22 @@ router.post("/cadastrar", function (req, res) {
 })
 
 router.get("/buscar/:idCargo", function (req, res) {
+  cargosController.verificarAssociacao(req, res);
+});
+
+router.get("/verificarAssociacao/:idCargos", function (req, res) {
   cargosController.buscarPorId(req, res);
 });
 
-router.get("/listar", function (req, res) {
-  cargosController.listar(req, res);
+router.get("/listarCargos", function (req, res) {
+  cargosController.listarCargos(req, res);
 });
 
-router.put("/editar/:idCargo", function (req, res) {
+router.put("/editar/:idCargos", function (req, res) {
   cargosController.editar(req, res);
 });
 
-router.delete("/deletar/:idCargo", function (req, res) {
+router.delete("/deletar/:idCargos", function (req, res) {
   cargosController.deletarCargo(req, res);
 });
 

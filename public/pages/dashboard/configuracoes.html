@@ -91,7 +91,7 @@
 
         <!-- EDITAR CONTA -->
 
-        <div id="div-editar-conta" class="opcao_selecionada" style="display: none;">
+        <div id="div-editar-conta" class="opcao_selecionada">
             <div class="div_info">
                 <div class="div_cabecalho_opcoes">
                     <span class="titulo_span">Editar conta</span>
@@ -123,7 +123,7 @@
 
         <!-- ADICIONAR USUARIO -->
 
-        <div id="div-adc-usuario" class="opcao_selecionada">
+        <div id="div-adc-usuario" class="opcao_selecionada" style="display: none;">
             <div class="div_info">
                 <div class="div_cabecalho_opcoes">
                     <span class="titulo_span">Adicionar usuário</span>
@@ -213,7 +213,7 @@
             </div>
             <div class="div_cabecalho_func_filho" id="div_cabecalho_func_filho" style="display: flex;">
                 <p>Funcionários</p>
-                <p>Editar</p>
+                <p style="margin-left: 60px;">Editar</p>
                 <p>Deletar</p>
             </div>
 
@@ -317,7 +317,6 @@
                     <input class="input_design" type="number" id="gastoEmReais" placeholder="R$00,00">
                     <span>KWH que pretende gastar:</span>
                     <input class="input_design" type="number" id="gastoEnergetico" placeholder="5000">
-                    <span>Mês referente:</span>
                     <div>
                         <button id="btnSalvar" onclick="salvarEdicaoMeta()">Salvar</button>
                         <button onclick="cancelarEdicaoMeta()">Cancelar</button>
@@ -337,7 +336,7 @@
                 </div>
                 <div class="div_cabecalho_cargo_filho" id="div_cabecalho_cargo_filho">
                     <p>Cargos</p>
-                    <p>Editar</p>
+                    <p style="margin-left: 60px;">Editar</p>
                     <p>Deletar</p>
                 </div>
                 <div class="div_cargos" id="div_cargos">

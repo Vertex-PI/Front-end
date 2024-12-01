@@ -255,7 +255,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding-left: 25px;
     padding-bottom: 8px;
     padding-top: 8px;
 
@@ -271,7 +270,7 @@ a {
     /* background-color: red; */
     display: flex;
     flex-direction: column;
-
+    width: 120px;
 }
 
 .opcao_selecionada {
@@ -482,7 +481,7 @@ a {
     display: flex;
     align-items: center;
     gap: 100px;
-    padding-left: 85px;
+    justify-content: space-evenly;
     
     /* background-color: red; */
     width: 100%;
@@ -495,7 +494,7 @@ a {
     display: flex;
     align-items: center;
     gap: 100px;
-    padding-left: 90px;
+    justify-content: space-evenly;
     
     /* background-color: red; */
     width: 100%;
@@ -650,8 +649,7 @@ button:hover {
     display: flex;
     flex-direction: row;
 
-    padding-left: 120px;
-    gap: 100px;
+    justify-content: space-evenly;
 
     font-size: large;
     font-weight: 100px;
@@ -662,11 +660,19 @@ button:hover {
     display: flex;
     flex-direction: row;
 
-    padding-left: 85px;
+    justify-content: space-evenly;
     gap: 88px;
 
     font-size: large;
     font-weight: 100px;
+}
+
+.meta > span{
+    width: 10px;
+}
+
+.cargo > span{
+    width: 170px;
 }
 
 .div_cabecalho_cargo_filho{
@@ -674,7 +680,7 @@ button:hover {
     display: flex;
     flex-direction: row;
 
-    padding-left: 85px;
+    justify-content: space-evenly;
     gap: 88px;
 
     font-size: large;
@@ -694,3 +700,4 @@ button:hover {
 
     /* border: 2px solid red; */
 }
+

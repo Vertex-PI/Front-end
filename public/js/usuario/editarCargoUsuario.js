@@ -181,6 +181,7 @@ function salvarEdicaoCargo(idFuncionario) {
                     icon: "success",
                     title: "Sucesso",
                     text: "Cargo atualizado com sucesso!",
+                    backdrop: false,
                 }).then(() => {
                     document.getElementById("div-mudar-cargo").style.display = "none";
                     document.getElementById("div_cabecalho_func_pai").style.display = "flex";

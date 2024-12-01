@@ -84,36 +84,35 @@
         </section>
         <section class="section_kpis">
             <div class="div_kpi">
-                <img class="img_kpi" src="../../img/img_dash/user.svg" alt="" id="destaque_svg">
+                <img class="img_kpi" src="../../img/home-1-svgrepo-com.svg" alt="" id="destaque_svg">
                 <div class="div_titulo_kpi">
                     <div class="conteudo">
-                        <span class="indicador_kpi">3</span>
-                        <span class="legenda_kpi">Setores com altos gastos</span>
+                        <span class="indicador_kpi" id="indicador_setores"></span>
+                        <span class="legenda_kpi">Setor(es) com altos gastos</span>
                     </div>
-                    <span class="descricao_kpi">No mês de <b>maio</b> </span>
+                    <span class="descricao_kpi" id="descricao_setores">No mês de <b>maio</b></span>
                 </div>
             </div>
-
-
+        
             <div class="div_kpi">
                 <img class="img_kpi" src="../../img/img_dash/target-svgrepo-com.svg" alt="" id="destaque_svg">
                 <div class="div_titulo_kpi">
                     <div class="conteudo">
-                        <span class="indicador_kpi">80%</span>
-                        <span class="legenda_kpi">Meta atingida</span>
+                        <span class="indicador_kpi" id="indicador_meta"></span>
+                        <span class="legenda_kpi">Meta(s) atingida(s)</span>
                     </div>
-                    <span class="descricao_kpi">Porcentagem da meta atingida no mês</span>
+                    <span class="descricao_kpi" id="descricao_meta">Porcentagem da meta atingida no ano</span>
                 </div>
             </div>
-
+        
             <div class="div_kpi">
                 <img class="img_kpi" src="../../img/img_dash/dollar-svgrepo-com.svg" alt="" id="destaque_svg">
                 <div class="div_titulo_kpi">
                     <div class="conteudo">
-                        <span class="indicador_kpi">10%</span>
+                        <span class="indicador_kpi" id="indicador_reducao"></span>
                         <span class="legenda_kpi">Redução de gastos</span>
                     </div>
-                    <span class="descricao_kpi">Comparado ao mês anterior</span>
+                    <span class="descricao_kpi" id="descricao_reducao">Comparado ao mês anterior</span>
                 </div>
             </div>
         </section>
@@ -137,3 +136,5 @@
 
 <script src="../../js/dash/sessao.js"></script>
 <script src="../../js/dash/graficos.js"></script>
+
+<script src="../../js/kpi/kpi.js"></script>

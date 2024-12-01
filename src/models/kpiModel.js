@@ -18,13 +18,13 @@ function buscarSetoresAltosGastosMesAnterior() {
 
   function buscarComparacaoMesAtual() {
     var instrucaoSql = `
-        SELECT
+                  SELECT
         COUNT(*) AS totalMetasAtingidas
-    FROM Energia e
-    JOIN Metas m ON e.fk_empresa = m.fk_empresa AND e.mes = m.mes
+    FROM Metas m
+    JOIN Energia e ON e.fk_empresa = m.fk_empresa AND e.mes = m.mes
     WHERE e.fk_empresa = 1
     AND e.ano = YEAR(CURDATE())
-    AND e.gastoEnergetico >= m.gastoEnergetico; 
+    AND e.gastoEnergetico >= m.gastoEnergetico;  
     `;
   
     console.log("Executando a instrução SQL para comparar o mês atual com outros meses: \n" + instrucaoSql);

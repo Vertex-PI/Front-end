@@ -29,7 +29,6 @@ function carregarKPIs() {
                 const indicadorMeta = document.getElementById('indicador_meta');
                 indicadorMeta.textContent = `${data[0].totalMetasAtingidas}`; // Porcentagem da meta
                 const descricaoMeta = document.getElementById('descricao_meta');
-                descricaoMeta.textContent = "Porcentagem da meta atingida no mês";
             } else {
                 console.log("Nenhum dado de meta atingida encontrado.");
             }

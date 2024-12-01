@@ -41,12 +41,13 @@ FROM (
 
   function buscarMetaAtingida() {
     var instrucaoSql = `
-  SELECT
-        ROUND((SUM(e.gastoEnergetico) / SUM(m.gastoEnergetico)) * 100, 2) AS porcentagemAtingida
-    FROM Energia e
-    JOIN Metas m ON e.fk_empresa = m.fk_empresa AND e.mes = m.mes
-    WHERE e.fk_empresa = 1
-    AND e.ano = YEAR(CURDATE())
+SELECT
+    COUNT(DISTINCT local) AS totalLocaisComAltosGastos
+FROM Energia
+WHERE
+    mes = MONTHNAME(DATE_SUB(CURDATE(), INTERVAL 2 MONTH))
+    AND ano = YEAR(CURDATE())
+    AND gastoEmReais > 1000;
     `;
   
     console.log("Executando a instrução SQL para buscar porcentagem da meta atingida: \n" + instrucaoSql);

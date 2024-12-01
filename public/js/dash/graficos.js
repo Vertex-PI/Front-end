@@ -69,25 +69,39 @@ function plotarGraficos(dadosEnergia, metas) {
     metasPorEmpresa[idEmpresa].metasGasto[mesIndex] = parseFloat(meta.gastoEmReais) || 0;
   });
 
-  // Configuração dos datasets para Kwh e Gasto
-  const datasetsKwh = Object.keys(dadosKwh).map((ano) => ({
+  const coresKwh = [
+    "rgba(54, 162, 235, 0.5)",
+    "rgba(75, 192, 192, 0.5)", 
+    "rgba(153, 102, 255, 0.5)", 
+    "rgba(201, 203, 207, 0.5)", 
+  ];
+  
+  const coresGasto = [
+    "rgba(255, 205, 86, 0.5)", 
+    "rgba(75, 192, 192, 0.5)", 
+    "rgba(153, 102, 255, 0.5)",
+    "rgba(201, 203, 207, 0.5)", 
+  ];
+  
+  // Configuração dos datasets para Kwh
+  const datasetsKwh = Object.keys(dadosKwh).map((ano, index) => ({
     label: `Consumo de Energia (${ano})`,
     data: dadosKwh[ano],
-    backgroundColor: "rgba(54, 162, 235, 0.5)",
-    borderColor: "rgba(54, 162, 235)",
+    backgroundColor: coresKwh[index % coresKwh.length],
+    borderColor: coresKwh[index % coresKwh.length].replace("0.5", "1"),
     borderWidth: 2,
     barPercentage: 0.4,
   }));
-
-  const datasetsGasto = Object.keys(dadosGasto).map((ano) => ({
+  
+  // Configuração dos datasets para Gasto
+  const datasetsGasto = Object.keys(dadosGasto).map((ano, index) => ({
     label: `Gasto Total (${ano})`,
     data: dadosGasto[ano],
-    backgroundColor: "rgba(255, 99, 132, 0.5)",
-    borderColor: "rgba(255, 99, 132)",
+    backgroundColor: coresGasto[index % coresGasto.length],
+    borderColor: coresGasto[index % coresGasto.length].replace("0.5", "1"),
     borderWidth: 2,
     barPercentage: 0.4,
   }));
-
   // Adicionando as metas ao gráfico
   Object.keys(metasPorEmpresa).forEach((idEmpresa) => {
     const metasEmpresa = metasPorEmpresa[idEmpresa];

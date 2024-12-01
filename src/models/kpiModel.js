@@ -2,13 +2,13 @@ var database = require("../database/config");
 
 function buscarSetoresAltosGastosMesAnterior() {
     var instrucaoSql = `
-    SELECT
-        COUNT(DISTINCT local) AS totalLocaisComAltosGastos
-    FROM Energia
-    WHERE
-        mes = MONTHNAME(DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
-        AND ano = YEAR(CURDATE())
-        AND gastoEmReais > 100000;
+ SELECT
+    COUNT(DISTINCT local) AS totalLocaisComAltosGastos
+FROM Energia
+WHERE
+    mes = MONTHNAME(DATE_SUB(CURDATE(), INTERVAL 2 MONTH))
+    AND ano = YEAR(CURDATE())
+    AND gastoEmReais > 10000;
     `;
   
     console.log("Executando a instrução SQL para buscar setores com altos gastos no mês anterior: \n" + instrucaoSql);
@@ -18,7 +18,7 @@ function buscarSetoresAltosGastosMesAnterior() {
 
   function buscarComparacaoMesAtual() {
     var instrucaoSql = `
-  SELECT
+ SELECT
     COUNT(*) AS totalMetasAtingidas
 FROM (
     SELECT
@@ -32,7 +32,7 @@ FROM (
     AND e.mes = m.mes
     GROUP BY m.mes
     HAVING totalEnergiaConsumida <= totalMetaEnergia
-) AS metasAtingidas; 
+) AS metasAtingidas;  
     `;
   
     console.log("Executando a instrução SQL para comparar o mês atual com outros meses: \n" + instrucaoSql);
@@ -41,13 +41,12 @@ FROM (
 
   function buscarMetaAtingida() {
     var instrucaoSql = `
-SELECT
-    COUNT(DISTINCT local) AS totalLocaisComAltosGastos
-FROM Energia
-WHERE
-    mes = MONTHNAME(DATE_SUB(CURDATE(), INTERVAL 2 MONTH))
-    AND ano = YEAR(CURDATE())
-    AND gastoEmReais > 1000;
+  SELECT
+        ROUND((SUM(e.gastoEnergetico) / SUM(m.gastoEnergetico)) * 100, 2) AS porcentagemAtingida
+    FROM Energia e
+    JOIN Metas m ON e.fk_empresa = m.fk_empresa AND e.mes = m.mes
+    WHERE e.fk_empresa = 1
+    AND e.ano = YEAR(CURDATE())
     `;
   
     console.log("Executando a instrução SQL para buscar porcentagem da meta atingida: \n" + instrucaoSql);

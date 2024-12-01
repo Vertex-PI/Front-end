@@ -8,6 +8,7 @@ function editarPerfil() {
     document.getElementById("div-alterar-senha").style.display = "none";
     document.getElementById("div-modificar-metas").style.display = "none";
     document.getElementById("div-modificar-cargo").style.display = "none";
+    document.getElementById("div-editar-cargo").style.display = "none";
     
     document.getElementById("opt-cadastro").style.fontWeight = "400";
     document.getElementById("opt-editar-conta").style.fontWeight = "700";
@@ -29,6 +30,7 @@ function alterarSenha() {
     document.getElementById("div-alterar-senha").style.display = "flex";
     document.getElementById("div-modificar-metas").style.display = "none";
     document.getElementById("div-modificar-cargo").style.display = "none";
+    document.getElementById("div-editar-cargo").style.display = "none";
     
     document.getElementById("opt-cadastro").style.fontWeight = "400";
     document.getElementById("opt-editar-conta").style.fontWeight = "400";

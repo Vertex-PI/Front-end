@@ -1,6 +1,6 @@
 function carregarKPIs() {
     const hoje = new Date();
-    hoje.setMonth(hoje.getMonth() - 1);
+    hoje.setMonth(hoje.getMonth() - 2);
 
     const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     const mesAnterior = meses[hoje.getMonth()];

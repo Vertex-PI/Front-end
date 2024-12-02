@@ -15,3 +15,7 @@ document.addEventListener('click', function(event) {
     menuLateral.classList.remove('aberto');
   }
 });
+
+function levarParaOutraPagina(){
+  window.location = 'pages/login.html';
+}

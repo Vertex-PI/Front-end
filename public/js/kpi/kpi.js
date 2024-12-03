@@ -11,7 +11,6 @@ function carregarKPIs() {
         .then((data) => {
             if (data.length > 0 && data[0].totalLocaisComAltosGastos !== undefined) {
                 const indicadorSetores = document.getElementById('indicador_setores');
-                indicadorSetores.textContent = `${data[0].totalLocaisComAltosGastos}`; // Número de setores
                 const descricaoSetores = document.getElementById('descricao_setores');
                 descricaoSetores.innerHTML = `No mês de <b>${mesAnterior}</b>`; // Mês do dado
             } else {

@@ -43,7 +43,7 @@ function carregarKPIs() {
                 const indicadorReducao = document.getElementById('indicador_reducao');
                 indicadorReducao.textContent = `${data[0].porcentagemAtingida}%`; // Porcentagem de redução de gastos
                 const descricaoReducao = document.getElementById('descricao_reducao');
-                descricaoReducao.textContent = "Comparado ao mês anterior";
+                descricaoReducao.textContent = "Ano Atual vs. Ano Anterior";
             } else {
                 console.log("Nenhum dado de redução de gastos encontrado.");
             }

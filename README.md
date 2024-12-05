@@ -67,7 +67,7 @@ services:
     image: gusttarizerio/vertex:imagem-bd-vertex
     container_name: container-bd-vertex
     environment:
-      MYSQL_ROOT_PASSWORD: urubu100
+      MYSQL_ROOT_PASSWORD: senha
       MYSQL_DATABASE: Vertex
     ports:
       - "3306:3306"
